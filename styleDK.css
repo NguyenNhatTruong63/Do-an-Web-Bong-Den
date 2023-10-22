@@ -1,0 +1,71 @@
+html {
+    background-image: url("../lb-bg.png");
+    background-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    font-family: Tahoma;
+
+}
+
+body {
+    overflow: auto;
+    text-align: center;
+    margin: 20px 420px 100px 500px; /* trên - phải - dưới - trái */
+    height: 630px;
+    border: 4px solid black;
+    border-radius: 20px;
+    background: white;
+
+}
+
+h2 {
+    padding-top: 20px;
+    font-size: 60px;
+    color: lightskyblue;
+}
+
+input {
+    border-radius: 6px;
+    font-size: 20px;
+    padding: 10px 90px 10px 5px;
+    border: none;
+
+}
+
+.username, .password, .email, .sdt {
+    margin-top: 35px;
+    border: 2px solid black;
+    padding: 10px 90px 10px 5px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+
+}
+
+.btn_dk {
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none; /*bỏ gạch chân*/
+    border: 3px solid black;
+    border-radius: 60px;
+    padding: 10px 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+
+
+}
+
+
+.btn_dk a:hover{
+    margin-top: 50px;
+    background: black;
+    color: white;
+}
