@@ -74,7 +74,7 @@ ul li a{
   height: 30px;
   font-size: 12px;
   margin-top: 7px;
-  padding-right: 18px;
+  padding-right: 10px;
   color: black;
   border: solid 2px;
   border-radius: 6px;
@@ -183,6 +183,12 @@ ul li a{
 }
 .image_sp11{
   margin-top: -17px;
+}
+.image_sp13{
+  margin-left: 27px;
+}
+.image_sp14{
+  margin-left: 10px;
 }
 
 
@@ -305,7 +311,8 @@ li{
   font-family: Tahoma;
   font-size: 16px;
   font-weight: 600;
-  color: #7f7f90;
+  color: black;
+  text-decoration: none;
   white-space: nowrap;
   transition: 0.3s;
   position: relative;
@@ -325,7 +332,6 @@ li{
   height: 2px;
   bottom: -6px;
   left: 0;
-  /*background-color: var(--color-primary);*/
   background-color: red;
   visibility: hidden;
   width: 0px;
@@ -362,12 +368,14 @@ li{
 }
 
 .navbar .dropdown ul li {
+  text-decoration: none;
   min-width: 200px;
 }
 
 .navbar .dropdown ul a {
+  text-decoration: none;
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 14px;
   text-transform: none;
   font-weight: 600;
 }
@@ -379,11 +387,11 @@ li{
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  /*color: var(--color-primary);*/
-  color: chartreuse;
+  color: red;
 }
 
 .navbar .dropdown:hover>ul {
+  text-decoration: none;
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -400,7 +408,69 @@ li{
   top: 0;
   left: 100%;
   visibility: visible;
+}
 
+
+
+.navbar .dropdown1 ul {
+  display: block;
+  position: absolute;
+  left: 28px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.navbar .dropdown1 ul li {
+  min-width: 120px;
+}
+
+.navbar .dropdown1 ul a {
+  padding: 10px 20px;
+  font-size: 15px;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar .dropdown1 ul a i {
+  font-size: 12px;
+}
+.navbar .dropdown1 ul a:hover,
+.navbar .dropdown1 ul .active:hover,
+.navbar .dropdown1 ul li:hover>a {
+  color: red;
+}
+
+.navbar .dropdown1:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.purch_price{
+  display: inline-flex;
+  text-align: center;
+  padding-left: 50px;
+}
+.purche{
+  width: 70px;
+  padding: 5px;
+  margin: -15px 10px 5px;
+  font-size: 15px;
+  color: white;
+  border: solid 0px;
+  border-radius: 10px;
+  background-color: red;
+}
+.caret{
+  margin-top: 5px;
 }
 
 
