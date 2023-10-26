@@ -18,7 +18,8 @@ body{
   height: 600px;
   /*margin: 20px 250px;*/
   padding-top: 3px;
-  background-image: url("image/backgound/anhnendk.jpg");
+  /*background-image: url("image/backgound/anhnendk.jpg");*/
+  background-image: url("image/backgound/anhnen.jpg");
 }
 .register{
   width: 500px;
@@ -42,9 +43,9 @@ body{
 }
 .icon_name_dk{
   position: absolute;
-  width: 25px;
-  height: 25px;
-  padding-top: 5px;
+  width: 20px;
+  height: 20px;
+  padding-top: 7px;
   padding-left: 37px;
 }
 #email{
@@ -57,9 +58,9 @@ body{
 }
 .icon_email_dk{
   position: absolute;
-  width: 25px;
-  height: 25px;
-  padding-top: 25px;
+  width: 20px;
+  height: 20px;
+  padding-top: 27px;
   padding-left: 40px;
 }
 
@@ -73,9 +74,9 @@ body{
 }
 .icon_phone_dk{
   position: absolute;
-  width: 25px;
-  height: 25px;
-  padding-top: 25px;
+  width: 20px;
+  height: 20px;
+  padding-top: 27px;
   padding-left: 40px;
 }
 #password{
@@ -88,9 +89,9 @@ body{
 }
 .icon_key_dk{
   position: absolute;
-  width: 25px;
-  height: 25px;
-  padding-top: 25px;
+  width: 20px;
+  height: 20px;
+  padding-top: 27px;
   padding-left: 40px;
 }
 a{
@@ -102,7 +103,7 @@ a{
   cursor: pointer;
   text-align: center;
   margin-top: 20px;
-  margin-left: 15px;
+  margin-left: 150px;
   border-style: none;
   border-radius: 10px;
 }
@@ -135,9 +136,9 @@ a{
 }
 .icon_map_dk{
   position: absolute;
-  width: 25px;
-  height: 25px;
-  padding-top: 25px;
+  width: 20px;
+  height: 20px;
+  padding-top: 27px;
   padding-left: 40px;
 }
 .birthday{

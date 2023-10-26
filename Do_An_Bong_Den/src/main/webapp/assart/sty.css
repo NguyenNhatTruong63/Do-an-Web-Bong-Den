@@ -22,8 +22,9 @@ ul li a{
     width: 1260px;
     height: 30px;
     font-size: 18px;
-    background-color: #b3d4fc;
+    /*background-color: #b3d4fc;*/
     /*background-color: #999999;*/
+  background-color: rgb(11 168 177);
 
 }
 .icon_telephone{
@@ -43,8 +44,9 @@ ul li a{
 #section_title{
     width: 1260px;
     height: 40px;
-    /*background-color: aqua;*/
-    background-color: rgb(234 233 229);
+    background-color: rgb(15 166 177);
+    /*background-color: rgb(234 233 229);*/
+
 }
 .logo_flash{
     margin-left: 20px;
@@ -91,7 +93,7 @@ ul li a{
     margin-top: 5px;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 3px;
+    margin-left: -10px;
     background-color: #999999;
     border-radius: 10px;
 }
@@ -100,7 +102,7 @@ ul li a{
     margin-top: 5px;
     font-size: 16px;
     cursor: pointer;
-    margin-left: -15px;
+    margin-left: -20px;
     background-color: #999999;
     border-radius: 10px;
 }
@@ -120,8 +122,10 @@ ul li a{
     width: 1260px;
     height: 650px;
     margin-top: -28px;
+    border-bottom: solid 3px rgb(136 136 135);
     /*background-color: rgb(211 210 205);*/
-    background-color: rgb(234 233 229);
+    /*background-color: rgb(234 233 229);*/
+  background-color: rgb(182 162 144);
 }
 .bg_item{
     width: 1000px;
@@ -173,10 +177,11 @@ ul li a{
     margin-top: -5px;
 }
 .price_sp1{
-    font-size: 22px;
+    font-size: 20px;
     margin-top: -10px;
+    margin-left: -20px;
     color: black;
-    text-align: center;
+
 }
 .image_sp5{
     margin-left: 10px;
@@ -454,11 +459,15 @@ li{
     text-align: center;
     padding-left: 50px;
 }
+.purche a{
+  text-decoration: none;
+  color: white;
+}
 .purche{
-    width: 70px;
-    padding: 5px;
+    width: 130px;
+    /*padding: 2px;*/
     margin: -15px 10px 5px;
-    font-size: 15px;
+    font-size: 13px;
     color: white;
     border: solid 0px;
     border-radius: 10px;
