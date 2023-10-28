@@ -1,4 +1,15 @@
 html {
+
+  background-image: url("image/lb-bg.png");
+  background-size: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+  font-family: Tahoma;
+
     background-image: url("../lb-bg.png");
     background-size: 100%;
 }
@@ -9,9 +20,19 @@ html {
     font-size: 35px;
     font-family: Tahoma;
 
+
 }
 
 body {
+
+  overflow: auto;
+
+  margin: 20px 510px 0px 500px; /* trên - phải - dưới - trái */
+  height: 600px;
+  border: 4px solid black;
+  border-radius: 20px;
+  background: white;
+
     overflow: auto;
     text-align: center;
     margin: 20px 420px 100px 500px; /* trên - phải - dưới - trái */
@@ -20,9 +41,66 @@ body {
     border-radius: 20px;
     background: white;
 
+
 }
 
 h2 {
+
+  padding-top: 20px;
+  font-size: 40px;
+  color: lightskyblue;
+  text-align: center;
+}
+
+input {
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 10px 40px 10px 60px;
+
+
+}
+
+.username, .password, .email, .sdt, .re-password, .diaChi {
+  text-align: center;
+  margin-top: 15px;
+
+
+}
+
+span i {
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.gioiTinh span, select, option {
+  font-size: 25px;
+
+
+}
+
+.gioiTinh {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+.gioiTinh select{
+  width: 220px;
+}
+.btn_dk {
+  margin-top: 25px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none; /*bỏ gạch chân*/
+  border: 3px solid black;
+  border-radius: 60px;
+  padding: 10px 20px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+
     padding-top: 20px;
     font-size: 60px;
     color: lightskyblue;
@@ -61,11 +139,19 @@ a {
     font-weight: bold;
 
 
+
 }
 
+
+
+.btn_dk a:hover {
+  margin-top: 50px;
+  background: black;
+  color: white;
 
 .btn_dk a:hover{
     margin-top: 50px;
     background: black;
     color: white;
+
 }

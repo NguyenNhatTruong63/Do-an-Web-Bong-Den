@@ -7,33 +7,30 @@ body{
   font-family: Tahoma;
   overflow: hidden;
 }
-.container{
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
+#page .container{
+  display: flex;
+  justify-content: center;
 }
 #page{
-  /*width: 700px;*/
-  /*height: 700px;*/
   width: 100%;
   height: 100vh;
-  /*margin: 20px 250px;*/
   padding-top: 3px;
-  /*background-image: url("image/backgound/anhnendk.jpg");*/
   background: url("image/backgound/anhnen.jpg") no-repeat center center;
   background-size: cover;
-
+  padding-top: 3px;
 }
 .register{
   width: 500px;
   height: 600px;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .text_register{
   font-size: 40px;
   color: #436799;
+  color: white;
   text-align: center;
   font-family: inherit;
 }
@@ -102,11 +99,10 @@ a{
 }
 .submit{
   width: 150px;
+  margin: 10px 10px;
   height: 30px;
   cursor: pointer;
   text-align: center;
-  margin-top: 20px;
-  margin-right: 50px;
   border-style: none;
   border-radius: 10px;
 }
@@ -173,6 +169,7 @@ a{
   width: 500px;
   text-align: center;
 }
+
 
 
 
