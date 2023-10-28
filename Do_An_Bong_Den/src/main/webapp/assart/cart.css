@@ -12,7 +12,16 @@ body{
 }
 #cart1{
   background-color: rgb(230 230 230);
+  margin-bottom: -35px;
 }
+.text_order{
+  float: right;
+  font-size: 17px;
+  color: brown;
+  font-weight: bold;
+  margin-right: 150px;
+}
+
 .product1{
   width: 1000px;
   height: 120px;
@@ -30,7 +39,7 @@ body{
 
 }
 .text_cart1{
-  width: 400px;
+  width: 600px;
   font-size: 18px;
   color: black;
   margin-left: 40px;
@@ -53,8 +62,45 @@ body{
   text-decoration: none;
   color: white;
 }
-/*.product2{*/
-/*  width: 100px;*/
-/*  height: 200px;*/
-/*  background-color: yellow;*/
-/*}*/
+.quantity{
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 40px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+#number1{
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: -2px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+#number2{
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: -2px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.product2{
+  width: 1000px;
+  height: 120px;
+  display: inline-flex;
+  margin-left: 80px;
+  background-color: white;
+}
+.delivery{
+  position: absolute;
+  float: right;
+  font-size: 15px;
+  margin-left: 450px;
+  margin-top: -3px;
+
+}
+

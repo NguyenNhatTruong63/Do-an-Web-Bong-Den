@@ -1,172 +1,79 @@
-body{
-  margin: 0px;
-  padding: 0px;
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-  font-family: Tahoma;
+html {
+  background: url("image/backgound/anhnen.jpg");
+  background-size: 100%;
 }
-.container{
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+  font-family: Tahoma, sans-serif;
+
 }
-#page{
-  /*width: 700px;*/
-  /*height: 700px;*/
-  width: 1260px;
-  height: 600px;
-  /*margin: 20px 250px;*/
-  padding-top: 3px;
-  background-image: url("image/backgound/anhnendk.jpg");
-  /*background-image: url("image/backgound/anhnen.jpg");*/
+
+body {
+  overflow: auto;
+
+  margin: 20px 510px 10px 500px; /* trên - phải - dưới - trái */
+  height: 550px;
+
+
 }
-.register{
-  width: 500px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
+
+h2 {
   padding-top: 5px;
+  margin-left: -50px;
+  width: 500px;
+  font-size: 50px;
+  color: black;
+  text-align: center;
 }
-.text_register{
-  font-size: 40px;
+
+input {
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 15px 50px 12px 60px;
+
+
+}
+
+.username, .password, .email, .sdt, .re-password, .diaChi {
+  text-align: center;
+  margin-top: 20px;
+
+
+}
+
+span img {
+  position: absolute;
+  padding-top: 8px;
+  padding-left: 15px;
+  color: deepskyblue;
+}
+
+
+.btn_dk {
+  margin-top: 30px;
+  text-align: center;
+
+}
+
+a {
+  text-decoration: none; /*bỏ gạch chân*/
+  border: 3px solid black;
+  border-radius: 60px;
+  padding: 10px 20px;
   color: white;
-  text-align: center;
-  font-family: inherit;
-}
-#full_name{
-  width: 400px;
-  height: 35px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-.icon_name_dk{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  padding-top: 7px;
-  padding-left: 37px;
-}
-#email{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-.icon_email_dk{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  padding-top: 27px;
-  padding-left: 40px;
-}
+  font-size: 30px;
+  font-weight: bold;
+  background: black;
 
-#phone{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-.icon_phone_dk{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  padding-top: 27px;
-  padding-left: 40px;
-}
-#password{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-.icon_key_dk{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  padding-top: 27px;
-  padding-left: 40px;
-}
-a{
-  text-decoration: none;
-}
-.submit{
-  width: 150px;
-  height: 30px;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 150px;
-  border-style: none;
-  border-radius: 10px;
-}
-.pix_text{
-  padding-left: 35px;
-}
-#password1{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-#section_sex{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-#location{
-  width: 400px;
-  height: 35px;
-  margin-top: 20px;
-  margin-left: 35px;
-  border-style: none;
-  border-radius: 10px;
-}
-.icon_map_dk{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  padding-top: 27px;
-  padding-left: 40px;
-}
-.birthday{
-  float: left;
-  margin-left: 40px;
-}
-#birthday_dk{
-  width: 120px;
-  height: 30px;
-  border-radius: 8px;
-  border: none;
-}
-.sex_form{
-  float: right;
-  margin-right: 40px;
-}
-#male{
-  width: 20px;
-  height: 20px;
-}
-#female{
-  width: 20px;
-  height: 20px;
+
 }
 
 
-
-
-
-
-
+.btn_dk a:hover {
+  margin-top: 50px;
+  background: white;
+  color: black;
+}
