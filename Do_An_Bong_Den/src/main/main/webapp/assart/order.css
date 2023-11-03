@@ -4,7 +4,7 @@ body{
   font-size: 20px;
   color: black;
   font-family: Tahoma;
-  background-color: #999999;
+  background-image: url("image/backgound/anhnendk.jpg");
 }
 .container{
   width: auto;
@@ -17,6 +17,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  /*background-color: blue;*/
 }
 .order_image{
   width: 100px;
@@ -43,5 +44,8 @@ body{
   float: right;
   margin-right: 240px;
   margin-top: -26px;
+}
+.sdt{
+  color: red;
 }
 

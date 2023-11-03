@@ -17,65 +17,15 @@ ul li a {
   margin-right: auto;
 }
 
-#flashbulb {
-  width: 1260px;
-  background-color: white;
-}
-
-#header_1 {
-  width: 1260px;
-  height: 30px;
-  font-size: 18px;
-  /*background-color: #b3d4fc;*/
-  /*background-color: #999999;*/
-  background-color: rgb(11 168 177);
-
-}
-
-.icon_telephone {
-  margin-left: 10px;
-  margin-top: 8px;
-}
-
-.telephone {
-  margin-left: 40px;
-  margin-top: -24px;
-}
-
-.button_icon {
-  display: inline-block;
-  float: right;
-  padding-right: 30px;
-  margin-top: -42px;
-}
-
-#section_title {
-  width: 1260px;
-  height: 40px;
-  background-color: rgb(15 166 177);
-  /*background-color: rgb(234 233 229);*/
-
-}
-
-.logo_flash {
-  margin-left: 20px;
-  border-radius: 50%;
-}
-
-.tex_flash {
-  font-size: 30px;
-  /*color: burlywood;*/
-  font-weight: bolder;
-  margin-left: 65px;
-  margin-top: -42px;
-}
-
 /*trang thanh toán*/
 .checkout .thanhtoan {
   text-align: center;
   font-size: 25px;
 }
-
+.pay{
+  margin-left: 570px;
+  padding-bottom: 20px;
+}
 .checkout p, .checkout .check_info {
   text-align: center;
   font-size: 16px;
@@ -88,6 +38,7 @@ ul li a {
   padding-left: 60px;
   padding-top: 20px;
   margin-bottom: -50px;
+  height: 450px;
 
 }
 
@@ -117,9 +68,11 @@ ul li a {
 
 .cart_check_right {
   float: right;
-  margin-top: -390px;
+  margin-top: -400px;
   margin-right: 30px;
   width: 500px;
+  height: 450px;
+
 
 }
 
@@ -169,12 +122,13 @@ ul li .number, .price, .l_total {
 }
 .btn_dathang{
   padding: 10px 10px;
-  margin-top: 25px;
+  margin-top: -23px;
+  float: right;
   background: #FF0000;
   color: white;
   border-radius: 6px;
   border: 2px solid #FF0000;
-  margin-left: 190px;
+  margin-right: -350px;
   font-size: 25px;
 }
 .btn_dathang a{
