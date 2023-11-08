@@ -4,8 +4,20 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="assart/ThanhToan.css">
   <title>Thanh Toán</title>
+  <link href="assart/sty.css" rel="stylesheet">
+<!--  <link href="assart/order.css" rel="stylesheet">-->
+  <script>
+    function  openPopup(){
+      document.getElementById("popup-wrapper_pay").style.display = "block";
+    }
+    function  closePopup(){
+      document.getElementById("popup-wrapper_pay").style.display = "none";
+    }
+  </script>
 </head>
 <body>
+
+
 <!--header-->
 <div id="flashbulb" class="flashbulb">
   <div class="container">
@@ -23,18 +35,13 @@
       <div class="container">
         <div class="logoshop_alpha">
           <img class="logo_flash" src="assart/image/logo/logo_flashbulb.png" width="40px" height="40px">
-          <p class="tex_flash"> Flashbulb Shop</p>
+          <p class="tex_flash"> Led Tâm Quang</p>
         </div>
         <div id="nanavbar-collapse-01" class="collapse">
           <nav id="navbar" class="navbar">
             <ul>
-              <li class="propClone"><input type="search" name="search" id="search"
-                                           placeholder="Tìm sản phẩm bạn mong muốn " class="text_search">
-                <img class="icon_search" src="assart/image/icon_button/search.svg">
-              </li>
               <li><a href="ieda.html">Trang Chủ </a></li>
-              <li class="dropdown1"><a href="#about"><span>Thương Hiệu</span><i
-                class="bi bi-chevron-down dropdown-indicator"></i>
+              <li class="dropdown1"><a href="#about"><span>Thương Hiệu</span><i class="bi bi-chevron-down dropdown-indicator"></i>
                 <img class="caret" src="assart/image/icon_button/caret-down.svg">
               </a>
                 <ul>
@@ -46,42 +53,35 @@
                   <li><a href="#">Panasonic</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i> <img class="caret"
-                                                                        src="assart/image/icon_button/caret-down.svg"></a>
+              <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="bi bi-chevron-down dropdown-indicator"></i> <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>
                 <ul>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Buld Led Tròn</a></li>
                       <li><a href="#">Bóng Đèn Buld Led Trụ</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Tuýp Led T5</a></li>
                       <li><a href="#">Bóng Đèn Tuýp Led T8</a></li>
                       <li><a href="#">Bóng Đèn Tuýp Led Bán Nguyệt</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Âm Trần Led Tròn</a></li>
                       <li><a href="#">Bóng Đèn Âm Trần Led Vuông</a></li>
                       <li><a href="#">Bóng Đèn Âm Trần Led Viền</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Ốp Trần Led Tròn</a></li>
                       <li><a href="#">Bóng Đèn Ốp Trần Led Vuông</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Led Ốp Trần</a></li>
                       <li><a href="#">Bóng Đèn Led Âm Trần</a></li>
@@ -89,8 +89,7 @@
                       <li><a href="#">Bóng Đèn Led Sân Vườn</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Bóng Đèn Sợi Đốt Halogen</a></li>
                     </ul>
@@ -100,27 +99,28 @@
               <li><a href="cart.html">Giỏi Hàng
                 <img class="icon_cart" src="assart/image/icon_button/cart.svg">
               </a></li>
-              <li class="dropdown1">
-                <button class="register"><a href="#"><span>Hồ Sơ</span><i
-                  class="bi bi-chevron-down dropdown-indicator"></i>
-                  <img class="caret" src="assart/image/icon_button/caret-down.svg"></a></button>
+              <li class="dropdown2"><a class="resume" href="#"><span class="text_resume">Hồ Sơ</span><i class="bi bi-chevron-down dropdown-indicator"></i>
+                <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>
                 <ul>
                   <li><a href="#">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
+                  <li><a href="policy.html">Chính Sách</a></li>
+                  <li><a href="formdn.html"> Đăng Nhập</a></li>
+                  <li><a href="fromđk.html">Đăng ký</a></li>
                   <li><a href="ieda.html">Đăng Xuất</a></li>
                 </ul>
               </li>
-              <li class="propClone"><a href="formdn.html">
-                <button class="log_in"> Đăng Nhập</button>
-              </a></li>
 
+              <li class="propClone"><input type="search" name="search" id="search" placeholder="Tìm sản phẩm bạn mong muốn " class="text_search">
+                <img class="icon_search" src="assart/image/icon_button/search.svg">
+              </li>
             </ul>
           </nav><!-- .navbar -->
-        </div>
+        </div >
 
         <!--content thanh toán-->
         <div class="checkout">
-        <span><img src="assart/image/logo/payment.png" height="80px" width="120px"></span>
+          <span><img class="pay" src="assart/image/logo/payment.png" height="80px" width="120px"></span>
 
           <p class="thanhtoan">THANH TOÁN</p>
           <p class="check_info">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Thanh Toán</p>
@@ -172,45 +172,62 @@
           </div>
         </div>
 
-          <button class="btn_dathang">ĐẶT HÀNG</button>
+        <button class="btn_dathang"><a href="#" onclick="openPopup()"> Đặt Hàng</a></button>
+        <div class="popup-wrapper_pay" id="popup-wrapper_pay">
+          <div class="popup_pay">
+            <span class="close" onclick="closePopup()">&times;</span>
+              <img class="order_image" src="assart/image/logo/order_tc.jpg">
+              <h1 class="order_text">Đặt Hàng Thành Công</h1>
+              <p class="text_order_tc"> Cảm ơn bạn đã đặt hàng tại <span class="text_shop" style="color: red"> Led Tâm Quang</span></p>
+              <p class="text_order_tc"> Bạn cần chuẩn bị số tiền tương ứng:<p class="text_price_order">630.000</p></p>
+              <p class="text_order_tc"> Để xem lịch sử giỏi hàng vui lòng <a class="lk_order" href="#">xem tại đây</a></p>
+              <p class="text_order_tc"> Để được hỗ trợ vui lòng gọi vào: <span class="sdt">0245730926 hoặc 0257190589</span></p>
+              <p class="text_order_tc">Quay về trang chủ: <a class="lk_order1" href="ieda.html">Tại đây</a></p>
+          </div>
+        </div>
 
-          <footer>
-            <!--footer-->
-            <div id="foot" class="">
-              <div class="container">
-                <div class="foot_alpha">
-                  <img class="logo_flash_foot" src="assart/image/logo/logo_flashbulb.png">
-                  <p class="text_foot">Flashbulb</p>
-                </div>
-                <div class="foot_contact">
-                  <ul class="contact">
-                    <li class="text_contact"> Liên Hệ</li>
-                    <li class="text_contact_email"> Email:<p class="email_contact">flashbulb01@gmail.com</p></li>
-                    <li class="text_contact_telephone"> Điện Thoại:<p class="telephone_contact">0245730926 -
-                      0257190589 </p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="foot_address">
-                  <p class="text_address1">Địa Chỉ:</p>
-                  <p class="text_address"> 63 Khu Phố 6 Phường Linh Trung Thành Phố Thủ Đức TP.HCM</p>
-                </div>
-                <div class="foot_social">
-                  <ul class="social">
-                    <li class="text_social"> Liên Hệ Với Chúng Tôi</li>
-                    <li class="social_icon"><img class="icon_foot" src="assart/image/logo/fb_icon_30x30.png"
-                                                 width="35px"
-                                                 height="35px"></li>
-                    <li class="social_icon"><img class="icon_foot" src="assart/image/logo/twitter.png " width="35px"
-                                                 height="35px"></li>
-                    <li class="social_icon"><img class="icon_foot" src="assart/image/logo/instagram.png" width="35px"
-                                                 height="35px"></li>
-                    <li class="social_icon"><img class="icon_foot" src="assart/image/logo/email.png" width="35px"
-                                                 height="35px"></li>
-                  </ul>
-                </div>
+        <footer>
+          <!--footer-->
+          <div id="foot" class="">
+            <div class="container">
+              <div class="foot_alpha">
+                <img class="logo_flash_foot" src="assart/image/logo/logo_flashbulb.png">
+                <p class="text_foot">Led Tâm Quang</p>
+              </div>
+              <div class="foot_contact">
+                <ul class="contact">
+                  <li class="text_contact"> Liên Hệ</li>
+                  <li class="text_contact_email"> Email:<p class="email_contact">flashbulb01@gmail.com</p></li>
+                  <li class="text_contact_telephone"> Điện Thoại:<p class="telephone_contact">0245730926 -
+                    0257190589 </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="foot_address">
+                <p class="text_address1">Địa Chỉ:</p>
+                <p class="text_address"> 63 Khu Phố 6 Phường Linh Trung Thành Phố Thủ Đức TP.HCM</p>
+              </div>
+              <div class="foot_social">
+                <ul class="social">
+                  <li class="text_social"> Liên Hệ Với Chúng Tôi</li>
+                  <li class="social_icon"><img class="icon_foot" src="assart/image/logo/fb_icon_30x30.png"
+                                               width="35px"
+                                               height="35px"></li>
+                  <li class="social_icon"><img class="icon_foot" src="assart/image/logo/twitter.png " width="35px"
+                                               height="35px"></li>
+                  <li class="social_icon"><img class="icon_foot" src="assart/image/logo/instagram.png" width="35px"
+                                               height="35px"></li>
+                  <li class="social_icon"><img class="icon_foot" src="assart/image/logo/email.png" width="35px"
+                                               height="35px"></li>
+                </ul>
               </div>
             </div>
-          </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

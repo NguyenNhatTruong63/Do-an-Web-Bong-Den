@@ -1,16 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: nguye
-  Date: 11/7/2023
-  Time: 9:24 PM
+  Date: 11/8/2023
+  Time: 7:54 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-  <meta charset="UTF-8">
-  <title>Flashlight Shop</title>
+    <title>Flashlight Shop</title>
   <link href="assart/sty.css" rel="stylesheet">
   <script>
     function  openPopup(){
@@ -21,7 +19,6 @@
     }
   </script>
 </head>
-<body>
 <body>
 <div id="flashbulb" class="flashbulb">
   <div class="container">
@@ -100,7 +97,7 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="cart.html">Giỏi Hàng
+              <li><a href="cart.html">Giỏ Hàng
                 <img class="icon_cart" src="assart/image/icon_button/cart.svg">
               </a></li>
               <li class="dropdown2"><a class="resume" href="#"><span class="text_resume">Hồ Sơ</span><i class="bi bi-chevron-down dropdown-indicator"></i>
@@ -109,7 +106,7 @@
                   <li><a href="#">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
                   <li><a href="policy.html">Chính Sách</a></li>
-                  <li><a href="formdn.html"> Đăng Nhập</a></li>
+                  <li><a href="formdn.jsp"> Đăng Nhập</a></li>
                   <li><a href="formdk.html">Đăng ký</a></li>
                   <li><a href="ieda.html">Đăng Xuất</a></li>
                 </ul>
@@ -504,7 +501,5 @@
 
 </div>
 
-
-</body>
 </body>
 </html>
