@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Form Đăng Nhập</title>
-  <link href="assart/stydk.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assart/DangNhap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <title>Đăng Nhập</title>
 </head>
 <body>
-<div id="page" class="">
-  <div class="container">
-    <div class="heard1">
-      <form action="#" class="register">
-        <h1 class="text_register"> Đăng Nhập</h1>
-        <div class="form_group">
-          <div class="email_dk">
-            <img class="icon_email_dk" src="assart/image/icon_đk/envelope.svg">
-            <input type="email" name="email" id="email" placeholder="Email" class="pix_text">
-          </div>
-          <div class="key_dk">
-            <img class="icon_key_dk" src="assart/image/icon_đk/key-fill%20(1).svg">
-            <input type="password" name="password" id="password" placeholder="Password" class="pix_text">
-          </div>
-          <div style="display: flex;justify-content: center">
-            <button class="submit"><a class="small-text" href="ieda.html"> Đăng nhập</a></button>
-            <button class="submit"><a class="small-text" href="fromđk.html"> Đăng ký</a></button>
-          </div>
-          <small class="forgot-password"> <a  class="small-text" href="forgotpassword.html">Quên mật khẩu?</a></small>
-        </div>
-      </form>
+<form action="">
+    <h2> Đăng Nhập</h2>
+    <div class="username">
+        <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
+        <input type="text" placeholder="Tên đăng nhập" size="25">
+    </div>
+    <div class="password">
+        <span><img src="assart/image/icon_đk/password.png" width="40px" height="40px"></i></span>
+        <input type="password" placeholder="Mật khẩu" size="25">
     </div>
 
-  </div>
-
-</div>
+    <div class="btn_dn">
+        <input type="submit" value="Đăng Nhập">
+    </div>
+    <div class="f_pass">
+        <p><a href="">Quên mật khẩu?</a></p>
+    </div>
+    <div class="questionDk">
+        <p>Bạn chưa có tài khoản? <a href="DangKy.html">Đăng ký ngay</a></p>
+    </div>
+</form>
 </body>
 </html>
-

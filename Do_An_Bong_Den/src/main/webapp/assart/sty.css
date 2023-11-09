@@ -24,7 +24,7 @@ ul li a{
     font-size: 18px;
     /*background-color: #b3d4fc;*/
     /*background-color: #999999;*/
-  background-color: rgb(11 168 177);
+  background-image: url("./image/icon_đk/background.png");
 
 }
 .icon_telephone{
@@ -44,7 +44,7 @@ ul li a{
 #section_title{
     width: 1260px;
     height: 40px;
-    background-color: rgb(15 166 177);
+  background-image: url("./image/icon_đk/background.png");
     /*background-color: rgb(234 233 229);*/
 
 }
@@ -54,7 +54,7 @@ ul li a{
 }
 .tex_flash{
     font-size: 30px;
-    color: white;
+color: black;
     font-weight: bolder;
     margin-left: 65px;
     margin-top: -42px;
@@ -215,7 +215,7 @@ ul li a{
     width: 1260px;
     height: 200px;
     /*background-color: black;*/
-    background-color: rgb(11 168 177);
+  background-image: url("./image/icon_đk/background.png");
 }
 li{
     list-style: none;
@@ -233,20 +233,20 @@ li{
     padding-top: 50px;
     font-size: 30px;
     font-weight: bolder;
-    color: white;
+  color: black;
 }
 .text_contact{
     margin-left: 400px;
     margin-top: -100px;
     font-size: 20px;
     font-weight: bolder;
-    color: white;
+    color: black;
 }
 .text_contact_email{
     margin-left: 400px;
     margin-top: 5px;
     font-size: 16px;
-    color: white;
+  color: black;
 }
 .email_contact{
     display: inline;
@@ -256,7 +256,7 @@ li{
     margin-left: 400px;
     margin-top: 15px;
     font-size: 16px;
-    color: white;
+  color: black;
 }
 .telephone_contact{
     display: inline;
@@ -267,12 +267,12 @@ li{
     font-size: 16px;
     margin-right: 50px;
     margin-top: -130px;
-    color: white;
+  color: black;
 }
 .text_address1{
     font-size: 20px;
     font-weight: bolder;
-    color: white;
+  color: black;
 }
 .social{
     display: inline;
@@ -282,7 +282,7 @@ li{
     padding-top: 10px;
     font-size: 20px;
     font-weight: bolder;
-    color: white;
+  color: black;
 }
 .social_icon{
     display: inline;

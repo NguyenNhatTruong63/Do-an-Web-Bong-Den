@@ -51,32 +51,24 @@ body{
   width: 100px;
   height: 40px;
   position: absolute;
-  margin-top: -55px;
-  margin-left: 780px;
+  margin-top: -20px;
+  margin-left: 800px;
   border-radius: 8px;
   border: solid 1px rgb(230 230 230);
   background-color: red;
 
 }
-
 .pay_cart a{
   text-decoration: none;
   color: white;
 }
-.pay_cart2 a{
-  text-decoration: none;
-  color: white;
-}
-/*.quantity{*/
-/*  position: absolute;*/
-/*  margin-top: -10px;*/
-/*  margin-left: 40px;*/
-/*  font-size: 16px;*/
-/*  color: black;*/
-/*  font-weight: bold;*/
-/*}*/
 .quantity{
-  padding-right: 10px;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 40px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
 }
 #number1{
   width: 50px;
@@ -110,31 +102,5 @@ body{
   margin-left: 450px;
   margin-top: -3px;
 
-}
-.add_quantity{
-  display: flex;
-  margin-left: 40px;
-  margin-top: -30px;
-}
-#minus {
-  margin: 21px 10px 0px 0px;
-  height: 24px;
-  width: 24px;
-}
-#plus{
-  margin: 21px 0px 0px 10px;
-  height: 24px;
-  width: 24px;
-}
-
-#minus1 {
-  margin: 21px 10px 0px 0px;
-  height: 24px;
-  width: 24px;
-}
-#plus1{
-  margin: 21px 0px 0px 10px;
-  height: 24px;
-  width: 24px;
 }
 

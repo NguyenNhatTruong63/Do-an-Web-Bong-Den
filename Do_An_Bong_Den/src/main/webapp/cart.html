@@ -120,17 +120,11 @@
                 <h1 class="text_cart1"> Bóng Đèn Led Ốp Trần Panasonic 18W</h1>
                 <p class="price_cart1">150.000đ</p>
                 <p class="delivery">Dự kiến giao ngày: 10/11/20023 - 12/11/2023</p>
-                <div class="add_quantity">
-                  <p class="quantity">Số Lượng</p>
-                  <button id="minus" onclick="minus()">-</button>
-                  <p id="numbera">0</p>
-                  <button id="plus" onclick="plus()">+</button>
-                </div>
-                <button class="pay_cart"><a class="card" href="TrangThanhToan.html">Thanh Toán</a></button>
+                <label class="quantity">Số Lượng
+                <input type="number" name="number" id="number1"></label>
+                <button class="pay_cart"><a class="card" href="trangthanhtoan.html">Thanh Toán</a></button>
               </li>
             </ul>
-
-
             <ul class="product1">
               <li class="cart_product_image1">
                 <img class="cart_image1" src="assart/image/san_pham_tc/sp4.jpg">
@@ -139,13 +133,9 @@
                 <h1 class="text_cart1"> Đèn led âm trần Rạng Đông 16w D AT04L 155/16W </h1>
                 <p class="price_cart1">240.000đ</p>
                 <p class="delivery">Dự kiến giao ngày: 10/11/20023 - 12/11/2023</p>
-                  <div class="add_quantity">
-                    <p class="quantity">Số Lượng</p>
-                    <button id="minus1" onclick="minus1()">-</button>
-                    <p id="numberb">0</p>
-                    <button id="plus1" onclick="plus1()">+</button>
-                  </div>
-                <button class="pay_cart"><a class="card" href="TrangThanhToan.html">Thanh Toán</a></button>
+                <label class="quantity">Số Lượng
+                  <input type="number" name="number" id="number2"></label>
+                <button class="pay_cart"><a class="card" href="trangthanhtoan.html">Thanh Toán</a></button>
               </li>
 
             </ul>
@@ -189,50 +179,5 @@
     </div>
   </div >
 </div >
-<script>
-  function plus(){
-    let number = document.getElementById("numbera").innerHTML
-    if (document.getElementById("plus")){
-      number ++;
-      document.getElementById("numbera").innerHTML = number
-    }
-
-  }
-  function minus(){
-    let number = document.getElementById("numbera").innerHTML
-    if (document.getElementById("minus")){
-      number --;
-      document.getElementById("numbera").innerHTML = number
-      if(number < 0){
-        document.getElementById("numbera").innerHTML = 0;
-      }
-    }
-
-  }
-  function plus1(){
-    let number = document.getElementById("numberb").innerHTML
-    if (document.getElementById("plus1")){
-      number ++;
-      document.getElementById("numberb").innerHTML = number
-    }
-
-  }
-  function minus1(){
-    let number = document.getElementById("numberb").innerHTML
-    if (document.getElementById("minus1")){
-      number --;
-      document.getElementById("numberb").innerHTML = number
-      if(number < 0){
-        document.getElementById("numberb").innerHTML = 0;
-      }
-    }
-
-  }
-
-
-
-</script>
-
 </body>
-
 </html>
