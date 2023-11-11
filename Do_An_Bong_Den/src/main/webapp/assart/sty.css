@@ -19,6 +19,7 @@ ul li a{
     background-color: white;
 }
 #header_1{
+<<<<<<< HEAD
     width: auto;
     height: 90px;
     /*font-size: 18px;*/
@@ -37,6 +38,14 @@ ul li a{
   margin-top: -15px;
   border-radius: 10px;
   border: solid 1px #999999;
+=======
+    width: 1260px;
+    height: 30px;
+    font-size: 18px;
+    /*background-color: #b3d4fc;*/
+    /*background-color: #999999;*/
+  background-image: url("./image/icon_đk/background.png");
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 
 }
 .icon_telephone{
@@ -51,6 +60,7 @@ ul li a{
     display: inline-block;
     float: right;
     padding-right: 30px;
+<<<<<<< HEAD
     margin-top: -35px;
 }
 #section_title{
@@ -83,6 +93,33 @@ ul li a{
   margin-left: 400px;
     /*margin-top: -80px;*/
    margin-top: 45px;
+=======
+    margin-top: -42px;
+}
+#section_title{
+    width: 1260px;
+    height: 40px;
+  background-image: url("./image/icon_đk/background.png");
+    /*background-color: rgb(234 233 229);*/
+
+}
+.logo_flash{
+    margin-left: 20px;
+    border-radius: 50%;
+}
+.tex_flash{
+    font-size: 30px;
+color: black;
+    font-weight: bolder;
+    margin-left: 65px;
+    margin-top: -42px;
+}
+#nanavbar-collapse-01{
+    float: right;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: -80px;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
     font-size: 20px;
     color: #999999;
 }
@@ -91,6 +128,7 @@ ul li a{
     padding-left: 50px;
 
 }
+<<<<<<< HEAD
 /*#search{*/
 /*    width: 160px;*/
 /*    height: 30px;*/
@@ -108,6 +146,24 @@ ul li a{
     margin-top: 5px;
     width: 25px;
     height: 25px;
+=======
+#search{
+    width: 160px;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 7px;
+    padding-right: 10px;
+    color: black;
+    border: solid 2px;
+    border-radius: 6px;
+}
+.icon_search{
+    position: absolute;
+    margin-left: -18px;
+    margin-top: 14px;
+    width: 15px;
+    height: 15px;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .resume{
     width: 80px;
@@ -116,9 +172,15 @@ ul li a{
     cursor: pointer;
     font-weight: bold;
     margin-left: -10px;
+<<<<<<< HEAD
     /*border: solid 2px black;*/
     /*background-color: white ;*/
     /*border-radius: 10px;*/
+=======
+    border: solid 2px black;
+    background-color: white ;
+    border-radius: 10px;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .text_resume{
   text-align: center;
@@ -149,14 +211,27 @@ ul li a{
 }
 #image_item{
     width: 1260px;
+<<<<<<< HEAD
     height: 622px;
     margin-top: -27px;
     border-bottom: solid 3px rgb(136 136 135);
+=======
+    height: 650px;
+    margin-top: -28px;
+    border-bottom: solid 3px rgb(136 136 135);
+    /*background-color: rgb(211 210 205);*/
+    /*background-color: rgb(234 233 229);*/
+  background-color: rgb(182 162 144);
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .bg_item{
     width: 1260px;
     height: 650px;
     margin-top: -28px;
+<<<<<<< HEAD
+=======
+    /*padding-left: 130px;*/
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 
 }
 .text_bg{
@@ -190,6 +265,10 @@ ul li a{
 .table_product{
     margin-left: 20px;
     margin-top: 20px;
+<<<<<<< HEAD
+=======
+    /*background-color: burlywood;*/
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .image_sp1{
     margin-bottom: 10px;
@@ -227,11 +306,18 @@ ul li a{
 
 
 #foot{
+<<<<<<< HEAD
     width: auto;
     height: 200px;
     color: white;
     background-color: lightseagreen;
   /*background-image: url("./image/icon_đk/background.png");*/
+=======
+    width: 1260px;
+    height: 200px;
+    /*background-color: black;*/
+  background-image: url("./image/icon_đk/background.png");
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 li{
     list-style: none;
@@ -249,20 +335,32 @@ li{
     padding-top: 50px;
     font-size: 30px;
     font-weight: bolder;
+<<<<<<< HEAD
     /*color: black;*/
+=======
+  color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .text_contact{
     margin-left: 400px;
     margin-top: -100px;
     font-size: 20px;
     font-weight: bolder;
+<<<<<<< HEAD
     /*color: black;*/
+=======
+    color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .text_contact_email{
     margin-left: 400px;
     margin-top: 5px;
     font-size: 16px;
+<<<<<<< HEAD
   /*color: black;*/
+=======
+  color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .email_contact{
     display: inline;
@@ -272,7 +370,11 @@ li{
     margin-left: 400px;
     margin-top: 15px;
     font-size: 16px;
+<<<<<<< HEAD
   /*color: black;*/
+=======
+  color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .telephone_contact{
     display: inline;
@@ -283,26 +385,49 @@ li{
     font-size: 16px;
     margin-right: 50px;
     margin-top: -130px;
+<<<<<<< HEAD
   /*color: black;*/
+=======
+  color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 .text_address1{
     font-size: 20px;
     font-weight: bolder;
+<<<<<<< HEAD
   /*color: black;*/
 }
 .social{
     display: inline-flex;
     float: right;
     margin-right: 90px;
+=======
+  color: black;
+}
+.social{
+    display: inline;
+    float: right;
+    margin-right: 270px;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
     margin-top: -40px;
     padding-top: 10px;
     font-size: 20px;
     font-weight: bolder;
+<<<<<<< HEAD
   /*color: black;*/
 }
 
 .icon_foot{
   padding-left: 10px;
+=======
+  color: black;
+}
+.social_icon{
+    display: inline;
+}
+.icon_foot{
+    padding-top: 10px;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 
 .navbar {
@@ -332,12 +457,19 @@ li{
     align-items: center;
     justify-content: space-between;
     padding: 0 3px;
+<<<<<<< HEAD
     /*margin-top: -30px;*/
     font-family: Tahoma;
     font-size: 20px;
     font-weight: 600;
     /*color: white;*/
     color: white;
+=======
+    font-family: Tahoma;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
     text-decoration: none;
     white-space: nowrap;
     transition: 0.3s;
@@ -374,8 +506,12 @@ li{
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
+<<<<<<< HEAD
     /*color: #000;*/
 
+=======
+    color: #000;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 }
 
 .navbar .dropdown ul {
@@ -388,8 +524,12 @@ li{
     z-index: 99;
     opacity: 0;
     visibility: hidden;
+<<<<<<< HEAD
     /*background: #fff;*/
     background: dimgrey;
+=======
+    background: #fff;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 10px;
@@ -450,8 +590,12 @@ li{
     z-index: 99;
     opacity: 0;
     visibility: hidden;
+<<<<<<< HEAD
     /*background: #fff;*/
     background: dimgrey;
+=======
+    background: #fff;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 10px;
@@ -572,8 +716,12 @@ li{
   z-index: 99;
   opacity: 0;
   visibility: hidden;
+<<<<<<< HEAD
   /*background: #fff;*/
   background-color: dimgrey;
+=======
+  background: #fff;
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 10px;
@@ -619,4 +767,7 @@ li{
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b

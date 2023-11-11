@@ -10,6 +10,7 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+<<<<<<< HEAD
 #section_title{
   margin-top: -45px;
 }
@@ -17,6 +18,8 @@ body{
   margin-top: 60px;
 }
 
+=======
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 .text_policy{
   text-align: center;
   color: #436799;
@@ -46,6 +49,7 @@ body{
 .exchange_return{
   margin: 0px 70px;
 }
+<<<<<<< HEAD
 .navbar a,
 .navbar a:focus {
   display: flex;
@@ -63,4 +67,6 @@ body{
   transition: 0.3s;
   position: relative;
 }
+=======
+>>>>>>> c899d13e58e0d9e084f5b8f6102b4946d8142d4b
 
