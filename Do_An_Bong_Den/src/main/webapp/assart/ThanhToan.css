@@ -16,8 +16,14 @@ ul li a {
   margin-left: auto;
   margin-right: auto;
 }
-
+#section_title{
+  margin-top: -45px;
+  background-color: #999999;
+}
 /*trang thanh toán*/
+.checkout{
+  margin-top: 100px;
+}
 .checkout .thanhtoan {
   text-align: center;
   font-size: 25px;
@@ -32,8 +38,6 @@ ul li a {
   margin-top: -10px;
   font-style: italic;
 }
-
-
 .input_group_left {
   padding-left: 60px;
   padding-top: 20px;
