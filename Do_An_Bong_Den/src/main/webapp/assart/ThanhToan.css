@@ -17,8 +17,8 @@ ul li a {
   margin-right: auto;
 }
 #section_title{
-  margin-top: -45px;
-  background-color: #999999;
+  margin-top: -65px;
+
 }
 /*trang thanh toán*/
 .checkout{
@@ -134,6 +134,7 @@ ul li .number, .price, .l_total {
   border: 2px solid #FF0000;
   margin-right: -350px;
   font-size: 25px;
+
 }
 .btn_dathang a{
   text-decoration: none;
@@ -197,6 +198,10 @@ ul li .number, .price, .l_total {
   float: right;
   margin-right: 330px;
   margin-top: -26px;
+  color: blue;
+}
+.lk_order1{
+  color: blue;
 }
 .sdt{
   color: red;
