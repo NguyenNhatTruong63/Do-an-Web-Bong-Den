@@ -1,0 +1,57 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: black;
+  font-family: Tahoma;
+}
+.container{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#policy{
+  margin-top: 30px;
+}
+
+.text_policy{
+  margin-left: -10px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #436799;
+}
+.policy_content{
+  margin-left: 80px;
+  margin-right: 40px;
+}
+.no_warranty{
+  margin-left: 70px;
+  font-size: 22px;
+}
+.detail_warranty{
+  margin: 0px 65px;
+}
+.policy_compensation{
+  margin-left: 70px;
+  font-size: 22px;
+}
+.compensation{
+  margin: 0px 70px;
+}
+.return{
+  margin-left: 70px;
+  font-size: 22px;
+}
+.exchange_return{
+  margin: 0px 70px;
+}
+.text_policy1{
+  margin-left: 400px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+
+
+

@@ -1,0 +1,88 @@
+html {
+    background: url("./image/icon_đk/background.png");
+    background-size: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    font-family: Tahoma, sans-serif;
+
+}
+
+body {
+    overflow: auto;
+
+    margin: 20px 510px 10px 500px; /* trên - phải - dưới - trái */
+    height: 550px;
+
+
+}
+
+h2 {
+    margin-top: 80px;
+    padding-top: 20px;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+
+input {
+    border-radius: 6px;
+    font-size: 20px;
+    padding: 15px 50px 12px 60px;
+
+
+}
+
+.username, .password {
+    text-align: center;
+    margin-top: 20px;
+
+
+}
+span img {
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 15px;
+    color: deepskyblue;
+}
+.btn_dn {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn_dn input {
+    border: 3px solid black;
+    border-radius: 60px;
+    padding: 10px 20px;
+    color: white;
+    background: black;
+    font-size: 30px;
+    font-weight: bold;
+
+
+}
+.btn_dn input:hover {
+    background: white;
+    color: black;
+}
+
+.f_pass p, .f_pass a {
+    font-size: 20px;
+    text-decoration: none;
+    font-style: italic;
+    margin-top: 30px;
+    margin-bottom: -3px;
+    text-align: center;
+}
+
+.questionDk p, .questionDk a {
+    font-size: 20px;
+    text-decoration: none;
+    font-style: italic;
+    margin-top: 18px;
+    text-align: center;
+}
+
