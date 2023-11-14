@@ -10,8 +10,15 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+#policy{
+  margin-top: 30px;
+}
+
 .text_policy{
+  margin-left: -10px;
   text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
   color: #436799;
 }
 .policy_content{
@@ -39,4 +46,12 @@ body{
 .exchange_return{
   margin: 0px 70px;
 }
+.text_policy1{
+  margin-left: 400px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+
+
 
