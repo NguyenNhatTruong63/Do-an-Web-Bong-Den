@@ -36,7 +36,7 @@ input {
 
 }
 
-.username, .password {
+.username, .password, .re-password {
     text-align: center;
     margin-top: 20px;
 
@@ -48,12 +48,12 @@ span img {
     padding-left: 15px;
     color: deepskyblue;
 }
-.btn_dn {
+.btn_submit {
     margin-top: 40px;
     text-align: center;
 }
 
-.btn_dn input {
+.btn_submit a {
     border: 3px solid black;
     border-radius: 60px;
     padding: 10px 20px;
@@ -61,28 +61,13 @@ span img {
     background: black;
     font-size: 30px;
     font-weight: bold;
+    text-decoration: none;
 
 
 }
-.btn_dn input:hover {
+.btn_submit a:hover {
     background: white;
     color: black;
 }
 
-.f_pass p, .f_pass a {
-    font-size: 20px;
-    text-decoration: none;
-    font-style: italic;
-    margin-top: 30px;
-    margin-bottom: -3px;
-    text-align: center;
-}
-
-.questionDk p, .questionDk a {
-    font-size: 20px;
-    text-decoration: none;
-    font-style: italic;
-    margin-top: 18px;
-    text-align: center;
-}
 
