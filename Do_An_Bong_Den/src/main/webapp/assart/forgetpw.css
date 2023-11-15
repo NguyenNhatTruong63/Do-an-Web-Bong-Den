@@ -1,4 +1,3 @@
-
 html {
     background: url("./image/icon_đk/background.png");
     background-size: 100%;
@@ -14,15 +13,15 @@ html {
 
 body {
     overflow: auto;
-    /*margin: 20px 510px 10px 500px; !* trên - phải - dưới - trái *!*/
-    width: 700px;
-    height: 650px;
-  margin-left: auto;
-  margin-right: auto;
+
+    margin: 20px 510px 10px 500px; /* trên - phải - dưới - trái */
+    height: 550px;
+
 
 }
 
 h2 {
+    margin-top: 80px;
     padding-top: 20px;
     font-size: 40px;
     color: black;
@@ -37,64 +36,38 @@ input {
 
 }
 
-.username, .password, .email, .sdt, .re-password, .diaChi {
+.username, .password, .re-password {
     text-align: center;
     margin-top: 20px;
 
 
 }
-
 span img {
     position: absolute;
     padding-top: 8px;
     padding-left: 15px;
     color: deepskyblue;
 }
-
-
-.btn_dk {
-    margin-top: 30px;
+.btn_submit {
+    margin-top: 40px;
     text-align: center;
-
 }
 
-a {
-    text-decoration: none; /*bỏ gạch chân*/
+.btn_submit a {
     border: 3px solid black;
     border-radius: 60px;
     padding: 10px 20px;
     color: white;
+    background: black;
     font-size: 30px;
     font-weight: bold;
-    background: black;
+    text-decoration: none;
 
 
 }
-
-
-.btn_dk a:hover {
-    margin-top: 50px;
+.btn_submit a:hover {
     background: white;
-    color: #FF0000;
-}
-/*popup*/
-.popup {
-  position: absolute;
-  top: 500px;
-  left: 1000px;
-  transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 100px;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+    color: black;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
+
