@@ -11,15 +11,17 @@
     <h2> Đăng Nhập</h2>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
-        <input type="text" placeholder="Tên đăng nhập" size="25">
+
+        <input id="username" type="text" placeholder="Tên đăng nhập" size="25">
     </div>
     <div class="password">
         <span><img src="assart/image/icon_đk/password.png" width="40px" height="40px"></i></span>
-        <input type="password" placeholder="Mật khẩu" size="25">
+        <input type="password" id="password" placeholder="Mật khẩu" size="25">
     </div>
 
     <div class="btn_dn">
-        <input type="submit" value="Đăng Nhập">
+        <input type="button" onclick="login()" value="Đăng Nhập">
+
     </div>
     <div class="f_pass">
         <p><a href="">Quên mật khẩu?</a></p>
@@ -28,5 +30,21 @@
         <p>Bạn chưa có tài khoản? <a href="DangKy.html">Đăng ký ngay</a></p>
     </div>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+ function  login(){
+   let username = $("#username").val();
+   let password = $("#password").val();
+   console.log(username+":"+password);
+    if(username==="admin"&&password==="admin"){
+      window.location.href="admin/index.html";
+    }
+    else{
+      alert("Sai ten dang nhap hoac mat khau vui long thu lai");
+    }
+ }
+</script>
+
 </body>
 </html>
