@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebServlet(name = "login", value = "/login")
 public class login extends HttpServlet {
-    @Override
+   @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("Hello GET");
     }
