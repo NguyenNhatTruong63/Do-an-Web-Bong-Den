@@ -13,9 +13,9 @@ html {
 
 body {
     overflow: auto;
-
-    margin: 20px 510px 10px 500px; /* trên - phải - dưới - trái */
+    margin: 20px 510px 10px 300px; /* trên - phải - dưới - trái */
     height: 550px;
+    width: 700px;
 
 
 }

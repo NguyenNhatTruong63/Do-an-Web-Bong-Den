@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: nguye
   Date: 11/8/2023
@@ -6,6 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
 <html>
 <head>
     <title>Flashlight Shop</title>
@@ -130,14 +135,27 @@
           <div class="container">
             <div class="box_product">
               <div class="box_table">
-                <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
+                <table class="table_product" border="1px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
+                  <% JDBIConnector Dao = new JDBIConnector();
+                    List<Product> list = Dao.getAllProduct();
+                    for( Product product: list) {
+                  %>
                   <tr id="section_product" class="products" >
+<%--                    <% JDBIConnector Dao = new JDBIConnector();--%>
+<%--                      List<Product> list = Dao.getAllProduct();--%>
+<%--                      for( Product product: list) {--%>
+<%--                    %>--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
                     <td class="table_image1" style="height: 300px; width: 300px">
-                      <a href="#"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Led Ốp Trần Panasonic 18W</p>
+
+
+                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>
+                      <p class="text_sp1">  <%= product.getName() %></p>
                       <div class="purch_price">
-                        <p class="price_sp1"><del>150.000đ</del> 105.000đ</p>
+                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>
                         <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                         <div class="popup-wrapper" id="popup-wrapper">
                           <div class="popup">
@@ -147,13 +165,16 @@
                           </div>
                         </div>
                       </div>
+<%--                      <% }%>--%>
                     </td>
+<%--  <% }%>--%>
+                    <td class="table_image1" style="height: 300px; width: 300px">
 
-                    <td class="table_image2" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp2" src="assart/image/san_pham_tc/sp2.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng đèn Led Bulb Philips 18W E27 3000K A67 ánh sáng vàng </p>
+
+                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>
+                      <p class="text_sp1">  <%= product.getName() %></p>
                       <div class="purch_price">
-                        <p class="price_sp1"><del>130.000đ</del> 104.000đ</p>
+                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>
                         <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                         <div class="popup-wrapper" id="popup-wrapper1">
                           <div class="popup">
@@ -163,13 +184,33 @@
                           </div>
                         </div>
                       </div>
-
+                      <%--                      <% }%>--%>
                     </td>
-                    <td class="table_image3" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp3" src="assart/image/san_pham_tc/sp3_amtran_Panasonic-5wjpg.jpg" width="270px" height="270px"><p class="text_dicount">25% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Led Panasonic Âm Trần kiểu vuông 5W</p>
+                    <td class="table_image1" style="height: 300px; width: 300px">
+
+
+                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>
+                      <p class="text_sp1">  <%= product.getName() %></p>
                       <div class="purch_price">
-                        <p class="price_sp1"><del>130.000đ</del> 98.000đ</p>
+                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>
+                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+                        <div class="popup-wrapper" id="popup-wrapper2">
+                          <div class="popup">
+                            <span class="close" onclick="closePopup()">&times;</span>
+                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
+                            <p>Đã thêm vào giỏ hàng thành công</p>
+                          </div>
+                        </div>
+                      </div>
+                      <%--                      <% }%>--%>
+                    </td>
+                    <td class="table_image1" style="height: 300px; width: 300px">
+
+
+                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>
+                      <p class="text_sp1">  <%= product.getName() %></p>
+                      <div class="purch_price">
+                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>
                         <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                         <div class="popup-wrapper" id="popup-wrapper3">
                           <div class="popup">
@@ -179,284 +220,328 @@
                           </div>
                         </div>
                       </div>
-
+                      <%--                      <% }%>--%>
                     </td>
-                    <td class="table_image4" style="height: 300px; width: 250px">
-                      <a><img class="image_sp4" src="assart/image/san_pham_tc/sp4.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>
-                      <p class="text_sp1"> Đèn led âm trần Rạng Đông 16w D AT04L 155/16W  </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>240.000đ</del> 168.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper4">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                                          <% }%>--%>
 
-                    </td>
+
+
+
+
+
+<%--                    <td class="table_image2" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp2" src="assart/image/san_pham_tc/sp2.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn Led Bulb Philips 18W E27 3000K A67 ánh sáng vàng </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>130.000đ</del> 104.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper1">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+
+<%--                    </td>--%>
+<%--                    <td class="table_image3" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp3" src="assart/image/san_pham_tc/sp3_amtran_Panasonic-5wjpg.jpg" width="270px" height="270px"><p class="text_dicount">25% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Led Panasonic Âm Trần kiểu vuông 5W</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>130.000đ</del> 98.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper3">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+
+<%--                    </td>--%>
+<%--                    <td class="table_image4" style="height: 300px; width: 250px">--%>
+<%--                      <a><img class="image_sp4" src="assart/image/san_pham_tc/sp4.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Đèn led âm trần Rạng Đông 16w D AT04L 155/16W  </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>240.000đ</del> 168.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper4">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+
+<%--                    </td>--%>
                   </tr>
-                  <tr id="section_product_2">
-                    <td class="table_image5" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp5" src="assart/image/san_pham_tc/sp5.jpg" width="270px" height="270px"><p class="text_dicount">25% <br>Giảm </p></a>
-                      <p class="text_sp1"> ĐÈN LED Tuýp Bán Nguyệt 1.5M 48W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>140.000đ</del> 105.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper5">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+                  <% }%>
 
-                    </td>
-                    <td class="table_image6" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp6" src="assart/image/san_pham_tc/sp6_denledamtranrubykingled-6w.jpg" width="270px" height="270px"><p class="text_dicount">40% <br>Giảm </p></a>
-                      <p class="text_sp1"> Đèn LED Âm Trần KingLED | Đèn LED KingLED Chính Hãng </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>220.000đ</del> 132.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper6">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
 
-                    </td>
-                    <td class="table_image7" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp7" src="assart/image/san_pham_tc/sp7_bd_hngoai_philips.jpg" width="270px" height="270px"><p class="text_dicount">50% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Hồng Ngoại Philips 150W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>450.000đ</del> 225.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper7">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table_image8" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp8" src="assart/image/san_pham_tc/sp8_den-led-am-tran-vuong-mat-vang-7w_panasonic.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Led Panasonic Âm Trần Vuông Mặt Vàng 7W</p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>160.000đ</del> 112.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper8">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
 
-                    </td>
-                  </tr>
-                  <tr id="section_product3">
-                    <td class="table_image9" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp9" src="assart/image/san_pham_tc/sp9_bongdenledbulb_doimau9w.jpg" width="270px" height="270px"><p class="text_dicount">10% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Led Rạng Đông Đổi Màu 9W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>70.000đ</del> 63.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper9">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
 
-                    </td>
-                    <td class="table_image10" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp10" src="assart/image/san_pham_tc/sp10_cambienRD7w.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Led Bulb Rạng Đông Cảm Biến 7W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>110.000đ</del> 88.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper10">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                  <tr id="section_product_2">--%>
+<%--                    <td class="table_image5" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp5" src="assart/image/san_pham_tc/sp5.jpg" width="270px" height="270px"><p class="text_dicount">25% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> ĐÈN LED Tuýp Bán Nguyệt 1.5M 48W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>140.000đ</del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper5">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                    </td>
-                    <td class="table_image11" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp11" src="assart/image/san_pham_tc/sp11_dendaytoc60w.jpg" width="270px" height="270px"><p class="text_dicount">10% <br>Giảm </p></a>
-                      <p class="text_sp1"> Đèn Dây Tóc Điện Quang 60W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>30.000đ</del> 27.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper11">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                    </td>--%>
+<%--                    <td class="table_image6" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp6" src="assart/image/san_pham_tc/sp6_denledamtranrubykingled-6w.jpg" width="270px" height="270px"><p class="text_dicount">40% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Đèn LED Âm Trần KingLED | Đèn LED KingLED Chính Hãng </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>220.000đ</del> 132.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper6">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                    </td>
-                    <td class="table_image12" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp12" src="assart/image/san_pham_tc/sp12_Bong-den-huynh-quang-philips-t5-14w_.jpg" width="270px" height="270px"><p class="text_dicount">15% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn Tuýp Philips T5-14W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>80.000đ</del> 68.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper12">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                    </td>--%>
+<%--                    <td class="table_image7" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp7" src="assart/image/san_pham_tc/sp7_bd_hngoai_philips.jpg" width="270px" height="270px"><p class="text_dicount">50% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Hồng Ngoại Philips 150W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>450.000đ</del> 225.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper7">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image8" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp8" src="assart/image/san_pham_tc/sp8_den-led-am-tran-vuong-mat-vang-7w_panasonic.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Led Panasonic Âm Trần Vuông Mặt Vàng 7W</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>160.000đ</del> 112.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper8">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                    </td>
-                  </tr>
+<%--                    </td>--%>
+<%--                  </tr>--%>
+<%--                  <tr id="section_product3">--%>
+<%--                    <td class="table_image9" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp9" src="assart/image/san_pham_tc/sp9_bongdenledbulb_doimau9w.jpg" width="270px" height="270px"><p class="text_dicount">10% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Led Rạng Đông Đổi Màu 9W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>70.000đ</del> 63.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper9">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                  <tr id="section_product4">
-                    <td class="table_image13" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp13" src="assart/image/san_pham_tc/sp13_denledsanvuon.jpg" width="250px" height="250px"> <p class="text_dicount">40% <br>Giảm </p></a>
-                      <p class="text_sp1">Bóng led trụ ngoài trời trang trí sân vườn A7414 | Flexhouse VN </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"> <del>420.000</del> 252.000</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper13">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                    </td>--%>
+<%--                    <td class="table_image10" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp10" src="assart/image/san_pham_tc/sp10_cambienRD7w.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Led Bulb Rạng Đông Cảm Biến 7W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>110.000đ</del> 88.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper10">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                    </td>
-                    <td class="table_image14" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp14" src="assart/image/san_pham_tc/sp14_densanvuontron.jpg" width="250px" height="250px"> <p class="text_dicount">20% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng đèn led tròn ngoài trời trang trí sân vườn </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>300.000đ</del> 240.000đ </p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper14">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table_image15" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp15" src="assart/image/san_pham_tc/sp15_bongdenbulb-rd-5W.jpg" width="250px" height="250px"><p class="text_dicount">15% <br>Giảm </p> </a>
-                      <p class="text_sp1"> Bóng đèn led Blub tròn 5W </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"> <del>50.000đ</del> 42.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper15">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table_image16" style="height: 300px; width: 250px">
-                      <a><img class="image_sp16" src="assart/image/san_pham_tc/sp16_bong-den-led-tuyp-philips-t8.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p> </a>
-                      <p class="text_sp1"> Bóng đèn led Tuýp T8-18W-1.2m</p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>100.000đ</del> 80.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper16">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
+<%--                    </td>--%>
+<%--                    <td class="table_image11" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp11" src="assart/image/san_pham_tc/sp11_dendaytoc60w.jpg" width="270px" height="270px"><p class="text_dicount">10% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Đèn Dây Tóc Điện Quang 60W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>30.000đ</del> 27.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper11">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                  <tr id="section_product5">
-                    <td class="table_image17" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp17" src="assart/image/san_pham_tc/sp17_bden_bulb_rd_20w.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p> </a>
-                      <p class="text_sp1">Bóng Led Bulb Rạng Đông 20W  </p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>80.000đ</del> 64.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper17">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
+<%--                    </td>--%>
+<%--                    <td class="table_image12" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp12" src="assart/image/san_pham_tc/sp12_Bong-den-huynh-quang-philips-t5-14w_.jpg" width="270px" height="270px"><p class="text_dicount">15% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn Tuýp Philips T5-14W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>80.000đ</del> 68.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper12">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
 
-                    </td>
-                    <td class="table_image18" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp18" src="assart/image/san_pham_tc/sp18%20optran_rd-12W.jpg" width="250px" height="250px"><p class="text_dicount">25% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng đèn Led Ốp Trần Rạng Đông 12W</p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>140.000đ</del> 105.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper18">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table_image19" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp19" src="assart/image/san_pham_tc/sp19_bong-den-led-bulb-tru-nhom-duc-led-osram-20W.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p></a>
-                      <p class="text_sp1"> Bóng Đèn LED Bulb Trụ Nhôm Đúc Led Osram 20W</p>
-                      <div class="purch_price">
-                        <p class="price_sp1"> <del>80.000đ</del> 64.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper19">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table_image20" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp20" src="assart/image/san_pham_tc/sp20_bd_buld_trụ_20w.jpg" width="250px" height="250px"><p class="text_dicount">25% <br>Giảm </p> </a>
-                      <p class="text_sp1"> Bóng đèn Led Buld Trụ Rạng Đông</p>
-                      <div class="purch_price">
-                        <p class="price_sp1"><del>130.000đ</del> 98.000đ</p>
-                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                        <div class="popup-wrapper" id="popup-wrapper20">
-                          <div class="popup">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                            <p>Đã thêm vào giỏ hàng thành công</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
+<%--                    </td>--%>
+<%--                  </tr>--%>
+
+<%--                  <tr id="section_product4">--%>
+<%--                    <td class="table_image13" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp13" src="assart/image/san_pham_tc/sp13_denledsanvuon.jpg" width="250px" height="250px"> <p class="text_dicount">40% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">Bóng led trụ ngoài trời trang trí sân vườn A7414 | Flexhouse VN </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"> <del>420.000</del> 252.000</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper13">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+
+<%--                    </td>--%>
+<%--                    <td class="table_image14" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp14" src="assart/image/san_pham_tc/sp14_densanvuontron.jpg" width="250px" height="250px"> <p class="text_dicount">20% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn led tròn ngoài trời trang trí sân vườn </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>300.000đ</del> 240.000đ </p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper14">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image15" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp15" src="assart/image/san_pham_tc/sp15_bongdenbulb-rd-5W.jpg" width="250px" height="250px"><p class="text_dicount">15% <br>Giảm </p> </a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn led Blub tròn 5W </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"> <del>50.000đ</del> 42.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper15">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image16" style="height: 300px; width: 250px">--%>
+<%--                      <a><img class="image_sp16" src="assart/image/san_pham_tc/sp16_bong-den-led-tuyp-philips-t8.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p> </a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn led Tuýp T8-18W-1.2m</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>100.000đ</del> 80.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper16">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                  </tr>--%>
+
+<%--                  <tr id="section_product5">--%>
+<%--                    <td class="table_image17" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp17" src="assart/image/san_pham_tc/sp17_bden_bulb_rd_20w.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p> </a>--%>
+<%--                      <p class="text_sp1">Bóng Led Bulb Rạng Đông 20W  </p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>80.000đ</del> 64.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper17">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+
+<%--                    </td>--%>
+<%--                    <td class="table_image18" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp18" src="assart/image/san_pham_tc/sp18%20optran_rd-12W.jpg" width="250px" height="250px"><p class="text_dicount">25% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn Led Ốp Trần Rạng Đông 12W</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>140.000đ</del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper18">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image19" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp19" src="assart/image/san_pham_tc/sp19_bong-den-led-bulb-tru-nhom-duc-led-osram-20W.jpg" width="250px" height="250px"><p class="text_dicount">20% <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1"> Bóng Đèn LED Bulb Trụ Nhôm Đúc Led Osram 20W</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"> <del>80.000đ</del> 64.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper19">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image20" style="height: 300px; width: 250px">--%>
+<%--                      <a href="#"><img class="image_sp20" src="assart/image/san_pham_tc/sp20_bd_buld_trụ_20w.jpg" width="250px" height="250px"><p class="text_dicount">25% <br>Giảm </p> </a>--%>
+<%--                      <p class="text_sp1"> Bóng đèn Led Buld Trụ Rạng Đông</p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del>130.000đ</del> 98.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper20">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                    </td>--%>
+<%--                  </tr>--%>
 
 
                 </table>

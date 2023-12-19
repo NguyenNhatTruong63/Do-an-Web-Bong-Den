@@ -13,8 +13,8 @@ html {
 
 body {
     overflow: auto;
-
-    margin: 20px 510px 10px 500px; /* trên - phải - dưới - trái */
+    width: 600px;
+    margin: 20px 510px 10px 350px; /* trên - phải - dưới - trái */
     height: 550px;
 
 
@@ -53,7 +53,8 @@ span img {
     text-align: center;
 }
 
-.btn_dn input {
+
+.btn_dn a{
     border: 3px solid black;
     border-radius: 60px;
     padding: 10px 20px;
@@ -61,10 +62,10 @@ span img {
     background: black;
     font-size: 30px;
     font-weight: bold;
-
+    text-decoration: none;
 
 }
-.btn_dn input:hover {
+.btn_dn a:hover {
     background: white;
     color: black;
 }

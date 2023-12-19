@@ -11,24 +11,50 @@
     <h2> Đăng Nhập</h2>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
-        <input type="text" placeholder="Tên đăng nhập" size="25">
+        <input type="text" id="usernameLogin" placeholder="Tên đăng nhập" size="25">
     </div>
     <div class="password">
         <span><img src="assart/image/icon_đk/password.png" width="40px" height="40px"></i></span>
-        <input type="password" placeholder="Mật khẩu" size="25">
+        <input type="password" id="passwordLogin" placeholder="Mật khẩu" size="25">
     </div>
 
     <div class="btn_dn">
-        <input type="submit" value="Đăng Nhập">
+        <a href="ieda.html" onclick="dangnhap()">Đăng Nhập</a>
+
+
     </div>
     <div class="f_pass">
-        <p><a href="">Quên mật khẩu?</a></p>
+        <p><a href="forgetpw.html">Quên mật khẩu?</a></p>
     </div>
     <div class="questionDk">
-        <p>Bạn chưa có tài khoản? <a href="formdk.html">Đăng ký ngay</a></p>
+        <p>Bạn chưa có tài khoản? <a href="formdk.html" onclick="dangky()">Đăng ký ngay</a></p>
     </div>
 </form>
 </body>
+<script>
+  function dangnhap(){
+    var usesName = document.getElementById("usernameLogin").value;
+    var password = document.getElementById("passwordLogin").value;
+    if(usesName === ""){
+      alert("bạn chưa nhập tên đăng nhập")
+    }
+    if(password === ""){
+      alert("bạn chưa nhập mật khẩu")
+    }
+    if(usesName === "user" && password === "123"){
+      alert("bạn đã đăng nhập thành công")
+      window.local.href = "ieda.html";
+    }
+    // else if
+    // (usesName === "admin" && password === "1234"){
+    //   window.local.href = "admin/index.html";
+    // }
+    else{
+      alert("không tìm thấy dữ liệu đăng nhâp")
+
+    }
+  }
+</script>
 </html>
 
 

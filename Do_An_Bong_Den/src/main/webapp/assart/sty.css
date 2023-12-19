@@ -27,12 +27,12 @@ ul li a{
 }
 .search{
   margin-left: 500px;
-  margin-top: -75px;
+  margin-top: -50px;
 }
 #search1{
   width: 400px;
   height: 35px;
-  margin-top: -15px;
+  /*margin-top: 30px;*/
   border-radius: 10px;
   border: solid 1px #999999;
 }
@@ -119,7 +119,7 @@ ul li a{
     width: 160px;
     height: 30px;
     font-size: 12px;
-    margin-top: 7px;
+    margin-top: 15px;
     padding-right: 10px;
     color: black;
     border: solid 2px;
@@ -222,6 +222,7 @@ ul li a{
   /*}*/
 
   .table_product {
+    /*width: 1260px;*/
     margin-left: 20px;
     margin-top: 20px;
     /*background-color: burlywood;*/
