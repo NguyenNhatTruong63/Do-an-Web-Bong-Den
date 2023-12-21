@@ -18,8 +18,8 @@ public class ProductByCategoryController extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    List<Category> id = CategoryServices.getInstance().getCategoryList();
-    req.setAttribute("id",id);
+//    List<Category> data = CategoryServices.getInstance().getCategoryList();
+//    req.setAttribute("category",data);
 
 
 
