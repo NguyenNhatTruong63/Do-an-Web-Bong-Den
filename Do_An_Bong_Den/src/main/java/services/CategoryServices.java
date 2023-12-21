@@ -37,9 +37,20 @@ public class CategoryServices {
     return categoryList;
 
   }
+  public String nameCategory(String id) {
+    return JDBIConnector.get().withHandle(handle -> {
+      return handle.createQuery("SELECT name FROM categories WHERE id = ?")
+        .bind(0, id)
+        .mapTo(String.class)
+        .findOne()
+        .orElse(null);
+    });
+  }
+
   public static void main(String[] args) throws SQLException {
     CategoryServices categoryServices = new CategoryServices();
-    System.out.println(categoryServices.getCategoryList());
+//    System.out.println(categoryServices.getCategoryList());
+    System.out.println(categoryServices.nameCategory("3"));
 
   }
 }

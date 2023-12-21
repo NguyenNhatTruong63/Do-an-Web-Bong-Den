@@ -1,5 +1,6 @@
 package beans;
 
+import java.awt.desktop.AboutEvent;
 import java.io.Serializable;
 
 public class Product implements Serializable {
@@ -9,8 +10,8 @@ public class Product implements Serializable {
   private String nameBrand;
   private String name;
   private String img;
-  private int price;
-  private int discount;
+  private double price;
+  private double discount;
   private int quantity;
   private int status;
 
@@ -18,7 +19,7 @@ public class Product implements Serializable {
 
   }
 
-  public Product(int id, int idCategory, String nameBrand, String name, String img, int price, int discount, int quantity, int status) {
+  public Product(int id, int idCategory, String nameBrand, String name, String img, double price, double discount, int quantity, int status) {
     this.id = id;
     this.idCategory = idCategory;
     this.nameBrand = nameBrand;
@@ -70,19 +71,19 @@ public class Product implements Serializable {
     this.img = img;
   }
 
-  public int getPrice() {
+  public double getPrice() {
     return price;
   }
 
-  public void setPrice(int price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 
-  public int getDiscount() {
+  public double getDiscount() {
     return discount;
   }
 
-  public void setDiscount(int discount) {
+  public void setDiscount(double discount) {
     this.discount = discount;
   }
 
@@ -115,5 +116,10 @@ public class Product implements Serializable {
       ", quantity=" + quantity +
       ", status=" + status +
       '}';
+  }
+
+  public double salePrice() {
+    double sale = price - (price * discount);
+    return sale;
   }
 }
