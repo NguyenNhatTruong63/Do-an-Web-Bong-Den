@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class JDBIConnector {
   private static Jdbi jdbi;
 
-
+//  tao ket noi
    static void makeConnect() {
     MysqlDataSource dataSource = new MysqlDataSource();
     dataSource.setURL("jdbc:mysql://" + DBProperties.getDbHost() + ":" + DBProperties.getDbPort() + "/"
