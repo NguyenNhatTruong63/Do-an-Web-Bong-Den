@@ -29,6 +29,7 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>3.0.4</version>
         </dependency>
+<<<<<<< HEAD
 <!--        <dependency>-->
 <!--            <groupId>org.glassfish.jersey.media</groupId>-->
 <!--            <artifactId>jersey-media-json-jackson</artifactId>-->
@@ -69,6 +70,13 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
       </dependency>
+=======
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+>>>>>>> 898112b297c3cb8ea1f9cb9ebf0dc5f03778a75e
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-cdi2-se</artifactId>
@@ -101,6 +109,22 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
+      <dependency>
+        <groupId>org.jdbi</groupId>
+        <artifactId>jdbi3-core</artifactId>
+        <version>3.34.0</version>
+
+      </dependency>
+      <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+      </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
     </dependencies>
 
     <build>

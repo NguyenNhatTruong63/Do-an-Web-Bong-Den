@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<%--&lt;%&ndash;%>
+<%
     String error = (String)(request.getAttribute("error"));
     if(error != null) {
         request.getAttribute("error");
@@ -23,7 +23,7 @@
         error = "";
     }
     String username = request.getParameter("username") != null ? request.getParameter("username") : "";
-
+%>
 
 <p style="color: white;
 font-weight: bold;
