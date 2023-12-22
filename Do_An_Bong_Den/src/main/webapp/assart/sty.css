@@ -27,14 +27,35 @@ ul li a{
 }
 .search{
   margin-left: 500px;
-  margin-top: -50px;
+  margin-top: -70px;
 }
 #search1{
   width: 400px;
   height: 35px;
-  /*margin-top: 30px;*/
+  margin-top: -30px;
   border-radius: 10px;
   border: solid 1px #999999;
+}
+.user1{
+  width: 35px;
+  margin-left: 20px;
+  margin-top: -10px;
+  border-radius: 50px;
+}
+.text_cart{
+  display: inline-flex;
+  position: absolute;
+  margin-left: 30px;
+  margin-top: -20px;
+  font-size: 15px;
+  color: white;
+
+}
+.cart1{
+  margin-top: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
 }
 .icon_telephone{
     margin-left: 10px;

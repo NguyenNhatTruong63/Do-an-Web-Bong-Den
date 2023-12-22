@@ -1,6 +1,6 @@
 package com.example.do_an_bong_den.controller;
 
-import com.example.do_an_bong_den.mode.Product;
+import com.example.do_an_bong_den.beans.Product;
 import com.example.do_an_bong_den.services.ProductServices;
 
 import javax.servlet.*;
@@ -13,9 +13,9 @@ import java.util.List;
 public class ListProduct extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    List<Product> list = ProductServices.getProductList();
-    request.setAttribute("list", list);
-    request.getRequestDispatcher("idea.jsp").forward(request, response);
+//    List<Product> list = ProductServices.getProductList();
+//    request.setAttribute("list", list);
+//    request.getRequestDispatcher("idea.jsp").forward(request, response);
 
   }
 
