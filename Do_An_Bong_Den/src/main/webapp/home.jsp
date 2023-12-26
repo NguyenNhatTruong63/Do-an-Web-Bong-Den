@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: nguye
   Date: 11/8/2023
@@ -132,13 +134,10 @@
               <div class="box_table">
                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-<<<<<<< HEAD
                   <% JDBIConnector Dao = new JDBIConnector();%>
                    <% List<Product> list = Dao.getAllProduct();%>
                     <%for( Product product: list) {
                   %>
-=======
->>>>>>> 898112b297c3cb8ea1f9cb9ebf0dc5f03778a75e
                   <tr id="section_product" class="products" >
                     <td class="table_image1" style="height: 300px; width: 300px">
                       <a href="#"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>
@@ -155,8 +154,7 @@
                         </div>
                       </div>
                     </td>
-<<<<<<< HEAD
-<%--  <% }%>--%>
+  <% }%>
 <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
 
 
@@ -212,7 +210,6 @@
 <%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
 <%--                    </td>--%>
 <%--                                          <% }%>--%>
-=======
 
                     <td class="table_image2" style="height: 300px; width: 250px">
                       <a href="#"><img class="image_sp2" src="assart/image/san_pham_tc/sp2.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>
@@ -260,7 +257,6 @@
                           </div>
                         </div>
                       </div>
->>>>>>> 898112b297c3cb8ea1f9cb9ebf0dc5f03778a75e
 
                     </td>
                   </tr>

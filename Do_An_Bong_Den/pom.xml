@@ -29,12 +29,11 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>3.0.4</version>
         </dependency>
-<<<<<<< HEAD
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.jersey.media</groupId>-->
-<!--            <artifactId>jersey-media-json-jackson</artifactId>-->
-<!--            <version>3.0.4</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>3.0.4</version>
+        </dependency>
 
       <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
       <dependency>
@@ -70,13 +69,11 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
       </dependency>
-=======
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
             <version>3.0.4</version>
         </dependency>
->>>>>>> 898112b297c3cb8ea1f9cb9ebf0dc5f03778a75e
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-cdi2-se</artifactId>
