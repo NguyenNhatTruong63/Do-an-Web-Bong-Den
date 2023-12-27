@@ -1,5 +1,11 @@
+
 <%@ page import="services.CategoryServices" %>
 <%@ page import="beans.Category" %><%--
+
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
+<%@ page import="java.util.List" %><%--
+
   Created by IntelliJ IDEA.
   User: nguye
   Date: 11/8/2023
@@ -115,6 +121,10 @@
               <div class="box_table">
                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
+                  <% JDBIConnector Dao = new JDBIConnector();%>
+                   <% List<Product> list = Dao.getAllProduct();%>
+                    <%for( Product product: list) {
+                  %>
                   <tr id="section_product" class="products" >
                     <td class="table_image1" style="height: 300px; width: 300px">
                       <a href="product.html"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px">
@@ -132,6 +142,62 @@
                         </div>
                       </div>
                     </td>
+  <% }%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper1">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper2">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper3">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                                          <% }%>--%>
 
                     <td class="table_image2" style="height: 300px; width: 250px">
                       <a href="#"><img class="image_sp2" src="assart/image/san_pham_tc/sp2.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>

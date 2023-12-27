@@ -1,6 +1,7 @@
 package com.example.do_an_bong_den.db;
 
 import com.example.do_an_bong_den.beans.Product;
+import org.jdbi.v3.core.Jdbi;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,10 +13,19 @@ import java.util.List;
 import java.util.Properties;
 
 public class JDBIConnector {
+  private static  Jdbi jdbi;
     Connection conn=null;
     PreparedStatement ps =null;
     ResultSet rs= null;
-    public List<Product> getAllProduct() {
+
+  public JDBIConnector() {
+  }
+  public static Jdbi get(){
+    if(jdbi == null) ;
+    return jdbi;
+  }
+
+  public List<Product> getAllProduct() {
       List<Product> list = new ArrayList<>();
       String query = "SELECT * FROM products";
       try {
