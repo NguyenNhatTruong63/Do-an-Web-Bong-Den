@@ -1,4 +1,13 @@
-<%--
+
+<%@ page import="services.CategoryServices" %>
+<%@ page import="beans.Category" %>
+<%@ page import="services.BrandServices" %>
+<%@ page import="beans.Brand" %><%--
+
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
+<%@ page import="java.util.List" %><%--
+
   Created by IntelliJ IDEA.
   User: nguye
   Date: 11/8/2023
@@ -8,8 +17,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Flashlight Shop</title>
+  <meta charset="UTF-8">
+  <title>Flashlight Shop</title>
   <link href="assart/sty.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
   <script>
     function  openPopup(){
       document.getElementById("popup-wrapper").style.display = "block";
@@ -18,111 +29,98 @@
       document.getElementById("popup-wrapper").style.display = "none";
     }
   </script>
+  <style>
+    #search1 {
+      margin-top: 0px;
+    }
+  </style>
 </head>
 <body>
 <div id="flashbulb" class="flashbulb">
   <div class="container">
     <div id="header_1">
-      <img class="icon_telephone" src="assart/image/icon_button/telephone.svg">
-      <p class="telephone">0245730926 - 0257190589</p>
-      <div class="button_icon">
-        <img class="icon_head" src="assart/image/logo/fb_icon_30x30.png" width="25px" height="25px">
-        <img class="icon_head" src="assart/image/logo/twitter.png" width="25px" height="25px">
-        <img class="icon_head" src="assart/image/logo/instagram.png" width="25px" height="25px">
-        <img class="icon_head" src="assart/image/logo/email.png" width="25px" height="25px">
+      <div class="container">
+        <div id="section_title1">
+          <div class="logoshop_alpha">
+            <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="50px" height="50px">
+            <p class="tex_flash"> Led Tâm Quang</p>
+          </div>
+          <div class="search">
+            <input type="text" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
+            <img class="icon_search" src="assart/image/icon_button/search.svg">
+          </div>
+          <div class="button_icon">
+            <a href="https://www.facebook.com/"><img class="icon_head" src="assart/image/logo/fb_icon_30x30.png" width="30px" height="30px"></a>
+            <a href="https://twitter.com/i/flow/login"><img class="icon_head" src="assart/image/logo/twitter.png" width="30px" height="30px"></a>
+            <a href="https://www.instagram.com/accounts/login/"> <img class="icon_head" src="assart/image/logo/instagram.png" width="30px" height="30px"></a>
+            <a href="https://www.google.com/intl/vi/gmail/about/"> <img class="icon_head" src="assart/image/logo/email.png" width="30px" height="30px"></a>
+          </div>
+        </div>
       </div>
     </div>
     <div id="section_title" class="">
       <div class="container">
-        <div class="logoshop_alpha">
-          <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="40px" height="40px">
-          <p class="tex_flash"> Led Tâm Quang</p>
-        </div>
         <div id="nanavbar-collapse-01" class="collapse">
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a href="ieda.html">Trang Chủ </a></li>
-              <li class="dropdown1"><a href="#about"><span>Thương Hiệu</span><i class="bi bi-chevron-down dropdown-indicator"></i>
-                <img class="caret" src="assart/image/icon_button/caret-down.svg">
+              <li><a href="home.jsp">Trang Chủ </a></li>
+              <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down" style="color: white"></i>
+                <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
               </a>
-                <ul>
-                  <li><a href="#">Rạng Đông</a></li>
-                  <li><a href="#">PHILIPS</a></li>
-                  <li><a href="#">OSRAM</a></li>
-                  <li><a href="#">Điện Quang</a></li>
-                  <li><a href="#">Duhal</a></li>
-                  <li><a href="#">Panasonic</a></li>
+                <% BrandServices brandServices = new BrandServices(); %>
+                <%--                hiển thị danh mục loại sp để chọn--%>
+                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+
+                  <li class="dropdown"><a href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a></li>
+                  <% } %>
                 </ul>
+<%--                <ul>--%>
+<%--                  <li><a href="#">Rạng Đông</a></li>--%>
+<%--                  <li><a href="#">PHILIPS</a></li>--%>
+<%--                  <li><a href="#">OSRAM</a></li>--%>
+<%--                  <li><a href="#">Điện Quang</a></li>--%>
+<%--                  <li><a href="#">Duhal</a></li>--%>
+<%--                  <li><a href="#">Panasonic</a></li>--%>
+<%--                </ul>--%>
               </li>
-              <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="bi bi-chevron-down dropdown-indicator"></i> <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>
-                <ul>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Buld Led Tròn</a></li>
-                      <li><a href="#">Bóng Đèn Buld Led Trụ</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Tuýp Led T5</a></li>
-                      <li><a href="#">Bóng Đèn Tuýp Led T8</a></li>
-                      <li><a href="#">Bóng Đèn Tuýp Led Bán Nguyệt</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Âm Trần Led Tròn</a></li>
-                      <li><a href="#">Bóng Đèn Âm Trần Led Vuông</a></li>
-                      <li><a href="#">Bóng Đèn Âm Trần Led Viền</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Ốp Trần Led Tròn</a></li>
-                      <li><a href="#">Bóng Đèn Ốp Trần Led Vuông</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Led Ốp Trần</a></li>
-                      <li><a href="#">Bóng Đèn Led Âm Trần</a></li>
-                      <li><a href="#">Bóng Đèn Led Hồng Ngoại</a></li>
-                      <li><a href="#">Bóng Đèn Led Sân Vườn</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Bóng Đèn Sợi Đốt Halogen</a></li>
-                    </ul>
-                  </li>
+              <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
+                  <% CategoryServices categoryServices = new CategoryServices(); %>
+<%--                hiển thị danh mục loại sp để chọn--%>
+                <ul><% for (Category category : categoryServices.getCategoryList()) { %>
+
+                  <li class="dropdown"><a href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a></li>
+                  <% } %>
                 </ul>
               </li>
               <li><a href="cart.html">Giỏ Hàng
-                <img class="icon_cart" src="assart/image/icon_button/cart.svg">
+                <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
+                <span><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>
               </a></li>
-              <li class="dropdown2"><a class="resume" href="#"><span class="text_resume">Hồ Sơ</span><i class="bi bi-chevron-down dropdown-indicator"></i>
-                <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>
+
+              <li class="dropdown2"><a class="resume" href="#"><span class="text_resume">Hồ Sơ</span><i class="fa-solid fa-caret-down" style="color: white"></i></a>
+                <!--                            <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>-->
+
                 <ul>
                   <li><a href="#">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
                   <li><a href="policy.html">Chính Sách</a></li>
-                  <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                  <li><a href="formdn.html"> Đăng Nhập</a></li>
                   <li><a href="formdk.html">Đăng ký</a></li>
                   <li><a href="ieda.html">Đăng Xuất</a></li>
                 </ul>
               </li>
 
-              <li class="propClone"><input type="search" name="search" id="search" placeholder="Tìm sản phẩm bạn mong muốn " class="text_search">
-                <img class="icon_search" src="assart/image/icon_button/search.svg">
+              <li>
+                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm" style="color: white;"></i> </span>
               </li>
             </ul>
           </nav><!-- .navbar -->
         </div >
         <div id="image_item" class="">
           <div class="item_bg">
-            <!--                        <img class="bg_item" src="assart/image/backgound/led-lighting.jpg">-->
-            <img class="bg_item" src="assart/image/backgound/bd2.jpg">
-            <!--                      <img class="bg_item1" src="assart/image/backgound/depositphotos_20%25.jpg">-->
+            <!--                        <img class="bg_item" src="assart/image/backgound/light%20bulbs.jpg">-->
+            <!--                      <img class="bg_item" src="assart/image/backgound/isto.jpg">-->
+            <img class="bg_item" src="assart/image/backgound/bd4.jpg">
             <p class="text_bg"> Thắp sáng mọi nơi - Sưởi ấm mọi ngôi nhà</p>
           </div>
         </div>
@@ -132,12 +130,22 @@
               <div class="box_table">
                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-                  <tr id="section_product" class="products" >
+<%--                  <% JDBIConnector Dao = new JDBIConnector();%>--%>
+<%--                   <% List<Product> list = Dao.getAllProduct();%>--%>
+<%--                    <%for( Product product: list) {--%>
+<%--                  %>--%>
+                  <tr id="section_product" class="products">
                     <td class="table_image1" style="height: 300px; width: 300px">
-                      <a href="#"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px"><p class="text_dicount">30% <br>Giảm </p></a>
+                      <a href="product.html"><img class="image_sp1"
+                                                  src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg"
+                                                  width="270px" height="270px">
+                        <p class="text_dicount">30% <br>Giảm </p></a>
                       <p class="text_sp1"> Bóng Đèn Led Ốp Trần Panasonic 18W</p>
                       <div class="purch_price">
-                        <p class="price_sp1"><del>150.000đ</del> 105.000đ</p>
+                        <p class="price_sp1">
+                          <del>150.000đ</del>
+                          105.000đ
+                        </p>
                         <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                         <div class="popup-wrapper" id="popup-wrapper">
                           <div class="popup">
@@ -148,6 +156,61 @@
                         </div>
                       </div>
                     </td>
+                    <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper1">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper2">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
+<%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>
+<%--                      <p class="text_sp1">  <%= product.getName() %></p>--%>
+<%--                      <div class="purch_price">--%>
+<%--                        <p class="price_sp1"><del> <%= product.getPrice() %></del> 105.000đ</p>--%>
+<%--                        <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+<%--                        <div class="popup-wrapper" id="popup-wrapper3">--%>
+<%--                          <div class="popup">--%>
+<%--                            <span class="close" onclick="closePopup()">&times;</span>--%>
+<%--                            <img class="order_image" src="assart/image/logo/order_tc.jpg">--%>
+<%--                            <p>Đã thêm vào giỏ hàng thành công</p>--%>
+<%--                          </div>--%>
+<%--                        </div>--%>
+<%--                      </div>--%>
+<%--                      &lt;%&ndash;                      <% }%>&ndash;%&gt;--%>
+<%--                    </td>--%>
+<%--                                          <% }%>--%>
 
                     <td class="table_image2" style="height: 300px; width: 250px">
                       <a href="#"><img class="image_sp2" src="assart/image/san_pham_tc/sp2.jpg" width="270px" height="270px"><p class="text_dicount">20% <br>Giảm </p></a>
@@ -412,7 +475,7 @@
 
                     </td>
                     <td class="table_image18" style="height: 300px; width: 250px">
-                      <a href="#"><img class="image_sp18" src="assart/image/san_pham_tc/sp18%20optran_rd-12W.jpg" width="250px" height="250px"><p class="text_dicount">25% <br>Giảm </p></a>
+                      <a href="#"><img class="image_sp18" src="assart/image/san_pham_tc/sp18%20optran_rd-12W.jpg" width="250px" height="250px" ><p class="text_dicount">25% <br>Giảm </p></a>
                       <p class="text_sp1"> Bóng đèn Led Ốp Trần Rạng Đông 12W</p>
                       <div class="purch_price">
                         <p class="price_sp1"><del>140.000đ</del> 105.000đ</p>
@@ -475,6 +538,7 @@
                 <li class="text_contact"> Liên Hệ</li>
                 <li class="text_contact_email"> Email:<p class="email_contact">flashbulb01@gmail.com</p></li>
                 <li class="text_contact_telephone"> Điện Thoại:<p class="telephone_contact">0245730926 - 0257190589 </p> </li>
+                <li class="text_policy"><a href="policy.html">Chính Sách</a></li>
               </ul>
             </div>
             <div class="foot_address">
@@ -484,10 +548,10 @@
             <div class="foot_social">
               <ul class="social">
                 <li class="text_social"> Liên Hệ Với Chúng Tôi </li>
-                <li class="social_icon"><img class="icon_foot" src="assart/image/logo/fb_icon_30x30.png" width="35px" height="35px"></li>
-                <li class="social_icon"><img class="icon_foot" src="assart/image/logo/twitter.png " width="35px" height="35px"></li>
-                <li class="social_icon"><img class="icon_foot" src="assart/image/logo/instagram.png" width="35px" height="35px"></li>
-                <li class="social_icon"><img class="icon_foot" src="assart/image/logo/email.png" width="35px" height="35px"></li>
+                <li class="social_icon"><a href="https://www.facebook.com/"> <img class="icon_foot" src="assart/image/logo/fb_icon_30x30.png" width="35px" height="35px"></a></li>
+                <li class="social_icon"><a href="https://twitter.com/i/flow/login"><img class="icon_foot" src="assart/image/logo/twitter.png " width="35px" height="35px"></a></li>
+                <li class="social_icon"><a href="https://www.instagram.com/accounts/login/"><img class="icon_foot" src="assart/image/logo/instagram.png" width="35px" height="35px"></a></li>
+                <li class="social_icon"><a href="https://www.google.com/intl/vi/gmail/about/"><img class="icon_foot" src="assart/image/logo/email.png" width="35px" height="35px"></a></li>
               </ul>
             </div>
           </div>
@@ -500,6 +564,7 @@
   </div>
 
 </div>
+
 
 </body>
 </html>
