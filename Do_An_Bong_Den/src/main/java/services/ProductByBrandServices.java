@@ -6,7 +6,10 @@ import database.JDBIConnector;
 import java.sql.SQLException;
 import java.util.List;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 public class ProductByBrandServices {
     private static ProductByBrandServices instance;
 
@@ -37,11 +40,19 @@ public class ProductByBrandServices {
 
 
     public static void main(String[] args) throws SQLException {
+<<<<<<< HEAD
         List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("Rạng Đông");
+=======
+        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("Ráº¡ng ÄÃ´ng");
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 
         ProductByBrandServices product = new ProductByBrandServices();
 
         System.out.println(all);
 
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 }

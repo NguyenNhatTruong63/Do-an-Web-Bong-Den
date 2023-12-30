@@ -33,4 +33,8 @@ public class Brand {
                 ", name='" + name + '\'' +
                 '}';
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 }

@@ -1,8 +1,11 @@
 package services;
 
 import beans.Brand;
+<<<<<<< HEAD
 import beans.Category;
 import beans.Product;
+=======
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 import database.JDBIConnector;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.mapper.reflect.BeanMapper;
@@ -51,7 +54,14 @@ public class BrandServices {
     public static void main(String[] args) throws SQLException {
         BrandServices brandServices = new BrandServices();
 //    System.out.println(categoryServices.getCategoryList());
+<<<<<<< HEAD
         System.out.println(brandServices.nameBrand("1"));
 
     }
+=======
+        System.out.println(brandServices);
+
+    }
+
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 }

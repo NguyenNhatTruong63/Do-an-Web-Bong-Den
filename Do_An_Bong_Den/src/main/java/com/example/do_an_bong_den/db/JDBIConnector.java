@@ -1,5 +1,9 @@
 package com.example.do_an_bong_den.db;
 
+<<<<<<< HEAD
+=======
+import com.example.do_an_bong_den.beans.Brand;
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 import com.example.do_an_bong_den.beans.Product;
 import org.jdbi.v3.core.Jdbi;
 
@@ -20,11 +24,24 @@ public class JDBIConnector {
 
   public JDBIConnector() {
   }
+<<<<<<< HEAD
   public static Jdbi get(){
     if(jdbi == null) ;
     return jdbi;
   }
 
+=======
+//  public static Jdbi get(){
+//    if(jdbi == null) ;
+//    return jdbi;
+//  }
+
+
+  public static Jdbi get() {
+    if(jdbi == null);
+    return jdbi;
+  }
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
   public List<Product> getAllProduct() {
       List<Product> list = new ArrayList<>();
       String query = "SELECT * FROM products";
@@ -40,10 +57,17 @@ public class JDBIConnector {
             rs.getString(4),
             rs.getString(5),
             rs.getInt(6),
+<<<<<<< HEAD
             rs.getString(7),
             rs.getInt(8),
             rs.getString(9),
             rs.getString(10)
+=======
+            rs.getInt(7),
+            rs.getInt(8),
+            rs.getString(9)
+//            rs.getString(10)
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
           ));
         }
       } catch (SQLException e) {
@@ -56,12 +80,45 @@ public class JDBIConnector {
       return list;
     }
 
+<<<<<<< HEAD
   public static void main(String[] args) {
     try {
       JDBIConnector dao = new JDBIConnector();
       List<Product> list = dao.getAllProduct();
       if (!list.isEmpty()) {
         for (Product a : list) {
+=======
+  public List<Brand> getBrand(){
+    List<Brand> list = new ArrayList<>();
+    String query = "SELECT * FROM brand";
+    try {
+      conn = new producdb().getConnection();
+      ps = conn.prepareStatement(query);
+      rs = ps.executeQuery();
+      while (rs.next()){
+        list.add(new Brand(
+                rs.getString(1),
+                rs.getString(2)
+        ));
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    return list;
+  }
+
+
+
+
+  public static void main(String[] args) {
+    try {
+      JDBIConnector dao = new JDBIConnector();
+//      List<Product> list = dao.getAllProduct();
+      List<Brand> list = dao.getBrand();
+
+      if (!list.isEmpty()) {
+        for (Brand a : list) {
+>>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
           System.out.println(a);
         }
       } else {
