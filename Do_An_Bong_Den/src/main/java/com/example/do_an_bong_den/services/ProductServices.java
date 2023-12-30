@@ -11,18 +11,27 @@ public class ProductServices {
 
     public ProductServices() {
     }
-    public static ProductServices getInstance(){
-        if(instance == null){
+
+    public static ProductServices getInstance() {
+        if (instance == null) {
             instance = new ProductServices();
-        }return instance;
+        }
+        return instance;
     }
-    public List<Product> getAll(){
+
+    public List<Product> getAll() {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT * FROM products"))
                 .mapToBean(Product.class).collect(Collectors.toList());
     }
-    public Product getById(int productid){
+
+    public Product getById(int productid) {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT * FROM products WHERE id = :id")
                 .bind("id", productid).mapToBean(Product.class).stream().findFirst()).get();
+    }
+
+    public Product getByNameBrand(String brand) {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT nameBrand FROM products"))
+                .bind("nameBrand", brand).mapToBean(Product.class).stream().findFirst().get();
     }
 
     public static void main(String[] args) {

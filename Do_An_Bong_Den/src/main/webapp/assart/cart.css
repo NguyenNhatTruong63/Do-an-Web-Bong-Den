@@ -24,7 +24,7 @@ body{
 }
 
 #cart1{
-  margin-top: -10px;
+  /*margin-top: -10px;*/
   /*margin-top: -80px;*/
   background-color: rgb(230 230 230);
   /*margin-bottom: -35px;*/
@@ -41,6 +41,7 @@ body{
 .product1{
   width: 1000px;
   height: 120px;
+
   display: inline-flex;
   margin-left: 80px;
   background-color: white;
@@ -58,16 +59,20 @@ body{
   width: 600px;
   font-size: 18px;
   color: black;
-  margin-left: 40px;
+  margin-left: 50px;
+  margin-top: 30px;
 }
 .price_cart1{
-  margin-left: 40px;
+  margin-left: -600px;
+  margin-top: 60px;
+  float: left;
+  color: black;
 }
 .pay_cart{
   width: 100px;
   height: 40px;
   position: absolute;
-  margin-top: -55px;
+  margin-top: 90px;
   margin-left: 800px;
   border-radius: 8px;
   border: solid 1px rgb(230 230 230);
@@ -85,20 +90,26 @@ body{
 
 .add_quantity{
   display: flex;
-  margin-left: 40px;
-  margin-top: -30px;
+  margin-left: -30px;
+  /*margin-top: -30px;*/
+  margin-top: 75px;
+  color: black;
 }
 #minus {
-  margin: 21px 10px 0px 0px;
+  margin: 12px 10px 0px 0px;
   height: 24px;
   width: 24px;
 }
 #plus{
-  margin: 21px 0px 0px 10px;
+  margin: 12px 0px 0px 10px;
   height: 24px;
   width: 24px;
 }
-
+.delete{
+  margin-top: 60px;
+  margin-left: 20px;
+  color: black;
+}
 #minus1 {
   margin: 21px 10px 0px 0px;
   height: 24px;
@@ -118,10 +129,16 @@ body{
   background-color: white;
 }
 .delivery{
+  width: 330px;
+  height: 25px;
+  text-align: center;
   position: absolute;
   float: right;
   font-size: 15px;
-  margin-left: 450px;
-  margin-top: -3px;
+  margin-left: 400px;
+  margin-top: 90px;
+  color: black;
+  /*background-color: #436799;*/
 
 }
+

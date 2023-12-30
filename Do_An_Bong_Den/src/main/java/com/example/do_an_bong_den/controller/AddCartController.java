@@ -31,12 +31,12 @@ public class AddCartController extends HttpServlet {
         if(quantity <=0 ) quantity = 1;
         carts.add(id, quantity);
         session.setAttribute("cart", carts);
+        session.setAttribute("totalPrice", carts.getTotal());
 
         response.sendRedirect("product");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

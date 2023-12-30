@@ -2,6 +2,8 @@
 <%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
 <%@ page import="com.example.do_an_bong_den.beans.Product" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.NumberFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -173,14 +175,17 @@
                                     <% List<Product> list = Dao.getAllProduct();%>
                                     <% for (Product product : list) {%>
                                     <%--                                    %>--%>
+                                    <%
+                                        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+                                    %>
                                     <tr id="section_product" class="products" style="float: left">
                                         <td class="table_image1" style="height: 300px; width: 300px; border: solid 1px black">
                                             <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px" height="270px">
                                                 <p class="text_dicount"><%=product.getDiscount()%>%<br>Giảm</p></a>
                                             <p class="text_sp1"><%=product.getName()%></p>
                                             <div class="purch_price">
-                                                <p class="price_sp1"><del><%=product.getPrice()%></del>  <%=product.salePrice()%></p>
-                                                <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+                                                <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
+                                                <button class="purche"><a href="add-cart?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
                                                         <span class="close" onclick="closePopup()">&times;</span>

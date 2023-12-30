@@ -1,5 +1,6 @@
 package com.example.do_an_bong_den.db;
 
+import com.example.do_an_bong_den.beans.Brand;
 import com.example.do_an_bong_den.beans.Product;
 import org.jdbi.v3.core.Jdbi;
 
@@ -30,7 +31,6 @@ public class JDBIConnector {
     if(jdbi == null);
     return jdbi;
   }
-
   public List<Product> getAllProduct() {
       List<Product> list = new ArrayList<>();
       String query = "SELECT * FROM products";
@@ -62,16 +62,40 @@ public class JDBIConnector {
       return list;
     }
 
+  public List<Brand> getBrand(){
+    List<Brand> list = new ArrayList<>();
+    String query = "SELECT * FROM brand";
+    try {
+      conn = new producdb().getConnection();
+      ps = conn.prepareStatement(query);
+      rs = ps.executeQuery();
+      while (rs.next()){
+        list.add(new Brand(
+                rs.getString(1),
+                rs.getString(2)
+        ));
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    return list;
+  }
+
+
+
+
   public static void main(String[] args) {
     try {
       JDBIConnector dao = new JDBIConnector();
-      List<Product> list = dao.getAllProduct();
+//      List<Product> list = dao.getAllProduct();
+      List<Brand> list = dao.getBrand();
+
       if (!list.isEmpty()) {
-        for (Product a : list) {
-          System.out.print(a);
+        for (Brand a : list) {
+          System.out.println(a);
         }
       } else {
-        System.out.print("Danh sách sản phẩm trống.");
+        System.out.println("Danh sách sản phẩm trống.");
       }
     } catch (Exception e) {
       throw new RuntimeException(e);
