@@ -3,11 +3,7 @@ package controller;
 import beans.Category;
 import beans.Product;
 import services.CategoryServices;
-<<<<<<< HEAD
-import services.ProductServices;
-=======
 //import services.ProductServices;
->>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

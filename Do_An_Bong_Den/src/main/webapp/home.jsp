@@ -3,7 +3,10 @@
 <%@ page import="beans.Category" %>
 <<<<<<< HEAD
 <%@ page import="services.BrandServices" %>
-<%@ page import="beans.Brand" %><%--
+<%@ page import="beans.Brand" %>
+<%@ page import="database.JDBIConnector" %>
+<%@ page import="beans.Product" %>
+<%@ page import="java.util.List" %><%--
 =======
 <%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
 <%@ page import="com.example.do_an_bong_den.beans.Product" %>
@@ -136,7 +139,7 @@
               <div class="box_table">
                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-<<<<<<< HEAD
+
 <%--                  <% JDBIConnector Dao = new JDBIConnector();%>--%>
 <%--                   <% List<Product> list = Dao.getAllProduct();%>--%>
 <%--                    <%for( Product product: list) {--%>
@@ -146,15 +149,12 @@
                       <a href="product.html"><img class="image_sp1"
                                                   src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg"
                                                   width="270px" height="270px">
-=======
-                  <% JDBIConnector Dao = new JDBIConnector();%>
-                   <% List<Product> list = Dao.getAllProduct();%>
-                    <%for( Product product: list) {
-                  %>
+
+
                   <tr id="section_product" class="products" >
                     <td class="table_image1" style="height: 300px; width: 300px">
                       <a href="product.html"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px">
->>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
+
                         <p class="text_dicount">30% <br>Giảm </p></a>
                       <p class="text_sp1"> Bóng Đèn Led Ốp Trần Panasonic 18W</p>
                       <div class="purch_price">
@@ -172,12 +172,12 @@
                         </div>
                       </div>
                     </td>
-<<<<<<< HEAD
+                  </tr>
                     <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
-=======
-  <% }%>
+
+
 <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
->>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
+
 
 
 <%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>

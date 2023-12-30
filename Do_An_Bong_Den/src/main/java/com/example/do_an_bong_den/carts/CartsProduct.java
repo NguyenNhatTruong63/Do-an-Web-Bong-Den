@@ -29,8 +29,6 @@ public class CartsProduct {
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
-<<<<<<< HEAD
-=======
   public boolean incri(int productid, int quantity){
     this.quantity += quantity;
     if(this.product.getQuantity() < this.quantity){
@@ -47,14 +45,13 @@ public class CartsProduct {
     }
     return true;
   }
-  
->>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
+
 
   @Override
   public String toString() {
     return "CartsProduct{" +
-      "product=" + product +
-      ", quantity=" + quantity +
-      '}';
+            "product=" + product +
+            ", quantity=" + quantity +
+            '}';
   }
 }
