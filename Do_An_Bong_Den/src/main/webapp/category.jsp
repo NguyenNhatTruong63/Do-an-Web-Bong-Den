@@ -1,7 +1,7 @@
 <%@ page import="beans.Product" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
-<%@ page import="com.example.do_an_bong_den.beans.Category" %>
+<%@ page import="services.CategoryServices" %>
+<%@ page import="beans.Category" %>
 <%@ page import="services.ProductServices" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--

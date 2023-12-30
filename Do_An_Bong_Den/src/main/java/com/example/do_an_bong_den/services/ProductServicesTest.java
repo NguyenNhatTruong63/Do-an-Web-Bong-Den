@@ -8,8 +8,8 @@ public class ProductServicesTest {
   public static void main(String[] args) {
     List<Product> all = ProductServices.getInstance().getAll();
     System.out.println(all);
-    ProductServices.getInstance().getById(1);
-    System.out.println();
+    Product byId = ProductServices.getInstance().getById(1);
+    System.out.println(byId);
   }
 
 }

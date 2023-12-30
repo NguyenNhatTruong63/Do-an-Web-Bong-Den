@@ -55,6 +55,14 @@
         <version>3.34.0</version>
       </dependency>
 
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>org.jdbi</groupId>-->
+<!--                <artifactId>jdbi3-core</artifactId>-->
+<!--                <version>3.42.1-SNAPSHOT</version>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>

@@ -1,11 +1,6 @@
 package com.example.do_an_bong_den.beans;
 
-import com.example.do_an_bong_den.db.producdb;
-
 import java.io.Serializable;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Product implements Serializable {
 
@@ -17,13 +12,13 @@ public class Product implements Serializable {
   private int price;
   private int discount;
   private int quantity;
-  private String description;
+//  private String description;
   private String status;
 
   public Product() {
   }
 
-  public Product(String id, String idCatgoy, String nameBrand, String name, String img, int price, int discount, int quantity, String description, String status) {
+  public Product(String id, String idCatgoy, String nameBrand, String name, String img, int price, int discount, int quantity, String status) {
     this.id = id;
     this.idCatgoy = idCatgoy;
     this.nameBrand = nameBrand;
@@ -32,7 +27,7 @@ public class Product implements Serializable {
     this.price = price;
     this.discount = discount;
     this.quantity = quantity;
-    this.description = description;
+//    this.description = description;
     this.status = status;
   }
 
@@ -100,13 +95,13 @@ public class Product implements Serializable {
     this.quantity = quantity;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+//  public String getDescription() {
+//    return description;
+//  }
+//
+//  public void setDescription(String description) {
+//    this.description = description;
+//  }
 
   public String getStatus() {
     return status;
@@ -115,12 +110,10 @@ public class Product implements Serializable {
   public void setStatus(String status) {
     this.status = status;
   }
-  public int salePrice( int sale){
-    sale = price - (price *discount);
-    return sale;
+  public int salePrice(){
+    return price *((100-discount)/100);
+//    return price -(price*discount);
   }
-
-
 
 }
 
