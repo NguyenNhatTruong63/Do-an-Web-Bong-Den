@@ -1,4 +1,4 @@
-package services;
+package com.example.do_an_bong_den.services;
 
 import beans.Product;
 import database.JDBIConnector;
@@ -36,7 +36,7 @@ public class ProductByBrandServices {
 
 
     public static void main(String[] args) throws SQLException {
-        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("Ráº¡ng ÄÃ´ng");
+        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("Rạng Đông");
 
         ProductByBrandServices product = new ProductByBrandServices();
 

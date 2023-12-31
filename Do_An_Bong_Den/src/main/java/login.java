@@ -21,7 +21,7 @@ public class login extends HttpServlet {
             req.getRequestDispatcher("formdn.jsp").forward(req, resp);
         }
         if (username.equals("admin") && password.equals("admin")) {
-            resp.sendRedirect("./home.jsp");
+            resp.sendRedirect("./index.jsp");
         } else {
             req.setAttribute("error", "Sai Tên đăng nhập hoặc Mật khẩu");
             req.getRequestDispatcher("formdn.jsp").forward(req, resp);
