@@ -1,28 +1,9 @@
 
 <%@ page import="services.CategoryServices" %>
 <%@ page import="beans.Category" %>
-<<<<<<< HEAD
+
 <%@ page import="services.BrandServices" %>
 <%@ page import="beans.Brand" %>
-<%@ page import="database.JDBIConnector" %>
-<%@ page import="beans.Product" %>
-<%@ page import="java.util.List" %><%--
-=======
-<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
-<%@ page import="com.example.do_an_bong_den.beans.Product" %>
-<%@ page import="java.util.List" %><%--
->>>>>>> 7421e0f4a1b215b60f2cf572aeae625e03d27cae
-
-<%@ page import="com.example.do_an_bong_den.beans.Product" %>
-<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
-<%@ page import="java.util.List" %><%--
-
-  Created by IntelliJ IDEA.
-  User: nguye
-  Date: 11/8/2023
-  Time: 7:54 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

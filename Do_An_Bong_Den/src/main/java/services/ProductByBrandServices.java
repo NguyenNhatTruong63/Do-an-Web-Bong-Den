@@ -29,14 +29,14 @@ public class ProductByBrandServices {
 
     public List<Product> getListProductByBrand(String id) {
         return JDBIConnector.get().withHandle(handle -> {
-            return handle.createQuery("select * from products where id = ?").bind(0, id)
+            return handle.createQuery("select * from products where idBrand = ?").bind(0, id)
                     .mapToBean(Product.class).list();
         });
     }
 
 
     public static void main(String[] args) throws SQLException {
-        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("Ráº¡ng ÄÃ´ng");
+        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("1");
 
         ProductByBrandServices product = new ProductByBrandServices();
 
