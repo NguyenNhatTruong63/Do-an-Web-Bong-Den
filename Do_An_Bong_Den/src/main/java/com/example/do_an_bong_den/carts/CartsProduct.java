@@ -45,13 +45,13 @@ public class CartsProduct {
     }
     return true;
   }
-  
+
 
   @Override
   public String toString() {
     return "CartsProduct{" +
-      "product=" + product +
-      ", quantity=" + quantity +
-      '}';
+            "product=" + product +
+            ", quantity=" + quantity +
+            '}';
   }
 }

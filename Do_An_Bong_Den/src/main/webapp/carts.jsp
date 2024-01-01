@@ -4,6 +4,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="services.BrandServices" %>
+<%@ page import="beans.Brand" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -68,14 +70,22 @@
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
-                                <ul>
-                                    <li><a href="#">Rạng Đông</a></li>
-                                    <li><a href="#">PHILIPS</a></li>
-                                    <li><a href="#">MPE</a></li>
-                                    <li><a href="#">Điện Quang</a></li>
-                                    <li><a href="#">Duhal</a></li>
-                                    <li><a href="#">Panasonic</a></li>
+                                <% BrandServices brandServices = new BrandServices(); %>
+                                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+
+                                    <li class="dropdown"><a
+                                            href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>
+                                    </li>
+                                    <% } %>
                                 </ul>
+<%--                                <ul>--%>
+<%--                                    <li><a href="#">Rạng Đông</a></li>--%>
+<%--                                    <li><a href="#">PHILIPS</a></li>--%>
+<%--                                    <li><a href="#">MPE</a></li>--%>
+<%--                                    <li><a href="#">Điện Quang</a></li>--%>
+<%--                                    <li><a href="#">Duhal</a></li>--%>
+<%--                                    <li><a href="#">Panasonic</a></li>--%>
+<%--                                </ul>--%>
                             </li>
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>

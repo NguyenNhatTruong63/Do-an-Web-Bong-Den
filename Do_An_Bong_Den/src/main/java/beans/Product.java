@@ -3,16 +3,17 @@ package beans;
 import java.awt.desktop.AboutEvent;
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class  Product implements Serializable {
   private static final long serialVersionUID = 1L;
   private int id;
   private int idCategory;
+  private int idBrand;
   private String nameBrand;
   private String name;
   private String img;
-  private double price;
   private double discount;
   private int quantity;
+  private double price;
   private int status;
 
   public Product() {
@@ -22,12 +23,13 @@ public class Product implements Serializable {
   public Product(int id, int idCategory, String nameBrand, String name, String img, double price, double discount, int quantity, int status) {
     this.id = id;
     this.idCategory = idCategory;
+    this.idBrand = idBrand;
     this.nameBrand = nameBrand;
     this.name = name;
     this.img = img;
-    this.price = price;
     this.discount = discount;
     this.quantity = quantity;
+    this.price = price;
     this.status = status;
   }
 
@@ -45,6 +47,14 @@ public class Product implements Serializable {
 
   public void setIdCategory(int idCategory) {
     this.idCategory = idCategory;
+  }
+
+  public int getIdBrand() {
+    return idBrand;
+  }
+
+  public void setIdBrand(int idBrand) {
+    this.idBrand = idBrand;
   }
 
   public String getNameBrand() {
@@ -71,13 +81,6 @@ public class Product implements Serializable {
     this.img = img;
   }
 
-  public double getPrice() {
-    return price;
-  }
-
-  public void setPrice(double price) {
-    this.price = price;
-  }
 
   public double getDiscount() {
     return discount;
@@ -94,6 +97,13 @@ public class Product implements Serializable {
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
   public int getStatus() {
     return status;
@@ -108,12 +118,13 @@ public class Product implements Serializable {
     return "Product{" +
       "id='" + id + '\'' +
       ", idCategory='" + idCategory + '\'' +
+      ", idBrand='" + idBrand + '\'' +
       ", nameBrand='" + nameBrand + '\'' +
       ", name='" + name + '\'' +
       ", img='" + img + '\'' +
-      ", price=" + price +
       ", discount=" + discount +
       ", quantity=" + quantity +
+      ", price=" + price +
       ", status=" + status +
       '}';
   }

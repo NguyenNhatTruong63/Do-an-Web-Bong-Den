@@ -12,7 +12,7 @@ public class Product implements Serializable {
   private int price;
   private int discount;
   private int quantity;
-//  private String description;
+  //  private String description;
   private String status;
 
   public Product() {
@@ -116,12 +116,3 @@ public class Product implements Serializable {
   }
 
 }
-
-
-
-
-
-
-
-
-
