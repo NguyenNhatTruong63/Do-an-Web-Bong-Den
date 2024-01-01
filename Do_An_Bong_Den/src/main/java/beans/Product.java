@@ -11,9 +11,9 @@ public class  Product implements Serializable {
   private String nameBrand;
   private String name;
   private String img;
-  private double price;
   private double discount;
   private int quantity;
+  private double price;
   private int status;
 
   public Product() {
@@ -27,9 +27,9 @@ public class  Product implements Serializable {
     this.nameBrand = nameBrand;
     this.name = name;
     this.img = img;
-    this.price = price;
     this.discount = discount;
     this.quantity = quantity;
+    this.price = price;
     this.status = status;
   }
 
@@ -49,11 +49,11 @@ public class  Product implements Serializable {
     this.idCategory = idCategory;
   }
 
-  public int getBrand() {
+  public int getIdBrand() {
     return idBrand;
   }
 
-  public void setBrand(int idBrand) {
+  public void setIdBrand(int idBrand) {
     this.idBrand = idBrand;
   }
 
@@ -81,13 +81,6 @@ public class  Product implements Serializable {
     this.img = img;
   }
 
-  public double getPrice() {
-    return price;
-  }
-
-  public void setPrice(double price) {
-    this.price = price;
-  }
 
   public double getDiscount() {
     return discount;
@@ -103,6 +96,13 @@ public class  Product implements Serializable {
 
   public void setQuantity(int quantity) {
     this.quantity = quantity;
+  }
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
   }
 
   public int getStatus() {
@@ -122,9 +122,9 @@ public class  Product implements Serializable {
       ", nameBrand='" + nameBrand + '\'' +
       ", name='" + name + '\'' +
       ", img='" + img + '\'' +
-      ", price=" + price +
       ", discount=" + discount +
       ", quantity=" + quantity +
+      ", price=" + price +
       ", status=" + status +
       '}';
   }
