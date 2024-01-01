@@ -63,8 +63,8 @@
                 <div id="nanavbar-collapse-01" class="collapse">
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="ieda.html">Trang Chủ </a></li>
-                            <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
+                            <li><a href="index.jsp">Trang Chủ </a></li>
+                            <li class="dropdown1"><a href="brand.jsp"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
@@ -77,7 +77,7 @@
                                     <li><a href="#">Panasonic</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
+                            <li class="dropdown"><a href="category.jsp"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
                                 <ul>
                                     <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i
@@ -127,7 +127,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="cart.html">
+                            <li><a href="carts.jsp">
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -171,18 +171,18 @@
                         <div class="box_product">
                             <div class="box_table">
                                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
-                                    <%--                                    <% JDBIConnector Dao = new JDBIConnector();%>--%>
-                                    <%--                                    <% List<Brand> listBrand = Dao.getBrand();%>--%>
-                                    <%--                                    <% for (Brand brand : listBrand) {%>--%>
-                                    <%ProductServices productServices = new ProductServices();%>
-                                    <caption class="caption"><%= request.getParameter("id")%>
-                                    </caption>
-                                    <% for (beans.Product product : ProductServices.getInstance().getListProductByCategory(request.getParameter("id"))) {%>
+                                                                        <% JDBIConnector Dao = new JDBIConnector();%>
+                                                                        <% List<Brand> listBrand = Dao.getBrand();%>
+                                    <% for (Brand brand : listBrand) {%>
+<%--                                    <%ProductServices productServices = new ProductServices();%>--%>
+<%--                                    <caption class="caption"><%= request.getParameter("id")%><%}%>--%>
+                                    <caption class="caption"><%= brand.getName()%></caption><%}%>
+<%--                                    <% for (beans.Product product : ProductServices.getInstance().getListProductByCategory(request.getParameter("id"))) {%>--%>
                                     <%--                                    <%--%>
                                     <%--                                    <% JDBIConnector Dao = new JDBIConnector();%>--%>
-                                    <%--                                    <% List<Product> list = Dao.getAllProduct();%>--%>
-                                    <%--                                    <% for (Product product : list) {%>--%>
-                                    <%--                                    %>--%>
+                                                                        <% List<Product> list = Dao.getAllProduct();%>
+                                                                        <% for (Product product : list) {%>
+                                                                        %>
                                     <%
                                         NumberFormat numberFormat = NumberFormat.getNumberInstance();
                                     %>

@@ -6,6 +6,7 @@ import database.JDBIConnector;
 import java.sql.SQLException;
 import java.util.List;
 
+
 public class ProductByBrandServices {
     private static ProductByBrandServices instance;
 
@@ -36,12 +37,11 @@ public class ProductByBrandServices {
 
 
     public static void main(String[] args) throws SQLException {
-        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("1");
+        List<Product> all = ProductByBrandServices.getInstance().getListProductByBrand("3");
 
         ProductByBrandServices product = new ProductByBrandServices();
 
         System.out.println(all);
 
     }
-
 }

@@ -61,8 +61,8 @@
                 <div id="nanavbar-collapse-01" class="collapse">
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="ieda.html">Trang Chủ </a></li>
-                            <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
+                            <li><a href="index.jsp">Trang Chủ </a></li>
+                            <li class="dropdown1"><a href="brand.jsp"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
@@ -75,7 +75,7 @@
                                     <li><a href="#">Panasonic</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
+                            <li class="dropdown"><a href="category.jsp"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
                                 <ul>
                                     <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i
@@ -125,7 +125,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="cart.html">
+                            <li><a href="add-cart">
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -143,8 +143,8 @@
                                     <li><a href="#">Thông tin cá nhân</a></li>
                                     <li><a href="#">Lịch sử đơn hàng</a></li>
                                     <li><a href="policy.html">Chính Sách</a></li>
-                                    <li><a href="formdn.html"> Đăng Nhập</a></li>
-                                    <li><a href="formdk.html">Đăng ký</a></li>
+                                    <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                    <li><a href="signup.jsp">Đăng ký</a></li>
                                     <li><a href="ieda.html">Đăng Xuất</a></li>
                                 </ul>
                             </li>

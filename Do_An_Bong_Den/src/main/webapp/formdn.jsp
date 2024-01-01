@@ -40,8 +40,9 @@ background: red;
 ">
     <%= error %>
 </p>
-<form method="post" action="./login">
+<form method="post" action="login">
     <h2> Đăng Nhập</h2>
+    <p class="mess">${mess}</p>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
         <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=username%>">
@@ -52,7 +53,8 @@ background: red;
     </div>
 
     <div class="btn_dn" id="btn_dn">
-        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">
+<%--        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">--%>
+        <input type="submit" value="Đăng Nhập">
     </div>
     <div class="f_pass">
         <p><a href="">Quên mật khẩu?</a></p>

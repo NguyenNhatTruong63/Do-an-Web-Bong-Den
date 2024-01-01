@@ -33,5 +33,4 @@ public class Brand {
                 ", name='" + name + '\'' +
                 '}';
     }
-
 }
