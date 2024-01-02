@@ -1,6 +1,8 @@
 package com.example.do_an_bong_den.beans;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private String id;
     private String userName;
     private String password;

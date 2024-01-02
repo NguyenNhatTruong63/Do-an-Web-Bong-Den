@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 </head>
 <body>
-<form action="SignupController" method="post">
+<form action="//SignupController" method="post">
     <h2> Đăng Ký Tài Khoản</h2>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>

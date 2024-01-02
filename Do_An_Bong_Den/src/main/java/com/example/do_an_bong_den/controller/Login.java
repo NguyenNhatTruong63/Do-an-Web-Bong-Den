@@ -22,9 +22,11 @@ public class Login extends HttpServlet {
         Dao dao = new Dao();
         Account a = dao.login(userName, password);
         if(a == null){
-            request.setAttribute("mess", "Wrong user or pass");
+            request.setAttribute("mess", "Vui lòng nhập lại user or password");
             request.getRequestDispatcher("formdn.jsp").forward(request, response);
         }else{
+            HttpSession session = request.getSession();
+            session.setAttribute("account", a);
 //            request.getRequestDispatcher("index").forward(request, response);
             response.sendRedirect("index");
         }
