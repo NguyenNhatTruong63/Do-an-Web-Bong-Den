@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "SignupController", value = "/SignupController")
+@WebServlet(name = "SignupController", value = "/signup")
 public class SignupController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,17 +25,18 @@ public class SignupController extends HttpServlet {
         String address = request.getParameter("address");
 
         if(password.equals(re_password)){
-            response.sendRedirect("formdk.jsp");
+            response.sendRedirect("signup.jsp");
         } else {
             Dao dao = new Dao();
             Account account = dao.checkAccountExit(username);
             if(account == null){
                 dao.signup("username", "password", "email", "phone", "address");
-                response.sendRedirect("index");
+                response.sendRedirect("index.jsp");
 
-            }else {
-                response.sendRedirect("signup.jsp");
             }
+//            else {
+//                response.sendRedirect("signup.jsp");
+//            }
         }
 
     }

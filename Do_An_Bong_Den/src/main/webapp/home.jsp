@@ -94,8 +94,8 @@
                   <li><a href="#">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
                   <li><a href="policy.html">Chính Sách</a></li>
-                  <li><a href="formdn.html"> Đăng Nhập</a></li>
-                  <li><a href="formdk.html">Đăng ký</a></li>
+                  <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                  <li><a href="signup.jsp">Đăng ký</a></li>
                   <li><a href="ieda.html">Đăng Xuất</a></li>
                 </ul>
               </li>

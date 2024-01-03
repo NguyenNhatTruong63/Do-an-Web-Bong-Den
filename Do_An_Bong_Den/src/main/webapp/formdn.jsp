@@ -40,12 +40,13 @@ background: red;
 ">
     <%= error %>
 </p>
-<form method="post" action="//login">
+<form method="post" action="./login">
     <h2> Đăng Nhập</h2>
 <%--    <p class="mess">${mess}</p>--%>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
         <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=username%>">
+<%--        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="">--%>
     </div>
     <div class="password">
         <span><img src="assart/image/icon_đk/password.png" width="40px" height="40px" ></span>
@@ -60,7 +61,7 @@ background: red;
         <p><a href="">Quên mật khẩu?</a></p>
     </div>
     <div class="questionDk">
-        <p>Bạn chưa có tài khoản? <a href="DangKy.html">Đăng ký ngay</a></p>
+        <p>Bạn chưa có tài khoản? <a href="signup.jsp">Đăng ký ngay</a></p>
     </div>
 </form>
 </body>

@@ -110,9 +110,14 @@ public class Product implements Serializable {
   public void setStatus(String status) {
     this.status = status;
   }
-  public int salePrice(){
+//  public int salePrice(){
+//    return price *((100-discount)/100);
+////    return price -(price*discount);
+//  }
+  public int salePrice() {
+//    double sale = price - (price * discount);
+//    double sale = price *((100-discount)/100);
     return price *((100-discount)/100);
-//    return price -(price*discount);
   }
 
 }

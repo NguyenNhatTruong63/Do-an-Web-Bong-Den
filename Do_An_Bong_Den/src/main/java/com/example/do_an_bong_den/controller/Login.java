@@ -28,7 +28,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
 //            request.getRequestDispatcher("index").forward(request, response);
-            response.sendRedirect("index");
+            response.sendRedirect("./index.jsp");
         }
     }
 }
