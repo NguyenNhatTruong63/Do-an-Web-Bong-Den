@@ -1,34 +1,35 @@
 package beans;
 
-import java.awt.desktop.AboutEvent;
 import java.io.Serializable;
 
 public class Product implements Serializable {
   private static final long serialVersionUID = 1L;
   private int id;
   private int idCategory;
-  private String nameBrand;
+  private int idBrand;
   private String name;
   private String img;
   private double price;
   private double discount;
   private int quantity;
   private int status;
+  private String description;
 
   public Product() {
 
   }
 
-  public Product(int id, int idCategory, String nameBrand, String name, String img, double price, double discount, int quantity, int status) {
+  public Product(int id, int idCategory, int idBrand, String name, String img, double price, double discount, int quantity, int status, String description ) {
     this.id = id;
     this.idCategory = idCategory;
-    this.nameBrand = nameBrand;
+    this.idBrand = idBrand;
     this.name = name;
     this.img = img;
     this.price = price;
     this.discount = discount;
     this.quantity = quantity;
     this.status = status;
+    this.description = description;
   }
 
   public int getId() {
@@ -47,12 +48,12 @@ public class Product implements Serializable {
     this.idCategory = idCategory;
   }
 
-  public String getNameBrand() {
-    return nameBrand;
+  public int getIdBrand() {
+    return idBrand;
   }
 
-  public void setNameBrand(String nameBrand) {
-    this.nameBrand = nameBrand;
+  public void setIdBrand(int idBrand) {
+    this.idBrand = idBrand;
   }
 
   public String getName() {
@@ -103,18 +104,27 @@ public class Product implements Serializable {
     this.status = status;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   @Override
   public String toString() {
     return "Product{" +
-      "id='" + id + '\'' +
-      ", idCategory='" + idCategory + '\'' +
-      ", nameBrand='" + nameBrand + '\'' +
+      "id=" + id +
+      ", idCategory=" + idCategory +
+      ", idBrand='" + idBrand + '\'' +
       ", name='" + name + '\'' +
       ", img='" + img + '\'' +
       ", price=" + price +
       ", discount=" + discount +
       ", quantity=" + quantity +
       ", status=" + status +
+      ", description='" + description + '\'' +
       '}';
   }
 
