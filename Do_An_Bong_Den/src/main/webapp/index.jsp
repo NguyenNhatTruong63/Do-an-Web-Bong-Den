@@ -1,5 +1,5 @@
 
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.example.do_an_bong_den.carts.Carts" %>
 <%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
 <%@ page import="com.example.do_an_bong_den.beans.Product" %>
@@ -38,8 +38,8 @@
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
                     <div class="search">
-                        <input type="text" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
-                        <img class="icon_search" src="assart/image/icon_button/search.svg">
+                       <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
+                        <button type="submit" value="" class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="button_icon">
                         <a href="https://www.facebook.com/"><img class="icon_head"
@@ -138,27 +138,23 @@
                                 <!--                                <span ><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>-->
                             </a></li>
 
-                            <c:if test="${sessionScope.account != null}">
+<%--                            <c:if test="${sessionScope.account != null}">--%>
                                 <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
-                                    class="user1" src="assart/image/logo/user.jpg">Hello </span></a>
+                                    class="user1" src="assart/image/logo/user.jpg">Hello</span></a>
 <%--                                    </c:if>--%>
                                     <ul>
                                         <li><a href="#">Thông tin cá nhân</a></li>
                                         <li><a href="#">Lịch sử đơn hàng</a></li>
                                         <li><a href="policy.html">Chính Sách</a></li>
-
                                         <li><a href="formdn.jsp"> Đăng Nhập</a></li>
-                                        <c:if test = "${sessionScope.account}">
                                         <li><a href="signup.jsp">Đăng ký</a></li>
-                                        </c:if>
-
                                         <c:if test = "${sessionScope.account != null}">
                                         <li><a href="Logout">Đăng Xuất</a></li>
                                         </c:if>
 
                                     </ul>
                                 </li>
-                            </c:if>
+<%--                            </c:if>--%>
 
                             <li>
                                 <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"

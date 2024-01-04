@@ -1,11 +1,15 @@
-package com.example.do_an_bong_den.controller;
+package controller;
 
-import com.example.do_an_bong_den.beans.Account;
-import com.example.do_an_bong_den.services.Dao;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import beans.Account;
+import services.Dao;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "login", value = "/login")
@@ -28,7 +32,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
 //            request.getRequestDispatcher("index").forward(request, response);
-            response.sendRedirect("./index.jsp");
+            response.sendRedirect("home.jsp");
         }
     }
 }
