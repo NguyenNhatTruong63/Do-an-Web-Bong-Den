@@ -3,6 +3,8 @@
 <%@ page import="services.CategoryServices" %>
 <%@ page import="beans.Category" %>
 <%@ page import="services.ProductServices" %>
+<%@ page import="beans.Brand" %>
+<%@ page import="services.BrandServices" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -83,14 +85,22 @@
                                                                            style="color: white"></i>
                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
               </a>
-                <ul>
-                  <li><a href="#">Rạng Đông</a></li>
-                  <li><a href="#">PHILIPS</a></li>
-                  <li><a href="#">OSRAM</a></li>
-                  <li><a href="#">Điện Quang</a></li>
-                  <li><a href="#">Duhal</a></li>
-                  <li><a href="#">Panasonic</a></li>
+                <% BrandServices brandServices = new BrandServices(); %>
+                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+
+                  <li class="dropdown"><a
+                          href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>
+                  </li>
+                  <% } %>
                 </ul>
+<%--                <ul>--%>
+<%--                  <li><a href="#">Rạng Đông</a></li>--%>
+<%--                  <li><a href="#">PHILIPS</a></li>--%>
+<%--                  <li><a href="#">OSRAM</a></li>--%>
+<%--                  <li><a href="#">Điện Quang</a></li>--%>
+<%--                  <li><a href="#">Duhal</a></li>--%>
+<%--                  <li><a href="#">Panasonic</a></li>--%>
+<%--                </ul>--%>
               </li>
               <% CategoryServices categoryServices = new CategoryServices(); %>
 

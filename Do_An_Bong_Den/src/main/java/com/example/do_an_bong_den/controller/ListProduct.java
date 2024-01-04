@@ -1,13 +1,9 @@
 package com.example.do_an_bong_den.controller;
 
-import com.example.do_an_bong_den.beans.Product;
-import com.example.do_an_bong_den.services.ProductServices;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "ListProduct", value = "/ListProduct")
 public class ListProduct extends HttpServlet {

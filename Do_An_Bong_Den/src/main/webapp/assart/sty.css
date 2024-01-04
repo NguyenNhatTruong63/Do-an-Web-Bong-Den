@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body{
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ ul li a{
 }
 .user1{
   width: 35px;
-  margin-left: 20px;
+  /*margin-left: 5px;*/
   margin-top: -10px;
   border-radius: 50px;
 }
@@ -133,8 +133,9 @@ ul li a{
   position: absolute;
   margin-left: -30px;
   margin-top: 5px;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
+    background-color: white;
 }
 
   #search {
@@ -163,6 +164,8 @@ ul li a{
   .text_resume {
     text-align: center;
     margin-left: 10px;
+      font-size: 15px;
+      color: white;
   }
 
   .log_in {
@@ -684,7 +687,7 @@ a{
   visibility: visible;
 }
 
-=======
+
 body{
     margin: 0;
     padding: 0;
@@ -1348,4 +1351,4 @@ a{
   visibility: visible;
 }
 
->>>>>>> 898112b297c3cb8ea1f9cb9ebf0dc5f03778a75e
+

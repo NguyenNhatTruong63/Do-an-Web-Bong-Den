@@ -1,17 +1,9 @@
 
 <%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %><%--
+<%@ page import="beans.Category" %>
 
-<%@ page import="com.example.do_an_bong_den.beans.Product" %>
-<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
-<%@ page import="java.util.List" %><%--
-
-  Created by IntelliJ IDEA.
-  User: nguye
-  Date: 11/8/2023
-  Time: 7:54 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="services.BrandServices" %>
+<%@ page import="beans.Brand" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -65,14 +57,21 @@
               <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down" style="color: white"></i>
                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
               </a>
-                <ul>
-                  <li><a href="#">Rạng Đông</a></li>
-                  <li><a href="#">PHILIPS</a></li>
-                  <li><a href="#">OSRAM</a></li>
-                  <li><a href="#">Điện Quang</a></li>
-                  <li><a href="#">Duhal</a></li>
-                  <li><a href="#">Panasonic</a></li>
+                <% BrandServices brandServices = new BrandServices(); %>
+                <%--                hiển thị danh mục loại sp để chọn--%>
+                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+
+                  <li class="dropdown"><a href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a></li>
+                  <% } %>
                 </ul>
+<%--                <ul>--%>
+<%--                  <li><a href="#">Rạng Đông</a></li>--%>
+<%--                  <li><a href="#">PHILIPS</a></li>--%>
+<%--                  <li><a href="#">OSRAM</a></li>--%>
+<%--                  <li><a href="#">Điện Quang</a></li>--%>
+<%--                  <li><a href="#">Duhal</a></li>--%>
+<%--                  <li><a href="#">Panasonic</a></li>--%>
+<%--                </ul>--%>
               </li>
               <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
                   <% CategoryServices categoryServices = new CategoryServices(); %>
@@ -95,8 +94,8 @@
                   <li><a href="#">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
                   <li><a href="policy.html">Chính Sách</a></li>
-                  <li><a href="formdn.html"> Đăng Nhập</a></li>
-                  <li><a href="formdk.html">Đăng ký</a></li>
+                  <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                  <li><a href="signup.jsp">Đăng ký</a></li>
                   <li><a href="ieda.html">Đăng Xuất</a></li>
                 </ul>
               </li>
@@ -121,17 +120,29 @@
               <div class="box_table">
                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px" >
                   <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-                  <% JDBIConnector Dao = new JDBIConnector();%>
-                   <% List<Product> list = Dao.getAllProduct();%>
-                    <%for( Product product: list) {
-                  %>
+
+<%--                  <% JDBIConnector Dao = new JDBIConnector();%>--%>
+<%--                   <% List<Product> list = Dao.getAllProduct();%>--%>
+<%--                    <%for( Product product: list) {--%>
+<%--                  %>--%>
+                  <tr id="section_product" class="products">
+                    <td class="table_image1" style="height: 300px; width: 300px">
+                      <a href="product.html"><img class="image_sp1"
+                                                  src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg"
+                                                  width="270px" height="270px">
+
+
                   <tr id="section_product" class="products" >
                     <td class="table_image1" style="height: 300px; width: 300px">
                       <a href="product.html"><img class="image_sp1" src="assart/image/san_pham_tc/sp1_den-led-am-tran-18w-panasonic.jpg" width="270px" height="270px">
+
                         <p class="text_dicount">30% <br>Giảm </p></a>
                       <p class="text_sp1"> Bóng Đèn Led Ốp Trần Panasonic 18W</p>
                       <div class="purch_price">
-                        <p class="price_sp1"><del>150.000đ</del> 105.000đ</p>
+                        <p class="price_sp1">
+                          <del>150.000đ</del>
+                          105.000đ
+                        </p>
                         <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                         <div class="popup-wrapper" id="popup-wrapper">
                           <div class="popup">
@@ -142,8 +153,12 @@
                         </div>
                       </div>
                     </td>
-  <% }%>
+                  </tr>
+                    <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
+
 <%--                    <td class="table_image1" style="height: 300px; width: 300px">--%>
+
 
 
 <%--                      <a href="#"><img class="image_sp1" src=" <%= product.getImg() %>" width="270px" height="270px"><p class="text_dicount"> <%= product.getDiscount() %> <br>Giảm </p></a>--%>

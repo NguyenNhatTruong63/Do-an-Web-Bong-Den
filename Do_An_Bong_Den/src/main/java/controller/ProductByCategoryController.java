@@ -3,7 +3,7 @@ package controller;
 import beans.Category;
 import beans.Product;
 import services.CategoryServices;
-import services.ProductServices;
+//import services.ProductServices;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

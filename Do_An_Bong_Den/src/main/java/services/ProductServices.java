@@ -23,7 +23,7 @@ public class ProductServices {
   public List<Product> getAll() {
     return JDBIConnector.get().withHandle(handle -> {
       return handle.createQuery("select * from products")
-        .mapToBean(Product.class).list();
+              .mapToBean(Product.class).list();
     });
   }
 
@@ -31,7 +31,7 @@ public class ProductServices {
   public List<Product> getListProductByCategory(String id) {
     return JDBIConnector.get().withHandle(handle -> {
       return handle.createQuery("select * from products where idCategory = ?").bind(0, id)
-        .mapToBean(Product.class).list();
+              .mapToBean(Product.class).list();
     });
   }
 

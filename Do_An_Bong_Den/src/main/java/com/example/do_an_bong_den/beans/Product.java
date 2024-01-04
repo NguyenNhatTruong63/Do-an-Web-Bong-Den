@@ -10,15 +10,15 @@ public class Product implements Serializable {
   private String name;
   private String img;
   private int price;
-  private String discount;
+  private int discount;
   private int quantity;
-  private String description;
+  //  private String description;
   private String status;
 
   public Product() {
   }
 
-  public Product(String id, String idCatgoy, String nameBrand, String name, String img, int price, String discount, int quantity, String description, String status) {
+  public Product(String id, String idCatgoy, String nameBrand, String name, String img, int price, int discount, int quantity, String status) {
     this.id = id;
     this.idCatgoy = idCatgoy;
     this.nameBrand = nameBrand;
@@ -27,7 +27,7 @@ public class Product implements Serializable {
     this.price = price;
     this.discount = discount;
     this.quantity = quantity;
-    this.description = description;
+//    this.description = description;
     this.status = status;
   }
 
@@ -79,11 +79,11 @@ public class Product implements Serializable {
     this.price = price;
   }
 
-  public String getDiscount() {
+  public int getDiscount() {
     return discount;
   }
 
-  public void setDiscount(String discount) {
+  public void setDiscount(int discount) {
     this.discount = discount;
   }
 
@@ -95,13 +95,13 @@ public class Product implements Serializable {
     this.quantity = quantity;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+//  public String getDescription() {
+//    return description;
+//  }
+//
+//  public void setDescription(String description) {
+//    this.description = description;
+//  }
 
   public String getStatus() {
     return status;
@@ -110,15 +110,14 @@ public class Product implements Serializable {
   public void setStatus(String status) {
     this.status = status;
   }
-
+//  public int salePrice(){
+//    return price *((100-discount)/100);
+////    return price -(price*discount);
+//  }
+  public int salePrice() {
+//    double sale = price - (price * discount);
+//    double sale = price *((100-discount)/100);
+    return price *((100-discount)/100);
+  }
 
 }
-
-
-
-
-
-
-
-
-

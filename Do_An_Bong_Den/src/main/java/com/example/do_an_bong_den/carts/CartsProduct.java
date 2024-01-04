@@ -29,12 +29,29 @@ public class CartsProduct {
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
+  public boolean incri(int productid, int quantity){
+    this.quantity += quantity;
+    if(this.product.getQuantity() < this.quantity){
+      this.quantity -=quantity;
+      return false;
+    }
+    return true;
+  }
+  public boolean dencri(int productid, int quantity){
+    this.quantity -= quantity;
+    if(this.product.getQuantity() < this.quantity){
+      this.quantity +=quantity;
+      return false;
+    }
+    return true;
+  }
+
 
   @Override
   public String toString() {
     return "CartsProduct{" +
-      "product=" + product +
-      ", quantity=" + quantity +
-      '}';
+            "product=" + product +
+            ", quantity=" + quantity +
+            '}';
   }
 }
