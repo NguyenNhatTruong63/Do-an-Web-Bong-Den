@@ -1,13 +1,9 @@
 package database;
 
-import beans.Product;
 import org.jdbi.v3.core.Jdbi;
 import com.mysql.cj.jdbc.MysqlDataSource;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class JDBIConnector {
     private static Jdbi jdbi;

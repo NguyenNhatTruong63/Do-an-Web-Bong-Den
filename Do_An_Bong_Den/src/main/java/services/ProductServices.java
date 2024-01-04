@@ -1,6 +1,5 @@
 package services;
 
-import beans.Product;
 import database.JDBIConnector;
 
 import java.sql.SQLException;
