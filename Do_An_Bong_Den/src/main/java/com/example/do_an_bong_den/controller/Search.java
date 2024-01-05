@@ -2,7 +2,6 @@ package com.example.do_an_bong_den.controller;
 
 import com.example.do_an_bong_den.beans.Product;
 import com.example.do_an_bong_den.services.Dao;
-import jakarta.ws.rs.core.Link;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

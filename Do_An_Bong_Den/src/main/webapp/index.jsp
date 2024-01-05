@@ -38,8 +38,10 @@
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
                     <div class="search">
-                       <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
-                        <button type="submit" value="" class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <form action="./search" method="post">
+                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
+                            <button type="submit" value="" class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
                     </div>
                     <div class="button_icon">
                         <a href="https://www.facebook.com/"><img class="icon_head"
@@ -127,7 +129,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="add-cart">
+                            <li><a href="./AddCartController">
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -192,7 +194,7 @@
                                             <p class="text_sp1"><%=product.getName()%></p>
                                             <div class="purch_price">
                                                 <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
-                                                <button class="purche"><a href="add-cart?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+                                                <button class="purche"><a href="/AddCartController ?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
                                                         <span class="close" onclick="closePopup()">&times;</span>
@@ -206,9 +208,20 @@
                                     <% } %>
                                 </table>
                             </div>
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#" class="">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div id="foot" class="">
                     <div class="container">
                         <div class="foot_alpha">

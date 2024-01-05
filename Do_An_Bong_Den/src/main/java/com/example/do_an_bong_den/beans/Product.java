@@ -1,123 +1,109 @@
 package com.example.do_an_bong_den.beans;
 
-import java.io.Serializable;
+public class Product {
+    private String id;
+    private String idCatgoy;
+    private String nameBrand;
+    private String name;
+    private String img;
+    private double price;
+    private double discount;
+    private int quantity;
+    private String status;
 
-public class Product implements Serializable {
+    public Product() {
+    }
 
-  private String id;
-  private String idCatgoy;
-  private String nameBrand;
-  private String name;
-  private String img;
-  private int price;
-  private int discount;
-  private int quantity;
-  //  private String description;
-  private String status;
+    public Product(String id, String idCatgoy, String nameBrand, String name, String img, double price, double discount, int quantity, String status) {
+        this.id = id;
+        this.idCatgoy = idCatgoy;
+        this.nameBrand = nameBrand;
+        this.name = name;
+        this.img = img;
+        this.price = price;
+        this.discount = discount;
+        this.quantity = quantity;
+        this.status = status;
+    }
 
-  public Product() {
-  }
+    public String getId() {
+        return id;
+    }
 
-  public Product(String id, String idCatgoy, String nameBrand, String name, String img, int price, int discount, int quantity, String status) {
-    this.id = id;
-    this.idCatgoy = idCatgoy;
-    this.nameBrand = nameBrand;
-    this.name = name;
-    this.img = img;
-    this.price = price;
-    this.discount = discount;
-    this.quantity = quantity;
-//    this.description = description;
-    this.status = status;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public String getId() {
-    return id;
-  }
+    public String getIdCatgoy() {
+        return idCatgoy;
+    }
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    public void setIdCatgoy(String idCatgoy) {
+        this.idCatgoy = idCatgoy;
+    }
 
-  public String getIdCatgoy() {
-    return idCatgoy;
-  }
+    public String getNameBrand() {
+        return nameBrand;
+    }
 
-  public void setIdCatgoy(String idCatgoy) {
-    this.idCatgoy = idCatgoy;
-  }
+    public void setNameBrand(String nameBrand) {
+        this.nameBrand = nameBrand;
+    }
 
-  public String getNameBrand() {
-    return nameBrand;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setNameBrand(String nameBrand) {
-    this.nameBrand = nameBrand;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getImg() {
+        return img;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setImg(String img) {
+        this.img = img;
+    }
 
-  public String getImg() {
-    return img;
-  }
+    public double getPrice() {
+        return price;
+    }
 
-  public void setImg(String img) {
-    this.img = img;
-  }
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-  public int getPrice() {
-    return price;
-  }
+    public double getDiscount() {
+        return discount;
+    }
 
-  public void setPrice(int price) {
-    this.price = price;
-  }
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 
-  public int getDiscount() {
-    return discount;
-  }
+    public int getQuantity() {
+        return quantity;
+    }
 
-  public void setDiscount(int discount) {
-    this.discount = discount;
-  }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-  public int getQuantity() {
-    return quantity;
-  }
+    public String getStatus() {
+        return status;
+    }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
-
-//  public String getDescription() {
-//    return description;
-//  }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+//    public double salePrice() {
+//        double sale = price *((100-discount)/100));
+//        return sale;
 //
-//  public void setDescription(String description) {
-//    this.description = description;
-//  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-//  public int salePrice(){
-//    return price *((100-discount)/100);
-////    return price -(price*discount);
-//  }
-  public int salePrice() {
-//    double sale = price - (price * discount);
-//    double sale = price *((100-discount)/100);
-    return price *((100-discount)/100);
-  }
-
+//    }
+    public double salePrice() {
+        double sale = price - (price * discount);
+        return sale;
+    }
 }

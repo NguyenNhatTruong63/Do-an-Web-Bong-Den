@@ -4,14 +4,12 @@ import com.example.do_an_bong_den.beans.Brand;
 import com.example.do_an_bong_den.beans.Product;
 import org.jdbi.v3.core.Jdbi;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class JDBIConnector {
   private static  Jdbi jdbi;
@@ -89,10 +87,9 @@ public class JDBIConnector {
       JDBIConnector dao = new JDBIConnector();
 //      List<Product> list = dao.getAllProduct();
       List<Brand> list = dao.getBrand();
-
       if (!list.isEmpty()) {
-        for (Brand a : list) {
-          System.out.println(a);
+        for (Brand brand : list) {
+          System.out.println(brand);
         }
       } else {
         System.out.println("Danh sách sản phẩm trống.");

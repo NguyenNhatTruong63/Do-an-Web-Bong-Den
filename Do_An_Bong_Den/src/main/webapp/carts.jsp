@@ -6,6 +6,8 @@
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="services.BrandServices" %>
 <%@ page import="beans.Brand" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.text.DateFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -187,7 +189,9 @@
                                         <h1 class="text_cart1"><%=product.getName()%></h1>
                                         <p class="price_cart1"><del><%=numberFormat.format(product.getPrice())%></del><%=numberFormat.format(product.salePrice())%></p>
                                         <span class="delete"><i class="fa-solid fa-trash"></i></span>
-                                        <p class="delivery">Dự kiến giao ngày: 10/11/20023 - 12/11/2023</p>
+<%--                                        <p class="delivery">Dự kiến giao ngày: 10/11/20023 - 12/11/2023</p>--%>
+                                        <%SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");%>
+                                        <p class="delivery">Dự kiến giao ngày: <%= dateFormat.format(DateFormat.getDateInstance())%></p>
                                         <div class="add_quantity">
                                             <p class="quantity">Số Lượng</p>
                                             <button id="minus" onclick="minus()">-</button>

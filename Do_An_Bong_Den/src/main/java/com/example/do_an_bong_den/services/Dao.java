@@ -2,10 +2,8 @@ package com.example.do_an_bong_den.services;
 
 import com.example.do_an_bong_den.beans.Account;
 import com.example.do_an_bong_den.beans.Product;
-import com.example.do_an_bong_den.db.DBProperties;
 import com.example.do_an_bong_den.db.DBText;
-import com.example.do_an_bong_den.db.JDBIConnector;
-import com.example.do_an_bong_den.db.producdb;
+import database.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.Connection;
@@ -14,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Dao {
     private static Jdbi jdbi;
@@ -25,8 +24,16 @@ public class Dao {
         if(jdbi == null);
         return jdbi;
     }
+
+//    public Account login(String user, String pass){
+//        List<Account> accounts =  JDBIConnector.get().withHandle(handle -> {
+//            return handle.createQuery("select * from users where userName = ? and password = ?")
+//                    .mapToBean(Account.class).stream().collect(Collectors.toList());
+//        });
+//        return (Account) accounts;
+//    }
     public Account login(String user, String pass){
-        String query = "select * from user where userName = ? and password = ?";
+        String query = "select * from users where userName = ? and password = ?";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
@@ -51,7 +58,7 @@ public class Dao {
     }
 
     public Account checkAccountExit(String user){
-        String query = "select * from user where userName = ?";
+        String query = "select * from users where userName = ?";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
@@ -73,16 +80,16 @@ public class Dao {
         }
         return null;
     }
-    public void signup(String user, String pass, String email, String phone, String address){
-        String query = "insert into user values(?,?,?,?,?)";
+    public void signup(String user, String pass, String repassword, String email){
+        String query = "insert into users values(?,?,?,?,0)";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
             ps.setString(2, pass);
             ps.setString(3, email);
-            ps.setString(4, phone);
-            ps.setString(5, address);
+//            ps.setString(4, phone);
+//            ps.setString(5, address);
             ps.executeUpdate();
         }catch (Exception e){
 
@@ -90,14 +97,13 @@ public class Dao {
     }
     public List<Product> searchbyname(String search){
         List<Product> list = new ArrayList<>();
-        String query ="select * from products where name like = ?";
-
-        try {
+        String query = "select name from products where name like = ?";
+        try{
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, "%"+search+"%");
+            ps.setString(1, "%"+ search +"%");
             rs = ps.executeQuery();
-            while (rs.next()) {
+            while (rs.next()){
                 list.add(new Product(
                         rs.getString(1),
                         rs.getString(2),
@@ -108,15 +114,11 @@ public class Dao {
                         rs.getInt(7),
                         rs.getInt(8),
                         rs.getString(9)
-//            rs.getString(10)
+
                 ));
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            // Đóng tài nguyên ở đây
+        }catch (Exception e){
+
         }
         return list;
     }
@@ -138,7 +140,7 @@ public class Dao {
     }
     public List<Product> pagingProduct(int index){
         List<Product> list = new ArrayList<>();
-        String query = "select * from product order by id offset ? rows fetch next 3 rows only";
+        String query = "select * from products order by id offset ? rows fetch next 3 rows only";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
@@ -166,14 +168,37 @@ public class Dao {
         return list;
     }
 
+//    public static void main(String[] args) {
+//        Dao dao = new Dao();
+////        List<Product> list =
+////        int count = dao.getTotalPage();
+////        System.out.println(count);
+////        List<Product> list = dao.pagingProduct(1);
+////        for (Product product: list){
+////            System.out.println(product);
+////        }
+//        List<Product> list = dao.searchbyname("Bóng Đèn Buld Rạng Đông 12W");
+//        for (Product product: list){
+//            System.out.println(product);
+//        }
+//
+//    }
+
     public static void main(String[] args) {
-        Dao dao = new Dao();
-//        List<Product> list =
-//        int count = dao.getTotalPage();
-//        System.out.println(count);
-        List<Product> list = dao.pagingProduct(2);
-        for (Product product: list){
-            System.out.println(product);
+        try {
+            Dao dao = new Dao();
+            List<Product> list = dao.searchbyname("");
+            if (!list.isEmpty()) {
+                for (Product product : list) {
+                    System.out.println(product);
+                }
+            }else{
+                    System.out.println("dstrong");
+                }
+            } catch (Exception e){
+            throw new RuntimeException(e);
+
         }
+
     }
 }

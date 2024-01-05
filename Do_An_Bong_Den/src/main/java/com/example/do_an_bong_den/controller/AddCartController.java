@@ -8,8 +8,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.rmi.RemoteException;
 
-//@WebServlet(name = "AddCartController", value = "/AddCartController")
-@WebServlet(name = "AddCartController", value = "/add-cart")
+@WebServlet(name = "AddCartController", value = "/AddCartController")
+//@WebServlet(name = "AddCartController", value = "/add-cart")
 public class AddCartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

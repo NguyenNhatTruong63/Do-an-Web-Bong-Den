@@ -19,24 +19,28 @@ public class SignupController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String re_password = request.getParameter("repassword");
+        String repassword = request.getParameter("repassword");
         String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
+//        String phone = request.getParameter("phone");
+//        String address = request.getParameter("address");
 
-        if(password.equals(re_password)){
-            response.sendRedirect("signup.jsp");
-        } else {
+        if(!password.equals(repassword)){
+//            response.sendRedirect("signup.jsp");
+            request.setAttribute("error", "Vui lòng nhập lại user or password");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
+//            response.sendRedirect("formdn.jsp");
+        }
+        else {
             Dao dao = new Dao();
             Account account = dao.checkAccountExit(username);
             if(account == null){
-                dao.signup("username", "password", "email", "phone", "address");
+                dao.signup("username",  "password", "repassword", "email");
                 response.sendRedirect("index.jsp");
 
             }
-//            else {
-//                response.sendRedirect("signup.jsp");
-//            }
+            else {
+                response.sendRedirect("formdn.jsp");
+            }
         }
 
     }

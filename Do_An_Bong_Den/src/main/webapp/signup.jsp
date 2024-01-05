@@ -32,15 +32,15 @@
         <span><img src="assart/image/icon_đk/email1.png" width="35px" height="35px"></span>
         <input type="text" name="email" placeholder="Email" size="25">
     </div>
-    <div class="sdt">
-        <span><img src="assart/image/icon_đk/telephone.png" width="35px" height="35px"></span>
-        <input type="text" name="phone" placeholder="Số điện thoại" size="25">
-    </div>
+<%--    <div class="sdt">--%>
+<%--        <span><img src="assart/image/icon_đk/telephone.png" width="35px" height="35px"></span>--%>
+<%--        <input type="text" name="phone" placeholder="Số điện thoại" size="25">--%>
+<%--    </div>--%>
 
-    <div class="diaChi">
-        <span><img src="assart/image/icon_đk/placeholder.png" width="35px" height="35px"></span>
-        <input type="text" name="address" placeholder="Địa chỉ" size="25">
-    </div>
+<%--    <div class="diaChi">--%>
+<%--        <span><img src="assart/image/icon_đk/placeholder.png" width="35px" height="35px"></span>--%>
+<%--        <input type="text" name="address" placeholder="Địa chỉ" size="25">--%>
+<%--    </div>--%>
 
 <%--    <div class="btn_dk"><a href="">Đăng Ký</a></div>--%>
     <div class="btn_dk">
