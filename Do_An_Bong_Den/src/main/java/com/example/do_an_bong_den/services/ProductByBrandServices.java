@@ -1,5 +1,6 @@
 package com.example.do_an_bong_den.services;
 
+import beans.Product;
 import database.JDBIConnector;
 
 import java.sql.SQLException;

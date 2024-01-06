@@ -28,74 +28,62 @@ public class Order {
         return id;
     }
 
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public String getOrderDate() {
-        return orderDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdUser() {
+        return idUser;
     }
 
     public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 
+    public String getFullName() {
+        return fullName;
+    }
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
+    public String getEmail() {
+        return email;
+    }
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
+    public String getAddress() {
+        return address;
+    }
     public void setAddress(String address) {
         this.address = address;
     }
-
+    public String getNote() {
+        return note;
+    }
     public void setNote(String note) {
         this.note = note;
     }
-
+    public String getOrderDate() {
+        return orderDate;
+    }
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
-
+    public String getStatus() {
+        return status;
+    }
     public void setStatus(String status) {
         this.status = status;
     }
-
     @Override
     public String toString() {
         return "Order{" +
