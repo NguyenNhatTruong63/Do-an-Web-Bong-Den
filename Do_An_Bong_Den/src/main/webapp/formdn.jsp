@@ -28,10 +28,11 @@
 <p style="color: white;
 font-weight: bold;
 font-size: 20px;
-width: 500px;
+width: auto;
 height: auto;
-margin-left: -12px;
-margin-top: -45px;
+margin-left: 15px;
+/*margin-top: -45px;*/
+margin-top: 60px;
 position: absolute;
 text-align: center;
 border-radius: 5px;

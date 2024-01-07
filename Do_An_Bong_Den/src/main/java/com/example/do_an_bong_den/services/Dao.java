@@ -3,16 +3,13 @@ package com.example.do_an_bong_den.services;
 import com.example.do_an_bong_den.beans.Account;
 import com.example.do_an_bong_den.beans.Product;
 import com.example.do_an_bong_den.db.DBText;
-import database.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Dao {
     private static Jdbi jdbi;
@@ -80,20 +77,23 @@ public class Dao {
         }
         return null;
     }
-    public void signup(String user, String pass, String repassword, String email){
-        String query = "insert into users values(?,?,?,?,0)";
+    public void signup(String userName, String password, String repassword, String email, String phone, String address){
+        String query = "insert into user VALUES ( 3, ?, ?, ?, ?, ?, 0 )";
+//        String query = "insert into user VALUES (0, ?, ?, ?, 0, 0 )";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, user);
-            ps.setString(2, pass);
+            ps.setString(1, userName);
+            ps.setString(2, password);
             ps.setString(3, email);
-//            ps.setString(4, phone);
-//            ps.setString(5, address);
+            ps.setString(4, phone);
+            ps.setString(5, address);
             ps.executeUpdate();
         }catch (Exception e){
 
         }
+
+
     }
     public List<Product> searchbyname(String search){
         List<Product> list = new ArrayList<>();
@@ -173,21 +173,21 @@ public class Dao {
 ////        List<Product> list =
 ////        int count = dao.getTotalPage();
 ////        System.out.println(count);
-////        List<Product> list = dao.pagingProduct(1);
-////        for (Product product: list){
-////            System.out.println(product);
-////        }
-//        List<Product> list = dao.searchbyname("Bóng Đèn Buld Rạng Đông 12W");
+//        List<Product> list = dao.pagingProduct(1);
 //        for (Product product: list){
 //            System.out.println(product);
 //        }
+////        List<Product> list = dao.searchbyname("Bóng Đèn Buld Rạng Đông 12W");
+////        for (Product product: list){
+////            System.out.println(product);
+////        }
 //
 //    }
 
     public static void main(String[] args) {
         try {
             Dao dao = new Dao();
-            List<Product> list = dao.searchbyname("");
+            List<Product> list = dao.pagingProduct(1);
             if (!list.isEmpty()) {
                 for (Product product : list) {
                     System.out.println(product);

@@ -6,6 +6,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="com.example.do_an_bong_den.beans.Account" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -146,13 +147,22 @@
 <%--                                    </c:if>--%>
                                     <ul>
                                         <li><a href="#">Thông tin cá nhân</a></li>
-                                        <li><a href="#">Lịch sử đơn hàng</a></li>
                                         <li><a href="policy.html">Chính Sách</a></li>
-                                        <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                        <li><a href="#">Lịch sử đơn hàng</a></li>
                                         <li><a href="signup.jsp">Đăng ký</a></li>
-                                        <c:if test = "${sessionScope.account != null}">
-                                        <li><a href="Logout">Đăng Xuất</a></li>
-                                        </c:if>
+                                        <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                        <li><a href="admin/index.html">Admin</a></li>
+                                        <li><a href="./Logout">Đăng Xuất</a></li>
+
+<%--                                        <c:if test="${sessionScope.account == null}">--%>
+<%--                                            <li><a href="formdn.jsp"> Đăng Nhập</a></li>--%>
+<%--                                        </c:if>--%>
+
+
+<%--                                        <li><a href="signup.jsp">Đăng ký</a></li>--%>
+<%--                                        <c:if test = "${sessionScope.account != null}">--%>
+<%--                                        <li><a href="./Logout">Đăng Xuất</a></li>--%>
+<%--                                        </c:if>--%>
 
                                     </ul>
                                 </li>

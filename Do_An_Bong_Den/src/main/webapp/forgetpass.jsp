@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assart/forgetpw.css">
 </head>
 <body>
-<form action="">
+<form action="" method="post">
     <h2>Đặt Lại Mật Khẩu</h2>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" style="width: 40px; height: 40px"></span>
@@ -29,7 +29,7 @@
     </div>
     <div class="btn_submit">
         <a href="index.jsp">Đồng ý</a>
-        <!--        <input type="submit" value="Đồng ý">-->
+<%--        <input type="submit" value="Đồng ý">--%>
     </div>
 
 </form>
