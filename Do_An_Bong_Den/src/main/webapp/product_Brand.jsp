@@ -1,14 +1,11 @@
-<%@ page import="beans.Product" %>
-<%@ page import="java.util.List" %>
-<%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %>
-<%@ page import="services.ProductByCategoryServices" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="java.text.ChoiceFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Category" %>
 <%@ page import="java.util.Locale" %>
-<%@ page import="services.BrandServices" %>
-<%@ page import="beans.Brand" %>
-<%@ page import="services.ProductByBrandServices" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.ProductByBrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -175,7 +172,7 @@
                     <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
                     <tr id="section_product" class="products" style="float: left; ">
                         <td class="table_image2" style="height: 300px; width: 250px; border: 1px solid black  ">
-                            <a href="id_product=<%=product.getId() %>"><img class="image_sp2" src="<%= product.getImg() %>"
+                            <a href="productDetail.jsp?id_product=<%=product.getId()%>"><img class="image_sp2" src="<%= product.getImg() %>"
                                                                             width="270px" height="270px">
                                 <p class="text_dicount"><%=  (int) (product.getDiscount() * 100) %>% <br>Giảm </p></a>
                             <p class="text_sp1"><%= product.getName() %> </p>

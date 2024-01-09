@@ -21,6 +21,22 @@ public class SignupController extends HttpServlet {
         String password = request.getParameter("password");
         String repassword = request.getParameter("repassword");
         String email = request.getParameter("email");
+//        String phone = request.getParameter("phone");
+//        String address = request.getParameter("address");
+        Dao dao = new Dao();
+        Account accountExist = dao.checkAccountExist(username);
+
+        if (!password.equals(repassword)) {
+            request.setAttribute("error", "Mật khẩu không khớp");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
+
+        } else if (accountExist == null) {
+            dao.signup(username, password, repassword, email);
+            response.sendRedirect("home.jsp");
+
+        } else if (accountExist != null){
+            request.setAttribute("error", "Tài khoản đã tồn tại");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         if (!password.equals(repassword)) {
@@ -38,8 +54,14 @@ public class SignupController extends HttpServlet {
             } else {
                 response.sendRedirect("formdn.jsp");
             }
+
         }
 
 
     }
+
+
+
+}
+
 }

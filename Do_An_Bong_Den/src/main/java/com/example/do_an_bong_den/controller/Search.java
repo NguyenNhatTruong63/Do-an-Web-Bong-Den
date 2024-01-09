@@ -20,9 +20,9 @@ public class Search extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
         Dao dao = new Dao();
-        List<Product> list = dao.searchbyname(search);
+//        List<Product> list = dao.searchbyname(search);
         request.setCharacterEncoding("UTF-8");
-        request.setAttribute("product", list);
+//        request.setAttribute("product", list);
         request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }
