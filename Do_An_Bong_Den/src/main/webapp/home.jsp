@@ -1,9 +1,10 @@
 
-<%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %>
-
-<%@ page import="services.BrandServices" %>
-<%@ page import="beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.services.Dao" %>
+<%@ page import="com.example.do_an_bong_den.beans.Account" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Category" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -91,7 +92,10 @@
                 <!--                            <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>-->
 
                 <ul>
-                  <li><a href="#">Thông tin cá nhân</a></li>
+                  <% Dao dao = new Dao();
+                    Account account = new Account();
+                  %>
+                  <li><a href="ttcn.jsp?id_user=<%= account.getId() %>">Thông tin cá nhân</a></li>
                   <li><a href="#">Lịch sử đơn hàng</a></li>
                   <li><a href="policy.html">Chính Sách</a></li>
                   <li><a href="formdn.jsp"> Đăng Nhập</a></li>
