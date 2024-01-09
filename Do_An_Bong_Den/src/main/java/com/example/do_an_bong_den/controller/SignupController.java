@@ -19,25 +19,27 @@ public class SignupController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String re_password = request.getParameter("repassword");
+        String repassword = request.getParameter("repassword");
         String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
+//        String phone = request.getParameter("phone");
+//        String address = request.getParameter("address");
+        Dao dao = new Dao();
+        Account accountExist = dao.checkAccountExist(username);
 
-        if(password.equals(re_password)){
-            response.sendRedirect("signup.jsp");
-        } else {
-            Dao dao = new Dao();
-            Account account = dao.checkAccountExit(username);
-            if(account == null){
-                dao.signup("username", "password", "email", "phone", "address");
-                response.sendRedirect("index.jsp");
+        if (!password.equals(repassword)) {
+            request.setAttribute("error", "Mật khẩu không khớp");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
 
-            }
-//            else {
-//                response.sendRedirect("signup.jsp");
-//            }
+        } else if (accountExist == null) {
+            dao.signup(username, password, repassword, email);
+            response.sendRedirect("home.jsp");
+
+        } else if (accountExist != null){
+            request.setAttribute("error", "Tài khoản đã tồn tại");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
         }
 
     }
+
+
 }

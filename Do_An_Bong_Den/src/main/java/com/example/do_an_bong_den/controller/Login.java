@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "login", value = "/login")
+@WebServlet(name = "Login", value = "/Login")
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,14 +21,20 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
         Dao dao = new Dao();
         Account a = dao.login(userName, password);
+
+
         if(a == null){
-            request.setAttribute("mess", "Vui lòng nhập lại user or password");
+            request.setAttribute("error", "Vui lòng nhập lại user or password");
             request.getRequestDispatcher("formdn.jsp").forward(request, response);
-        }else{
+        }
+        else{
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
 //            request.getRequestDispatcher("index").forward(request, response);
-            response.sendRedirect("./index.jsp");
+            response.sendRedirect("index.jsp");
         }
+        response.getWriter().println("username: " + userName);
+        response.getWriter().println("password: " + password);
+
     }
 }

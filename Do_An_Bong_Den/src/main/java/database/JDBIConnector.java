@@ -1,6 +1,5 @@
 package database;
 
-import beans.Product;
 import org.jdbi.v3.core.Jdbi;
 import com.mysql.cj.jdbc.MysqlDataSource;
 

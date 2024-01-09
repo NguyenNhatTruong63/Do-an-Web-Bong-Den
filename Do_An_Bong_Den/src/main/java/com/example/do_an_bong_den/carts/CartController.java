@@ -32,6 +32,6 @@ public class CartController extends HttpServlet {
             }
         }
 
-        response.sendRedirect("cart.jsp");
+        response.sendRedirect("carts.jsp");
     }
 }
