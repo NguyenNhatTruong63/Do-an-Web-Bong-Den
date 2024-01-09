@@ -14,11 +14,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Loại sản phẩm</title>
   <link href="assart/sty.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+  <link href="assart/product_detail.css" rel="stylesheet">
+
   <style>
     #search1 {
       margin-top: 0px;
@@ -149,9 +152,9 @@
       <div class="box_table">
         <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
 
-          <% ProductServices productServices = new ProductServices(); %>
-          <caption class="caption">Sản phẩm <%= request.getParameter("idCategory") %></caption>
-          <% for (Product product : ProductServices.getInstance().getListProductByCategory(request.getParameter("idCategory"))) {%>
+<%--          <% ProductServices productServices = new ProductServices(); %>--%>
+<%--          <caption class="caption">Sản phẩm <%= request.getParameter("idCategory") %></caption>--%>
+<%--          <% for (Product product : ProductServices.getInstance().getListProductByCategory(request.getParameter("idCategory"))) {%>--%>
           <tr id="section_product" class="products" style="float: left">
             <td class="table_image1" style="height: 300px; width: 300px">
               <a href="product.html"><img class="image_sp1" src="" width="270px" height="270px">
@@ -164,6 +167,35 @@
                   </del>
                   105.000đ
                 </p>
+                <div class="product_omega">
+                  <div class="product_title">
+                    <h1 class="text_detail_product">Bóng Đèn Led Ốp Trần Panasonic 18W</h1>
+                    <p class="price_detail_product">Giá: <del>150000đ</del> 105.000đ</p>
+                    <p class="firm">Hãng: Panasonic</p>
+                  </div>
+                  <hr>
+                  <div class="product_content">
+                    <div class="product_content1">
+                      <p class="wattage">Công Suất: <span class="wattage_W">18W</span> </p>
+                      <p class="voltage">Điện Áp: <span class="voltage1">220V/50HZ</span></p>
+                    </div>
+                    <div class="product_content2">
+                      <p class="luminous_flux">Quang Thông: <span class="luminous_flux"> 1300lm; CRI: 80</span></p>
+                      <p class="longevity">Tuổi Thọ: <span class="age">30.000 giờ</span></p>
+                    </div>
+                  </div>
+                  <div class="product_content_foot">
+                    <p class="warranty_detail">Bảo hành chính hãng 24 tháng</p>
+                    <p class="contact_detail"> Liên hệ với chúng tôi để biết thêm thông tin: <span class="phone">0245730926 - 0257190589</span></p>
+                  </div>
+                  <div class="told">
+                    <button id="minus" onclick="minus()">-</button>
+                    <p id="numbera">0</p>
+                    <button id="plus" onclick="plus()">+</button>
+                    <a href="cart.html"><input type="button" name="button" id="button_cart" value="Thêm vào giỏ hàng" class="text_cart_detail"></a>
+                  </div>
+                </div>
+              </div>
                 <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                 <div class="popup-wrapper" id="popup-wrapper">
                   <div class="popup">
@@ -172,10 +204,11 @@
                     <p>Đã thêm vào giỏ hàng thành công</p>
                   </div>
                 </div>
+
               </div>
             </td>
           </tr>
-          <% } %>
+<%--          <% } %>--%>
         </table>
       </div>
     </div>

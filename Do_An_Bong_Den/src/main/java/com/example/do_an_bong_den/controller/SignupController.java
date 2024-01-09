@@ -37,9 +37,31 @@ public class SignupController extends HttpServlet {
         } else if (accountExist != null){
             request.setAttribute("error", "Tài khoản đã tồn tại");
             request.getRequestDispatcher("formdn.jsp").forward(request, response);
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        if (!password.equals(repassword)) {
+//            response.sendRedirect("signup.jsp");
+            request.setAttribute("error", "Vui lòng nhập lại password");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
+//            response.sendRedirect("formdn.jsp");
+        } else {
+            Dao dao = new Dao();
+            Account account = dao.checkAccountExit(username);
+            if (account == null) {
+                dao.signup(username, password, repassword, email, phone, address);
+                response.sendRedirect("index.jsp");
+
+            } else {
+                response.sendRedirect("formdn.jsp");
+            }
+
         }
+
 
     }
 
+
+
+}
 
 }

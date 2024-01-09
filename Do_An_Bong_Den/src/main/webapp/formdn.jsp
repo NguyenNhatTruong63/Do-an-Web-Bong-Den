@@ -22,16 +22,17 @@
     } else {
         error = "";
     }
-    String username = request.getParameter("username") != null ? request.getParameter("username") : "";
+    String userName = request.getParameter("userName") != null ? request.getParameter("userName") : "";
 %>
 
 <p style="color: white;
 font-weight: bold;
 font-size: 20px;
-width: 500px;
+width: auto;
 height: auto;
-margin-left: -12px;
-margin-top: -45px;
+margin-left: 15px;
+/*margin-top: -45px;*/
+margin-top: 60px;
 position: absolute;
 text-align: center;
 border-radius: 5px;
@@ -40,12 +41,12 @@ background: red;
 ">
     <%= error %>
 </p>
-<form method="post" action="./login">
+<form method="post" action="./Login">
     <h2> Đăng Nhập</h2>
 <%--    <p class="mess">${mess}</p>--%>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
-        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=username%>">
+        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=userName%>">
 <%--        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="">--%>
     </div>
     <div class="password">
@@ -54,11 +55,11 @@ background: red;
     </div>
 
     <div class="btn_dn" id="btn_dn">
-        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">
-<%--        <input type="submit" value="Đăng Nhập">--%>
+<%--        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">--%>
+        <input type="submit" value="Đăng Nhập">
     </div>
     <div class="f_pass">
-        <p><a href="">Quên mật khẩu?</a></p>
+        <p><a href="forgetpass.jsp">Quên mật khẩu?</a></p>
     </div>
     <div class="questionDk">
         <p>Bạn chưa có tài khoản? <a href="signup.jsp">Đăng ký ngay</a></p>
