@@ -102,14 +102,7 @@
                                     </li>
                                     <% } %>
                                 </ul>
-<%--                                <ul>--%>
-<%--                                    <li><a href="#">Rạng Đông</a></li>--%>
-<%--                                    <li><a href="#">PHILIPS</a></li>--%>
-<%--                                    <li><a href="#">OSRAM</a></li>--%>
-<%--                                    <li><a href="#">Điện Quang</a></li>--%>
-<%--                                    <li><a href="#">Duhal</a></li>--%>
-<%--                                    <li><a href="#">Panasonic</a></li>--%>
-<%--                                </ul>--%>
+
                             </li>
                             <% CategoryServices categoryServices = new CategoryServices(); %>
 
@@ -172,7 +165,7 @@
                         style="text-align: center; color: red; margin-left: -120px "><%=brandServices.nameBrand(request.getParameter("id_namebrand")) %>
                     </h2>
                     <%--  hiển thị danh sách sản phẩm--%>
-                    <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
+                        <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
                     <tr id="section_product" class="products" style="float: left; ">
                         <td class="table_image2" style="height: 300px; width: 250px; border: 1px solid black  ">
                             <a href="id_product=<%=product.getId() %>"><img class="image_sp2" src="<%= product.getImg() %>"

@@ -1,5 +1,11 @@
 <%@ page import="beans.Brand" %>
 <%@ page import="services.BrandServices" %>
+<%@ page import="services.CategoryServices" %>
+<%@ page import="beans.Category" %>
+<%@ page import="beans.Product" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="services.OrderServices" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,64 +59,22 @@
                             <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down" style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
-                                <ul>
-                                    <li><a href="#">Rạng Đông</a></li>
-                                    <li><a href="#">PHILIPS</a></li>
-                                    <li><a href="#">OSRAM</a></li>
-                                    <li><a href="#">Điện Quang</a></li>
-                                    <li><a href="#">Duhal</a></li>
-                                    <li><a href="#">Panasonic</a></li>
-                                </ul>
+
                             </li>
-                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
-                                <ul>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i class="fa-solid fa-caret-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Bóng Đèn Buld Led Tròn</a></li>
-                                            <li><a href="#">Bóng Đèn Buld Led Trụ</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i class="fa-solid fa-caret-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Bóng Đèn Tuýp Led T5</a></li>
-                                            <li><a href="#">Bóng Đèn Tuýp Led T8</a></li>
-                                            <li><a href="#">Bóng Đèn Tuýp Led Bán Nguyệt</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i class="fa-solid fa-caret-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Bóng Đèn Âm Trần Led Tròn</a></li>
-                                            <li><a href="#">Bóng Đèn Âm Trần Led Vuông</a></li>
-                                            <li><a href="#">Bóng Đèn Âm Trần Led Viền</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i class="fa-solid fa-caret-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Bóng Đèn Ốp Trần Led Tròn</a></li>
-                                            <li><a href="#">Bóng Đèn Ốp Trần Led Vuông</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i class="fa-solid fa-caret-right"></i></a>
+                            <% CategoryServices categoryServices = new CategoryServices(); %>
 
-                                        <% BrandServices brandServices = new BrandServices(); %>
-                                        <%--                hiển thị danh mục loại sp để chọn--%>
-                                        <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
+                                                                                      style="color: white"></i> </a>
 
-                                            <li class="dropdown"><a href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a></li>
-                                                <% } %>
+                                <ul><% for (Category category : categoryServices.getCategoryList()) { %>
 
-<%--                                        <ul>--%>
-<%--                                            <li><a href="#">Bóng Đèn Led Ốp Trần</a></li>--%>
-<%--                                            <li><a href="#">Bóng Đèn Led Âm Trần</a></li>--%>
-<%--                                            <li><a href="#">Bóng Đèn Led Hồng Ngoại</a></li>--%>
-<%--                                            <li><a href="#">Bóng Đèn Led Sân Vườn</a></li>--%>
-<%--                                        </ul>--%>
+                                    <li class="dropdown"><a
+                                            href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a>
                                     </li>
-                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i class="fa-solid fa-caret-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Bóng Đèn Sợi Đốt Halogen</a></li>
-                                        </ul>
-                                    </li>
+                                    <% } %>
+                                </ul>
+
+                            </li>
                                 </ul>
                             </li>
                             <li><a href="cart.html">
@@ -149,8 +113,8 @@
                 <div class="input_group_left">
 
                     <h4>ThÔNG TIN KHÁCH HÀNG</h4>
-                    <label>Họ tên</label><br>
-                    <input type="text" placeholder="Họ và tên người nhận"><br>
+                    <label>Họ tên</label>
+                    <br><input type="text" placeholder="Họ và tên người nhận"><br>
                     <label>Giới tính</label><br>
                     <select name="gioiTinh">
                         <option value="nam">Nam</option>
@@ -163,7 +127,11 @@
                     <label> Email</label><br>
                     <input type="text" placeholder="Email"><br>
                 </div>
-
+                <% OrderServices orderServices = new OrderServices(); %>
+                <%
+                    Locale locale = new Locale("vi", "VN");
+                    NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+                %>
                 <div class="cart_check_right">
                     <h4>ĐƠN HÀNG CỦA BẠN</h4>
                     <div class="info_cart">
@@ -173,10 +141,10 @@
                         </div>
                         <ul>
                             <li class="sp1">
-                                <span>Bóng Đèn Led Ốp Trần Panasonic 18W</span>
+                                <span><%= order.getName() %></span>
                                 <span class="number">x 1</span><br>
                                 <span>Giá:</span>
-                                <span class="price">150.000đ</span>
+                                <span class="price"><%= order.getName() %></span>
                                 <span class="total_price">150.000đ</span>
                             </li>
                             <li class="sp2">
