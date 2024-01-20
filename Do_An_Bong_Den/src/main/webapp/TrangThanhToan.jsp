@@ -6,6 +6,7 @@
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="services.OrderServices" %>
+<%@ page import="beans.Order" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,7 +142,7 @@
                         </div>
                         <ul>
                             <li class="sp1">
-                                <span><%= order.getName() %></span>
+                                <span><%= Order. %></span>
                                 <span class="number">x 1</span><br>
                                 <span>Giá:</span>
                                 <span class="price"><%= order.getName() %></span>
