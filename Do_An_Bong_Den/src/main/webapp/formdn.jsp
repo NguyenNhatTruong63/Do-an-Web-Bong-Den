@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assart/DangNhap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <title>Đăng Nhập</title>
-
+    <h3 style="color: red">${requestScope.error}</h3>
 </head>
 <body>
 <%
