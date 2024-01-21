@@ -4,6 +4,7 @@ public class Order {
 
     private int id;
     private int idUser;
+    private int idOrderDetail;
     private String fullName;
     private String email;
     private int phoneNumber;
@@ -12,9 +13,10 @@ public class Order {
     private String orderDate;
     private String status;
 
-    public Order(int id, int idUser, String fullName, String email, int phoneNumber, String address, String note, String orderDate, String status) {
+    public Order(int id, int idUser, int idOrderDetail, String fullName, String email, int phoneNumber, String address, String note, String orderDate, String status) {
         this.id = id;
         this.idUser = idUser;
+        this.idOrderDetail = idOrderDetail;
         this.fullName = fullName;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -22,6 +24,10 @@ public class Order {
         this.note = note;
         this.orderDate = orderDate;
         this.status = status;
+    }
+
+    public Order() {
+
     }
 
     public int getId() {
@@ -38,6 +44,12 @@ public class Order {
 
     public void setIdUser(int idUser) {
         this.idUser = idUser;
+    }
+    public int getIdOrderDetail() {
+        return idOrderDetail;
+    }
+    public void setIdOrderDetail(int idOrderDetail) {
+        this.idOrderDetail = idOrderDetail;
     }
 
     public String getFullName() {
@@ -84,7 +96,7 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
-    @Override
+
     public String toString() {
         return "Order{" +
                 "id=" + id +

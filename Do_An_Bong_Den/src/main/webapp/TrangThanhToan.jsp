@@ -1,32 +1,22 @@
-<%@ page import="beans.Brand" %>
-<%@ page import="services.BrandServices" %>
-<%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %>
-<%@ page import="beans.Product" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="java.util.Locale" %>
-<%@ page import="services.OrderServices" %>
-<%@ page import="beans.Order" %>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page import="com.example.do_an_bong_den.carts.Carts" %>
+<%@ page import="com.example.do_an_bong_den.carts.CartsProduct" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="beans.Product" %><%--
+  Created by IntelliJ IDEA.
+  User: ADMIN
+  Date: 20/01/2024
+  Time: 11:50 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Thanh toán</title>
     <link rel="stylesheet" href="assart/ThanhToan.css">
-    <title>Thanh Toán</title>
     <link href="assart/sty.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
-    <!--  <link href="assart/order.css" rel="stylesheet">-->
-    <script>
-        function  openPopup(){
-            document.getElementById("popup-wrapper_pay").style.display = "block";
-        }
-        function  closePopup(){
-            document.getElementById("popup-wrapper_pay").style.display = "none";
-        }
-    </script>
 </head>
 <body>
-
 
 <!--header-->
 <div id="flashbulb" class="flashbulb">
@@ -60,22 +50,56 @@
                             <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down" style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
-
-                            </li>
-                            <% CategoryServices categoryServices = new CategoryServices(); %>
-
-                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
-                                                                                      style="color: white"></i> </a>
-
-                                <ul><% for (Category category : categoryServices.getCategoryList()) { %>
-
-                                    <li class="dropdown"><a
-                                            href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a>
-                                    </li>
-                                    <% } %>
+                                <ul>
+                                    <li><a href="#">Rạng Đông</a></li>
+                                    <li><a href="#">PHILIPS</a></li>
+                                    <li><a href="#">OSRAM</a></li>
+                                    <li><a href="#">Điện Quang</a></li>
+                                    <li><a href="#">Duhal</a></li>
+                                    <li><a href="#">Panasonic</a></li>
                                 </ul>
-
                             </li>
+                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
+                                <ul>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Buld Led Tròn</a></li>
+                                            <li><a href="#">Bóng Đèn Buld Led Trụ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Tuýp Led T5</a></li>
+                                            <li><a href="#">Bóng Đèn Tuýp Led T8</a></li>
+                                            <li><a href="#">Bóng Đèn Tuýp Led Bán Nguyệt</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Âm Trần Led Tròn</a></li>
+                                            <li><a href="#">Bóng Đèn Âm Trần Led Vuông</a></li>
+                                            <li><a href="#">Bóng Đèn Âm Trần Led Viền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Ốp Trần Led Tròn</a></li>
+                                            <li><a href="#">Bóng Đèn Ốp Trần Led Vuông</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Led Ốp Trần</a></li>
+                                            <li><a href="#">Bóng Đèn Led Âm Trần</a></li>
+                                            <li><a href="#">Bóng Đèn Led Hồng Ngoại</a></li>
+                                            <li><a href="#">Bóng Đèn Led Sân Vườn</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i class="fa-solid fa-caret-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Bóng Đèn Sợi Đốt Halogen</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li><a href="cart.html">
@@ -112,27 +136,24 @@
                 </div>
 
                 <div class="input_group_left">
-
-                    <h4>ThÔNG TIN KHÁCH HÀNG</h4>
-                    <label>Họ tên</label>
-                    <br><input type="text" placeholder="Họ và tên người nhận"><br>
-                    <label>Giới tính</label><br>
-                    <select name="gioiTinh">
-                        <option value="nam">Nam</option>
-                        <option value="nu">Nữ</option>
-                    </select><br>
-                    <label> Địa chỉ</label><br>
-                    <input type="text" placeholder="Địa chỉ người nhận"><br>
-                    <label> Điện thoại</label><br>
-                    <input type="text" placeholder="Số điện thoại người nhận"><br>
-                    <label> Email</label><br>
-                    <input type="text" placeholder="Email"><br>
+                    <form action="CheckoutVerifyController" id="formCheckoutInfomation">
+                        <h4>ThÔNG TIN KHÁCH HÀNG</h4>
+                        <label>Họ tên</label><br>
+                        <input type="text" placeholder="Họ và tên người nhận" name="fullname"><br>
+                        <label>Giới tính</label><br>
+                        <select name="gender">
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select><br>
+                        <label> Địa chỉ</label><br>
+                        <input type="text" placeholder="Địa chỉ người nhận" name="address"><br>
+                        <label> Điện thoại</label><br>
+                        <input type="text" placeholder="Số điện thoại người nhận" name="phonenumber"><br>
+                        <label> Email</label><br>
+                        <input type="text" placeholder="Email" name="email"><br>
+                    </form>
                 </div>
-                <% OrderServices orderServices = new OrderServices(); %>
-                <%
-                    Locale locale = new Locale("vi", "VN");
-                    NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
-                %>
+
                 <div class="cart_check_right">
                     <h4>ĐƠN HÀNG CỦA BẠN</h4>
                     <div class="info_cart">
@@ -141,27 +162,40 @@
                             <span class="tong">TỔNG</span>
                         </div>
                         <ul>
-                            <li class="sp1">
-                                <span><%= Order. %></span>
-                                <span class="number">x 1</span><br>
+                            <%
+                                Carts carts = (Carts) session.getAttribute("cart");
+                                if(carts != null) {
+                                    ArrayList<com.example.do_an_bong_den.beans.Product> cartproducts = carts.getProductFromCart();
+                                    for(com.example.do_an_bong_den.beans.Product product : cartproducts) {%>
+                            <li>
+                                <span><%=product.getName() %>/span>
+                                <span class="number">x <%=product.getQuantity()%></span><br>
                                 <span>Giá:</span>
-                                <span class="price"><%= order.getName() %></span>
-                                <span class="total_price">150.000đ</span>
+                                <span class="price"><%=product.getPrice()%></span>
+                                <span class="total_price"><%=product.getPrice() * product.getQuantity()%></span>
                             </li>
-                            <li class="sp2">
-                                <span>Đèn led âm trần Rạng Đông 16w D AT04L 155/16W </span>
-                                <span class="number">x 2</span><br>
-                                <span>Giá:</span>
-                                <span class="price">240.000đ</span>
-                                <span class="total_price">480.000đ</span>
-                            </li>
+                                <% } }%>
+<%--                            <li class="sp1">--%>
+<%--                                <span>Bóng Đèn Led Ốp Trần Panasonic 18W</span>--%>
+<%--                                <span class="number">x 1</span><br>--%>
+<%--                                <span>Giá:</span>--%>
+<%--                                <span class="price">150.000đ</span>--%>
+<%--                                <span class="total_price">150.000đ</span>--%>
+<%--                            </li>--%>
+<%--                            <li class="sp2">--%>
+<%--                                <span>Đèn led âm trần Rạng Đông 16w D AT04L 155/16W </span>--%>
+<%--                                <span class="number">x 2</span><br>--%>
+<%--                                <span>Giá:</span>--%>
+<%--                                <span class="price">240.000đ</span>--%>
+<%--                                <span class="total_price">480.000đ</span>--%>
+<%--                            </li>--%>
                         </ul>
                         <span class="l_total"> TỔNG THANH TOÁN</span>
-                        <span class="total">630.000đ</span>
+<%--                        <span class="total"><%=carts.getTotalPrice() %></span>--%>
                     </div>
                 </div>
 
-                <button class="btn_dathang"><a href="#" onclick="openPopup()"> Đặt Hàng</a></button>
+                <button class="btn_dathang"><a href="#"  form="formCheckoutInfomation" > Đặt Hàng</a></button>
                 <div class="popup-wrapper_pay" id="popup-wrapper_pay">
                     <div class="popup_pay">
                         <span class="close" onclick="closePopup()">&times;</span>
