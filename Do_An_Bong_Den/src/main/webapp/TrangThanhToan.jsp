@@ -195,7 +195,8 @@
                     </div>
                 </div>
 
-                <button class="btn_dathang"><a href="#"  form="formCheckoutInfomation" > Đặt Hàng</a></button>
+                <button class="btn_dathang"><a href="#"  form="formCheckoutInfomation" name="btnDatHang" > Đặt Hàng</a></button>
+                
                 <div class="popup-wrapper_pay" id="popup-wrapper_pay">
                     <div class="popup_pay">
                         <span class="close" onclick="closePopup()">&times;</span>

@@ -16,6 +16,7 @@ public class Order {
     public Order(int id, int idUser, int idOrderDetail, String fullName, String email, int phoneNumber, String address, String note, String orderDate, String status) {
         this.id = id;
         this.idUser = idUser;
+        this.idUser = idUser;
         this.idOrderDetail = idOrderDetail;
         this.fullName = fullName;
         this.email = email;
@@ -37,7 +38,6 @@ public class Order {
     public void setId(int id) {
         this.id = id;
     }
-
     public int getIdUser() {
         return idUser;
     }
@@ -45,6 +45,7 @@ public class Order {
     public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
+
     public int getIdOrderDetail() {
         return idOrderDetail;
     }
