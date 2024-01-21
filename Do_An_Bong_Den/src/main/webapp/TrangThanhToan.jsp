@@ -142,8 +142,8 @@
                         <input type="text" placeholder="Họ và tên người nhận" name="fullname"><br>
                         <label>Giới tính</label><br>
                         <select name="gender">
-                            <option value="nam">Nam</option>
-                            <option value="nu">Nữ</option>
+                            <option value="nam" name="name">Nam</option>
+                            <option value="nu" name="nu">Nữ</option>
                         </select><br>
                         <label> Địa chỉ</label><br>
                         <input type="text" placeholder="Địa chỉ người nhận" name="address"><br>
@@ -196,7 +196,7 @@
                 </div>
 
                 <button class="btn_dathang"><a href="#"  form="formCheckoutInfomation" name="btnDatHang" > Đặt Hàng</a></button>
-                
+
                 <div class="popup-wrapper_pay" id="popup-wrapper_pay">
                     <div class="popup_pay">
                         <span class="close" onclick="closePopup()">&times;</span>
