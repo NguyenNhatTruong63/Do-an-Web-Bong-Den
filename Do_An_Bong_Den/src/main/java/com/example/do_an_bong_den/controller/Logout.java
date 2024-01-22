@@ -10,8 +10,9 @@ public class Logout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.removeAttribute("account");
-        response.sendRedirect("index");
+        session.setAttribute("logoutMessage", "Bạn đã đăng xuất!");
+        session.invalidate();
+        response.sendRedirect("index.jsp");
     }
 
     @Override

@@ -12,9 +12,22 @@
     <link rel="stylesheet" href="assart/DangNhap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <title>Đăng Nhập</title>
+
     <h3 style="color: red">${requestScope.error}</h3>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup-wrapper").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-wrapper").style.display = "none";
+        }
+    </script>
+
 </head>
 <body>
+
 <%
     String error = (String)(request.getAttribute("error"));
     if(error != null) {
@@ -22,7 +35,7 @@
     } else {
         error = "";
     }
-    String username = request.getParameter("username") != null ? request.getParameter("username") : "";
+    String userName = request.getParameter("username") != null ? request.getParameter("username") : "";
 %>
 
 <p style="color: white;
@@ -30,7 +43,7 @@ font-weight: bold;
 font-size: 20px;
 width: 500px;
 height: auto;
-margin-left: -12px;
+margin-left: -50px;
 margin-top: -45px;
 position: absolute;
 text-align: center;
@@ -40,12 +53,12 @@ background: red;
 ">
     <%= error %>
 </p>
-<form method="post" action="./login">
+<form method="post" action="./Login">
     <h2> Đăng Nhập</h2>
 <%--    <p class="mess">${mess}</p>--%>
     <div class="username">
         <span> <img src="assart/image/icon_đk/user.png" width="40px" height="40px"></span>
-        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=username%>">
+        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="<%=userName%>">
 <%--        <input type="text" placeholder="Tên đăng nhập" size="25" name="username" value="">--%>
     </div>
     <div class="password">
@@ -54,15 +67,16 @@ background: red;
     </div>
 
     <div class="btn_dn" id="btn_dn">
-        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">
-<%--        <input type="submit" value="Đăng Nhập">--%>
+<%--        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">--%>
+        <input type="submit" value="Đăng Nhập" onclick="openPopup()">
     </div>
     <div class="f_pass">
-        <p><a href="">Quên mật khẩu?</a></p>
+        <p><a href="forgetpass.jsp">Quên mật khẩu?</a></p>
     </div>
     <div class="questionDk">
         <p>Bạn chưa có tài khoản? <a href="signup.jsp">Đăng ký ngay</a></p>
     </div>
+
 </form>
 </body>
 </html>

@@ -2,7 +2,6 @@ package com.example.do_an_bong_den.controller;
 
 import com.example.do_an_bong_den.beans.Product;
 import com.example.do_an_bong_den.services.Dao;
-import jakarta.ws.rs.core.Link;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,9 +20,9 @@ public class Search extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String search = request.getParameter("search");
         Dao dao = new Dao();
-        List<Product> list = dao.searchbyname(search);
+//        List<Product> list = dao.searchbyname(search);
         request.setCharacterEncoding("UTF-8");
-        request.setAttribute("product", list);
+//        request.setAttribute("product", list);
         request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }

@@ -13,9 +13,12 @@ public class Carts {
     long totalPrice = 0;
     public Carts() {
     }
-//    public boolean add(int productid) {
-//        return add(productid, 1);
-//    }
+
+
+    public boolean add(int productid) {
+        return add(productid, 1);
+    }
+
     public boolean add(int productid, int quantity) {
         if (data.containsKey(productid)){
             return data.get(productid).incri(productid,quantity);

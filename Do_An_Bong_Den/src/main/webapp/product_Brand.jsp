@@ -1,14 +1,13 @@
-<%@ page import="beans.Product" %>
-<%@ page import="java.util.List" %>
-<%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %>
-<%@ page import="services.ProductByCategoryServices" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="java.text.ChoiceFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Category" %>
 <%@ page import="java.util.Locale" %>
-<%@ page import="services.BrandServices" %>
-<%@ page import="beans.Brand" %>
-<%@ page import="services.ProductByBrandServices" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.ProductByBrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="com.example.do_an_bong_den.services.Dao" %>
+<%@ page import="com.example.do_an_bong_den.beans.Account" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -89,12 +88,13 @@
                 <div id="nanavbar-collapse-01" class="collapse">
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="home.jsp">Trang Chủ </a></li>
-                            <% BrandServices brandServices = new BrandServices(); %>
+                            <li><a href="index.jsp">Trang Chủ </a></li>
                             <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
+                                <% BrandServices brandServices = new BrandServices(); %>
+                                <%--                hiển thị danh mục loại sp để chọn--%>
                                 <ul><% for (Brand brand : brandServices.getBrandList()) { %>
 
                                     <li class="dropdown"><a
@@ -104,11 +104,10 @@
                                 </ul>
 
                             </li>
-                            <% CategoryServices categoryServices = new CategoryServices(); %>
-
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
-
+                                <% CategoryServices categoryServices = new CategoryServices(); %>
+                                <%--                hiển thị danh mục loại sp để chọn--%>
                                 <ul><% for (Category category : categoryServices.getCategoryList()) { %>
 
                                     <li class="dropdown"><a
@@ -116,30 +115,41 @@
                                     </li>
                                     <% } %>
                                 </ul>
-
                             </li>
                             <li><a href="cart.html">Giỏ Hàng
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <span><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>
                             </a></li>
+                            <% Dao dao = new Dao();
+                                Account account = (Account) session.getAttribute("account");
+                                if (account == null) account = new Account();
+                            %>
+                            <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
+                                    class="user1"
+                                    src="assart/image/logo/user.jpg">Hello  <% if (session.getAttribute("account") != null) { %>
+                                <%=account.getUserName() %>
 
-                            <li class="dropdown2"><a class="resume" href="#"><span class="text_resume">Hồ Sơ</span><i
-                                    class="fa-solid fa-caret-down" style="color: white"></i></a>
-                                <!--                            <img class="caret" src="assart/image/icon_button/caret-down.svg"></a>-->
-
+                                <% } %> </span></a>
+                                <%--                                    </c:if>--%>
                                 <ul>
-                                    <li><a href="#">Thông tin cá nhân</a></li>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="ttcn.jsp?id_user=<%= account.getId() %>">Thông tin cá nhân</a></li>
                                     <li><a href="#">Lịch sử đơn hàng</a></li>
-                                    <li><a href="policy.html">Chính Sách</a></li>
-                                    <li><a href="formdn.html"> Đăng Nhập</a></li>
-                                    <li><a href="formdk.html">Đăng ký</a></li>
-                                    <li><a href="ieda.html">Đăng Xuất</a></li>
+                                    <% } %>
+
+                                    <% if (session.getAttribute("account") == null) {%>
+                                    <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                    <li><a href="signup.jsp">Đăng Ký</a></li>
+                                    <% } %>
+                                    <li><a href="policy.jsp">Chính Sách</a></li>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="Logout">Đăng Xuất</a></li>
+                                    <% } %>
+
                                 </ul>
                             </li>
+                            <%--                            </c:if>--%>
 
-                            <li>
-                                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm" style="color: white;"></i> </span>
-                            </li>
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
@@ -168,7 +178,7 @@
                         <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
                     <tr id="section_product" class="products" style="float: left; ">
                         <td class="table_image2" style="height: 300px; width: 250px; border: 1px solid black  ">
-                            <a href="id_product=<%=product.getId() %>"><img class="image_sp2" src="<%= product.getImg() %>"
+                            <a href="productDetail.jsp?id_product=<%=product.getId()%>"><img class="image_sp2" src="<%= product.getImg() %>"
                                                                             width="270px" height="270px">
                                 <p class="text_dicount"><%=  (int) (product.getDiscount() * 100) %>% <br>Giảm </p></a>
                             <p class="text_sp1"><%= product.getName() %> </p>

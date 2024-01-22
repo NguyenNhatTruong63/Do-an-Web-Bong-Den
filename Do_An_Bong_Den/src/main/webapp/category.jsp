@@ -1,10 +1,10 @@
-<%@ page import="beans.Product" %>
-<%@ page import="java.util.List" %>
-<%@ page import="services.CategoryServices" %>
-<%@ page import="beans.Category" %>
-<%@ page import="services.ProductServices" %>
-<%@ page import="beans.Brand" %>
-<%@ page import="services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Category" %>
+
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
+<%@ page import="com.example.do_an_bong_den.services.ProductServices" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -150,7 +150,7 @@
         <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
           <% ProductServices productServices = new ProductServices(); %>
           <caption class="caption">Sản phẩm <%=request.getParameter("id")%></caption>
-          <% for (Product product : ProductServices.getInstance().getListProductByCategory(request.getParameter("id"))) {%>
+<%--          <% for (Product product : ProductServices.getInstance()getListProductByCategory(request.getParameter("id"))) {%>--%>
           <tr id="section_product" class="products" style="float: left">
             <td class="table_image1" style="height: 300px; width: 300px">
               <a href="product.html"><img class="image_sp1" src="" width="270px" height="270px">
@@ -174,7 +174,7 @@
               </div>
             </td>
           </tr>
-          <% } %>
+<%--          <% } %>--%>
         </table>
       </div>
     </div>
