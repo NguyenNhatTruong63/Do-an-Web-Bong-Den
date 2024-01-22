@@ -20,13 +20,6 @@ public class ProductByBrandServices {
     return instance;
   }
 
-//  public List<Product> getAll() {
-//    return JDBIConnector.get().withHandle(handle -> {
-//      return handle.createQuery("select * from products")
-//        .mapToBean(Product.class).list();
-//    });
-//  }
-
 
   public List<Product> getListProductByBrand(String id) {
     return JDBIConnector.get().withHandle(handle -> {
