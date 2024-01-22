@@ -151,15 +151,10 @@ public class Dao {
           rs.getString(5),
           rs.getString(6),
           rs.getString(7)
-
-
         );
       }
     } catch (Exception e) {
-
     }
-
-
     return null;
   }
 
