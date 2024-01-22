@@ -14,13 +14,7 @@ public class PaymentController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.getRequestDispatcher("TrangThanhToan.jsp").forward(request, response);
-//        OrderDAO orderDao = new OrderDAO();
-        HttpSession session = request.getSession();
-        Carts carts = (Carts) session.getAttribute("order");
-        if(carts == null){
-            carts = new Carts();
-            session.setAttribute("order", carts);
-        }
+
     }
 
     @Override

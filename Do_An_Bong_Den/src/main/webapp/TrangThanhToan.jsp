@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="input_group_left">
-                    <form action="CheckoutVerifyController" id="formCheckoutInfomation">
+                    <form action="CheckoutVerifyController" id="formCheckoutInfomation" method="post">
                         <h4>ThÔNG TIN KHÁCH HÀNG</h4>
                         <label>Họ tên</label><br>
                         <input type="text" placeholder="Họ và tên người nhận" name="fullname"><br>
@@ -175,27 +175,13 @@
                                 <span class="total_price"><%=product.getPrice() * product.getQuantity()%></span>
                             </li>
                                 <% } }%>
-<%--                            <li class="sp1">--%>
-<%--                                <span>Bóng Đèn Led Ốp Trần Panasonic 18W</span>--%>
-<%--                                <span class="number">x 1</span><br>--%>
-<%--                                <span>Giá:</span>--%>
-<%--                                <span class="price">150.000đ</span>--%>
-<%--                                <span class="total_price">150.000đ</span>--%>
-<%--                            </li>--%>
-<%--                            <li class="sp2">--%>
-<%--                                <span>Đèn led âm trần Rạng Đông 16w D AT04L 155/16W </span>--%>
-<%--                                <span class="number">x 2</span><br>--%>
-<%--                                <span>Giá:</span>--%>
-<%--                                <span class="price">240.000đ</span>--%>
-<%--                                <span class="total_price">480.000đ</span>--%>
-<%--                            </li>--%>
+
                         </ul>
                         <span class="l_total"> TỔNG THANH TOÁN</span>
-<%--                        <span class="total"><%=carts.getTotalPrice() %></span>--%>
                     </div>
                 </div>
 
-                <button class="btn_dathang"><a href="#"  form="formCheckoutInfomation" name="btnDatHang" > Đặt Hàng</a></button>
+                <button class="btn_dathang" type="submit" form="formCheckoutInfomation"> Đặt Hàng</button>
 
                 <div class="popup-wrapper_pay" id="popup-wrapper_pay">
                     <div class="popup_pay">
