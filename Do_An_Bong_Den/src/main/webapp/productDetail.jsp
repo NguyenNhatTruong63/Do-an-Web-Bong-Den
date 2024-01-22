@@ -71,20 +71,28 @@ Created by IntelliJ IDEA.
                 <div id="nanavbar-collapse-01" class="collapse">
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="home.jsp">Trang Chủ </a></li>
+                            <li><a href="index.jsp">Trang Chủ </a></li>
                             <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
-                                <ul>
-                                    <% BrandServices brandServices = new BrandServices(); %>
-                                    <% for (Brand brand : brandServices.getBrandList()) { %>
+                                <% BrandServices brandServices = new BrandServices(); %>
+                                <%--                hiển thị danh mục loại sp để chọn--%>
+                                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
 
                                     <li class="dropdown"><a
-                                            href="product_brand.jsp?id_brand=<%=brand.getId() %>"><span><%= brand.getName() %></span></a>
+                                            href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>
                                     </li>
                                     <% } %>
                                 </ul>
+                                <%--                <ul>--%>
+                                <%--                  <li><a href="#">Rạng Đông</a></li>--%>
+                                <%--                  <li><a href="#">PHILIPS</a></li>--%>
+                                <%--                  <li><a href="#">OSRAM</a></li>--%>
+                                <%--                  <li><a href="#">Điện Quang</a></li>--%>
+                                <%--                  <li><a href="#">Duhal</a></li>--%>
+                                <%--                  <li><a href="#">Panasonic</a></li>--%>
+                                <%--                </ul>--%>
                             </li>
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
@@ -102,20 +110,36 @@ Created by IntelliJ IDEA.
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <span><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>
                             </a></li>
-
+                            <% Dao dao = new Dao();
+                                Account account = (Account) session.getAttribute("account");
+                                if (account == null) account = new Account();
+                            %>
                             <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
-                                    class="user1" src="assart/image/logo/user.jpg">Hello</span></a>
+                                    class="user1"
+                                    src="assart/image/logo/user.jpg">Hello  <% if (session.getAttribute("account") != null) { %>
+                                <%=account.getUserName() %>
+
+                                <% } %> </span></a>
                                 <%--                                    </c:if>--%>
                                 <ul>
-                                    <li><a href="#">Thông tin cá nhân</a></li>
-                                    <li><a href="policy.html">Chính Sách</a></li>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="ttcn.jsp?id_user=<%= account.getId() %>">Thông tin cá nhân</a></li>
                                     <li><a href="#">Lịch sử đơn hàng</a></li>
-                                    <li><a href="signup.jsp">Đăng ký</a></li>
+                                    <% } %>
+
+                                    <% if (session.getAttribute("account") == null) {%>
                                     <li><a href="formdn.jsp"> Đăng Nhập</a></li>
-                                    <li><a href="admin/index.html">Admin</a></li>
-                                    <li><a href="./Logout">Đăng Xuất</a></li>
+                                    <li><a href="signup.jsp">Đăng Ký</a></li>
+                                    <% } %>
+                                    <li><a href="policy.jsp">Chính Sách</a></li>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="Logout">Đăng Xuất</a></li>
+                                    <% } %>
+
                                 </ul>
                             </li>
+                            <%--                            </c:if>--%>
+
                             <li>
                                 <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"
                                          style="color: white;"></i> </span>

@@ -1,38 +1,91 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.example.do_an_bong_den.carts.Carts" %>
-<%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
-<%@ page import="com.example.do_an_bong_den.beans.Product" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Locale" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="com.example.do_an_bong_den.services.Dao" %>
-<%@ page import="com.example.do_an_bong_den.beans.Account" %>
 <%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
 <%@ page import="com.example.do_an_bong_den.beans.Brand" %>
 <%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
 <%@ page import="com.example.do_an_bong_den.beans.Category" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page import="com.example.do_an_bong_den.services.Dao" %>
+<%@ page import="com.example.do_an_bong_den.beans.Account" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: nguye
+  Date: 1/8/2024
+  Time: 6:30 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Flashlight Shop</title>
+
+    <title>Thông tin cá nhân</title>
     <link href="assart/sty.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <script>
         function openPopup() {
-            document.getElementById("popup-wrapper").style.display = "block";
+            document.getElementById("popup-wrapper_pay").style.display = "block";
         }
 
         function closePopup() {
-            document.getElementById("popup-wrapper").style.display = "none";
+            document.getElementById("popup-wrapper_pay").style.display = "none";
         }
     </script>
+    <style>
+        #search1 {
+            margin-top: 0px;
+        }
+
+        .info_personal {
+            text-align: center;
+        }
+
+        .info_personal h2 {
+            text-align: center;
+            margin-bottom: 5px;
+
+
+        }
+
+        .info_personal input {
+            margin-top: 5px;
+            font-size: 20px;
+            height: 35px;
+            width: 417px;
+            border-radius: 5px;
+            background: #E8ECEE;
+            padding-left: 10px;
+            margin-bottom: 7px;
+        }
+
+        .info_personal p {
+            margin-top: 10px;
+            margin-bottom: -20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .btn a {
+            color: white;
+            border: 2px solid black;
+            background-color: #20b2aa;
+            border-radius: 5px;
+            padding: 10px 20px;
+
+
+        }
+
+        .btn input:hover {
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-<%--<h1><%= "Hello World!" %>--%>
-<%--</h1>--%>
-<%--<br/>--%>
-<%--<a href="hello-servlet">Hello Servlet</a>--%>
+<!--header-->
 <div id="flashbulb" class="flashbulb">
     <div class="container">
         <div id="header_1">
@@ -43,12 +96,8 @@
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
                     <div class="search">
-                        <form action="./search" method="post">
-                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm"
-                                   class="text_search">
-                            <button type="submit" value="" class="icon_search"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
+                        <input type="text" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
+                        <img class="icon_search" src="assart/image/icon_button/search.svg">
                     </div>
                     <div class="button_icon">
                         <a href="https://www.facebook.com/"><img class="icon_head"
@@ -86,7 +135,14 @@
                                     </li>
                                     <% } %>
                                 </ul>
-
+                                <%--                <ul>--%>
+                                <%--                  <li><a href="#">Rạng Đông</a></li>--%>
+                                <%--                  <li><a href="#">PHILIPS</a></li>--%>
+                                <%--                  <li><a href="#">OSRAM</a></li>--%>
+                                <%--                  <li><a href="#">Điện Quang</a></li>--%>
+                                <%--                  <li><a href="#">Duhal</a></li>--%>
+                                <%--                  <li><a href="#">Panasonic</a></li>--%>
+                                <%--                </ul>--%>
                             </li>
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
@@ -100,28 +156,20 @@
                                     <% } %>
                                 </ul>
                             </li>
-                            <li><a href="./AddCartController">
+                            <li><a href="cart.html">Giỏ Hàng
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
-                                <% Carts carts = (Carts) session.getAttribute("cart");
-                                    if (carts == null) carts = new Carts();
-                                %>
-                                <img class="cart1" src="assart/image/logo/cart1.jpg">
-                                <p class="text_cart"><%= carts.getTotal() %>
-                                </p>
-                                <!--                                <span ><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>-->
+                                <span><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>
                             </a></li>
                             <% Dao dao = new Dao();
                                 Account account = (Account) session.getAttribute("account");
                                 if (account == null) account = new Account();
                             %>
-                            <%--                            <c:if test="${sessionScope.account != null}">--%>
                             <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
                                     class="user1"
                                     src="assart/image/logo/user.jpg">Hello  <% if (session.getAttribute("account") != null) { %>
                                 <%=account.getUserName() %>
 
                                 <% } %> </span></a>
-
                                 <%--                                    </c:if>--%>
                                 <ul>
                                     <% if (session.getAttribute("account") != null) { %>
@@ -149,127 +197,25 @@
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
-                <div id="image_item" class="">
-                    <div class="item_bg">
-                        <!--                        <img class="bg_item" src="assart/image/backgound/light%20bulbs.jpg">-->
-                        <!--                      <img class="bg_item" src="assart/image/backgound/isto.jpg">-->
-                        <img class="bg_item" src="assart/image/backgound/bd4.jpg">
-                        <p class="text_bg"> Thắp sáng mọi nơi - Sưởi ấm mọi ngôi nhà</p>
-                    </div>
-                </div>
-                <div id="section_body" class="">
-                    <div class="container">
-                        <div class="box_product">
-                            <div class="box_table">
-                                <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
-                                    <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-                                    <%--                                    <%--%>
-                                    <% JDBIConnector
-                                            Dao
-                                            =
-                                            new
-                                                    JDBIConnector
-                                                    (
-                                                    );%>
-                                    <% List
-                                            <
-                                                    Product
-                                                    >
-                                            list
-                                            =
-                                            Dao
-                                                    .
-                                                    getAllProduct
-                                                            (
-                                                            );%>
-                                    <% for
-                                    (
-                                            Product
-                                                    product
-                                            :
-                                            list
-                                    ) {%>
-                                    <%--                                    %>--%>
-                                    <%
-                                        NumberFormat
-                                                numberFormat
-                                                =
-                                                NumberFormat
-                                                        .
-                                                        getNumberInstance
-                                                                (
-                                                                );
-                                    %>
-                                    <tr id="section_product" class="products" style="float: left">
-                                        <td class="table_image1"
-                                            style="height: 300px; width: 300px; border: solid 1px black">
-                                            <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px"
-                                                            height="270px">
-                                                <p class="text_dicount"><%=product
-                                                        .
-                                                        getDiscount
-                                                                (
-                                                                )%>%<br>Giảm</p></a>
-                                            <p class="text_sp1"><%=product
-                                                    .
-                                                    getName
-                                                            (
-                                                            )%>
-                                            </p>
-                                            <div class="purch_price">
-                                                <p class="price_sp1">
-                                                    <del><%=numberFormat
-                                                            .
-                                                            format
-                                                                    (
-                                                                            product
-                                                                                    .
-                                                                                    getPrice
-                                                                                            (
-                                                                                            )
-                                                                    )%>
-                                                    </del>
-                                                    <%=numberFormat
-                                                            .
-                                                            format
-                                                                    (
-                                                                            product
-                                                                                    .
-                                                                                    salePrice
-                                                                                            (
-                                                                                            )
-                                                                    )%>
-                                                </p>
-                                                <button class="purche"><a
-                                                        href="/AddCartController ?id=<%= product.getId()%>"
-                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
-                                                <div class="popup-wrapper" id="popup-wrapper">
-                                                    <div class="popup">
-                                                        <span class="close" onclick="closePopup()">&times;</span>
-                                                        <img class="order_image" src="assart/image/logo/order_tc.jpg">
-                                                        <p>Đã thêm vào giỏ hàng thành công</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <% } %>
-                                </table>
-                            </div>
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#" class="active">1</a>
-                                <a href="#" class="">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-                        </div>
+
+
+                <div class="info_personal">
+
+                    <h2>THÔNG TIN CÁ NHÂN</h2>
+                    <p class="info_item">Tên người dùng</p><br>
+                    <input type="text" placeholder=" <%= account.getUserName() %>" readonly><br>
+                    <p class="info_item"> Điện thoại</p><br>
+                    <input type="text" placeholder="<%= account.getPhoneNumber() %>" readonly><br>
+                    <p class="info_item"> Email</p><br>
+                    <input type="text" placeholder="<%= account.getEmail() %>" readonly><br>
+
+                    <div class="btn">
+                        <a href="forgetpass.jsp"> Thay đổi mật khẩu</a>
                     </div>
                 </div>
 
+
+                <!--footer-->
                 <div id="foot" class="">
                     <div class="container">
                         <div class="foot_alpha">
@@ -311,15 +257,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-
-
 </body>
 </html>
