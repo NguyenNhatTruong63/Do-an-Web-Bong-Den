@@ -26,6 +26,17 @@
         function closePopup() {
             document.getElementById("popup-wrapper").style.display = "none";
         }
+
+        <%-- success.jsp --%>
+        <% String successMessage = (String) session.getAttribute("successMessage"); %>
+
+        <% if (successMessage != null && session.getAttribute("account") != null) { %>
+        window.onload = function () {
+            alert("<%= successMessage %>");
+
+        };
+
+        <% } %>
     </script>
 </head>
 <body>
@@ -141,11 +152,6 @@
                                 </ul>
                             </li>
                             <%--                            </c:if>--%>
-
-                            <li>
-                                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"
-                                         style="color: white;"></i> </span>
-                            </li>
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
@@ -163,82 +169,25 @@
                             <div class="box_table">
                                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
                                     <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-                                    <%--                                    <%--%>
-                                    <% JDBIConnector
-                                            Dao
-                                            =
-                                            new
-                                                    JDBIConnector
-                                                    (
-                                                    );%>
-                                    <% List
-                                            <
-                                                    Product
-                                                    >
-                                            list
-                                            =
-                                            Dao
-                                                    .
-                                                    getAllProduct
-                                                            (
-                                                            );%>
-                                    <% for
-                                    (
-                                            Product
-                                                    product
-                                            :
-                                            list
-                                    ) {%>
-                                    <%--                                    %>--%>
+                                    <% JDBIConnector Dao = new JDBIConnector();%>
+                                    <% List<Product> list = Dao.getAllProduct();%>
+                                    <% for (Product product : list) {%>
                                     <%
-                                        NumberFormat
-                                                numberFormat
-                                                =
-                                                NumberFormat
-                                                        .
-                                                        getNumberInstance
-                                                                (
-                                                                );
+                                        NumberFormat numberFormat = NumberFormat.getNumberInstance();
                                     %>
                                     <tr id="section_product" class="products" style="float: left">
                                         <td class="table_image1"
                                             style="height: 300px; width: 300px; border: solid 1px black">
                                             <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px"
                                                             height="270px">
-                                                <p class="text_dicount"><%=product
-                                                        .
-                                                        getDiscount
-                                                                (
-                                                                )%>%<br>Giảm</p></a>
-                                            <p class="text_sp1"><%=product
-                                                    .
-                                                    getName
-                                                            (
-                                                            )%>
+                                                <p class="text_dicount"><%=product.getDiscount()%>%<br>Giảm</p></a>
+                                            <p class="text_sp1"><%=product.getName()%>
                                             </p>
                                             <div class="purch_price">
                                                 <p class="price_sp1">
-                                                    <del><%=numberFormat
-                                                            .
-                                                            format
-                                                                    (
-                                                                            product
-                                                                                    .
-                                                                                    getPrice
-                                                                                            (
-                                                                                            )
-                                                                    )%>
+                                                    <del><%=numberFormat.format(product.getPrice())%>
                                                     </del>
-                                                    <%=numberFormat
-                                                            .
-                                                            format
-                                                                    (
-                                                                            product
-                                                                                    .
-                                                                                    salePrice
-                                                                                            (
-                                                                                            )
-                                                                    )%>
+                                                    <%=numberFormat.format(product.salePrice())%>
                                                 </p>
                                                 <button class="purche"><a
                                                         href="/AddCartController ?id=<%= product.getId()%>"

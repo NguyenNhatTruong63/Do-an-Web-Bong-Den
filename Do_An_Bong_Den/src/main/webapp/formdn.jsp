@@ -31,7 +31,7 @@
     } else {
         error = "";
     }
-    String userName = request.getParameter("userName") != null ? request.getParameter("userName") : "";
+    String userName = request.getParameter("username") != null ? request.getParameter("username") : "";
 %>
 
 <p style="color: white;
@@ -39,7 +39,7 @@ font-weight: bold;
 font-size: 20px;
 width: 500px;
 height: auto;
-margin-left: -12px;
+margin-left: -50px;
 margin-top: -45px;
 position: absolute;
 text-align: center;

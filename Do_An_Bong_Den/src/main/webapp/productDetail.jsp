@@ -140,15 +140,11 @@ Created by IntelliJ IDEA.
                             </li>
                             <%--                            </c:if>--%>
 
-                            <li>
-                                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"
-                                         style="color: white;"></i> </span>
-                            </li>
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
             </div>
-            <% Dao dao = new Dao();
+            <%
                 Product product = dao.getProduct(request.getParameter("id_product"));
                 Locale locale = new Locale("vi", "VN");
                 NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);

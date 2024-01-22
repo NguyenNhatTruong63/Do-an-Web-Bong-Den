@@ -161,10 +161,7 @@
                             </li>
                             <%--                            </c:if>--%>
 
-                            <li>
-                                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"
-                                         style="color: white;"></i> </span>
-                            </li>
+
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
