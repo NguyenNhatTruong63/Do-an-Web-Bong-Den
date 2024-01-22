@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 public class OrderDAO {
     // Thay đổi các thông tin kết nối dưới đây
@@ -14,8 +13,10 @@ public class OrderDAO {
     private static final String PASSWORD = "";
 
     // Hàm thêm đơn hàng vào cơ sở dữ liệu
-    public void insertOrder(Order order) {
-        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+    public void insertOrder(Order order) throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        try (
+            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             // Câu truy vấn SQL để thêm mới đơn hàng
             String sql = "INSERT INTO orders (fullName, email, phoneNumber, address, note, orderDate, status, idUser) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -35,13 +36,13 @@ public class OrderDAO {
                 System.out.println("Error during insert");
                 e.printStackTrace();
             }
-        } catch (SQLException e) {
+        } catch (SQLException  e) {
             System.out.println("Connection error");
             e.printStackTrace();
-        }
+       }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         // Tạo một đối tượng OrderDAO
         OrderDAO orderDAO = new OrderDAO();
 

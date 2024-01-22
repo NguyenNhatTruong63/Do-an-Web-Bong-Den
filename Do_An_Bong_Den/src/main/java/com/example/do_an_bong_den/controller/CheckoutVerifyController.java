@@ -14,19 +14,7 @@ public class CheckoutVerifyController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String fullname = request.getParameter("fullname");
-//        String gender = request.getParameter("gender");
-//        String address = request.getParameter("address");
-//        String phonenumber = request.getParameter("phonenumber");
-//        String email = request.getParameter("email");
-//
-//        if (fullname != null && gender != null && address != null && phonenumber != null && email != null) {
-//            System.out.println(fullname + " " + gender + " " + address + " " + phonenumber + " " + email);
-//
-//            // Tạo đối tượng Order và thiết lập thông tin
-//            OrderDAO orderDAO = new OrderDAO();
-//
-//        }
+
 
 
     }
@@ -45,14 +33,23 @@ public class CheckoutVerifyController extends HttpServlet {
             Order order = new Order();
             order.setFullName(fullname);
             order.setAddress(address);
+
+            // TODO: validation font number in here.
             order.setPhoneNumber(Integer.parseInt(phonenumber)); // Assuming phone number is an integer
             order.setEmail(email);
 
             // Create OrderDAO object and insert the order into the database
             OrderDAO orderDAO = new OrderDAO();
-            orderDAO.insertOrder(order);
+            try{
+                orderDAO.insertOrder(order);
+            }catch (ClassNotFoundException e){
+                System.out.println("something when wrong!");
+            }
 
-
+            System.out.println("Order placed successfully!");
+        } else {
+            // Log for testing
+            System.out.println("Invalid data. Order not placed.");
         }
 
         // Forward to your JSP page

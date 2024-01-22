@@ -180,8 +180,7 @@
                         <span class="l_total"> TỔNG THANH TOÁN</span>
                     </div>
                 </div>
-
-                <button class="btn_dathang" type="submit" form="formCheckoutInfomation"> Đặt Hàng</button>
+                    <button class="btn_dathang" type="submit" form="formCheckoutInfomation"> Đặt Hàng</button>
 
                 <div class="popup-wrapper_pay" id="popup-wrapper_pay">
                     <div class="popup_pay">
