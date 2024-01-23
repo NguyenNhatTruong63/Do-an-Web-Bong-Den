@@ -100,19 +100,76 @@
                                 </ul>
 
                             </li>
+
+                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
                                 <% CategoryServices categoryServices = new CategoryServices(); %>
                                 <%--                hiển thị danh mục loại sp để chọn--%>
                                 <ul><% for (Category category : categoryServices.getCategoryList()) { %>
 
+                                    <li class="dropdown"><a href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a></li>
                                     <li class="dropdown"><a
                                             href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a>
                                     </li>
                                     <% } %>
                                 </ul>
                             </li>
+
                             <li><a href="./addcart">
+
+<%--                            <li class="dropdown"><a href="category.jsp"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"--%>
+<%--                                                                                      style="color: white"></i> </a>--%>
+<%--                                <ul>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Buld</span> <i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Buld Led Tròn</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Buld Led Trụ</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Tuýp</span> <i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Tuýp Led T5</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Tuýp Led T8</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Tuýp Led Bán Nguyệt</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Âm Trần</span><i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Âm Trần Led Tròn</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Âm Trần Led Vuông</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Âm Trần Led Viền</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Ốp Trần</span><i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Ốp Trần Led Tròn</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Ốp Trần Led Vuông</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Led Cảm Ứng</span><i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Led Ốp Trần</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Led Âm Trần</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Led Hồng Ngoại</a></li>--%>
+<%--                                            <li><a href="#">Bóng Đèn Led Sân Vườn</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                    <li class="dropdown"><a href="#"><span>Bóng Đèn Sợi Đốt</span><i--%>
+<%--                                            class="fa-solid fa-caret-right"></i></a>--%>
+<%--                                        <ul>--%>
+<%--                                            <li><a href="#">Bóng Đèn Sợi Đốt Halogen</a></li>--%>
+<%--                                        </ul>--%>
+<%--                                    </li>--%>
+<%--                                </ul>--%>
+<%--                            </li>--%>
+                            <li><a href="./AddCartController">
+
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -179,12 +236,12 @@
                                     <tr id="section_product" class="products" style="float: left">
                                         <td class="table_image1"
                                             style="height: 300px; width: 300px; border: solid 1px black">
-                                            <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px"
-                                                            height="270px">
+                                            <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px" height="270px">
                                                 <p class="text_dicount"><%=product.getDiscount()%>%<br>Giảm</p></a>
                                             <p class="text_sp1"><%=product.getName()%>
                                             </p>
                                             <div class="purch_price">
+
                                                 <p class="price_sp1">
                                                     <del><%=numberFormat.format(product.getPrice())%>
                                                     </del>
@@ -193,6 +250,16 @@
                                                 <button class="purche"><a
                                                         href="./addcart"
                                                         onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+
+                                                <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
+<%--                                                <button class="purche"><a href="/AddCartController ?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+                                                <button class="purche"><a href="AddCartController?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+<%--                                                <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del><%=numberFormat.format(product.salePrice())%>--%>
+<%--                                                </p>--%>
+<%--                                                <button class="purche"><a--%>
+<%--                                                        href="/AddCartController ?id=<%= product.getId()%>"--%>
+<%--                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
                                                         <span class="close" onclick="closePopup()">&times;</span>

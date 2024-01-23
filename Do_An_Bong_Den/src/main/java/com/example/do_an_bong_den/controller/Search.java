@@ -19,6 +19,7 @@ public class Search extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         // search bằng tiếng việt
         request.setCharacterEncoding("UTF-8");
         // lấy giá trị từ khóa tìm kiếm
@@ -28,6 +29,14 @@ public class Search extends HttpServlet {
 //        request.setCharacterEncoding("UTF-8");
 //        request.setAttribute("product", list);
 //        request.getRequestDispatcher("searchsp.jsp").forward(request, response);
+
+        String search = request.getParameter("search");
+        Dao dao = new Dao();
+        List<Product> list = dao.searchbyname(search);
+        request.setCharacterEncoding("UTF-8");
+        request.setAttribute("product", list);
+//        request.getRequestDispatcher("index.jsp").forward(request, response);
+
 
 //        response.sendRedirect("searchsp.jsp?keyword=" + URLEncoder.encode(search, "UTF-8"));
         request.getRequestDispatcher("searchsp.jsp").forward(request, response);
