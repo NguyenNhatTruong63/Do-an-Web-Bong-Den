@@ -1,6 +1,6 @@
 package beans;
 
-public class DetailOrder {
+public class OrderDetail {
 
     private int id;
     private int orderId;
@@ -9,7 +9,7 @@ public class DetailOrder {
     private int quantity;
     private double unitPrice;
 
-    public DetailOrder(int id, int orderId, int productId, String productName, int quantity, double unitPrice) {
+    public OrderDetail(int id, int orderId, int productId, String productName, int quantity, double unitPrice) {
         this.id = id;
         this.orderId = orderId;
         this.productId = productId;
@@ -18,7 +18,7 @@ public class DetailOrder {
         this.unitPrice = unitPrice;
     }
 
-    public DetailOrder() {
+    public OrderDetail() {
 
     }
 
