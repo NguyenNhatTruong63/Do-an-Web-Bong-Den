@@ -25,7 +25,7 @@ public class ForgetPassword extends HttpServlet {
         String repassword = request.getParameter("repassword");
         Dao dao = new Dao();
         Account account = dao.changePassword(username, newPassword);
-        Account accountExist = dao.checkAccountExist(username);
+        Account accountExist = dao.checkAccountExit(username);
 
         if (username.equals("") || newPassword.equals("")) {
             request.setAttribute("error", "Vui lòng nhập đầy đủ thông tin");

@@ -4,7 +4,7 @@
 <%@ page import="beans.Category" %>
 <%@ page import="services.ProductServices" %>
 <%@ page import="beans.Brand" %>
-<%@ page import="services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -89,7 +89,7 @@
                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
               </a>
                 <% BrandServices brandServices = new BrandServices(); %>
-                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+                <ul><% for (com.example.do_an_bong_den.beans.Brand brand : brandServices.getBrandList()) { %>
 
                   <li class="dropdown"><a
                           href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>

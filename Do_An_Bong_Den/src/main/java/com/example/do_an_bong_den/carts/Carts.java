@@ -11,18 +11,15 @@ import java.util.Map;
 public class Carts {
     Map<Integer, CartsProduct> data = new HashMap<>();
 
-<<<<<<< HEAD
 //    public Carts() {
 //    }
     public Map<Integer, CartsProduct> getData() {
      return data;
 }
 
-=======
     long totalPrice = 0;
     public Carts() {
     }
->>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
 
 
     public boolean add(int productid) {
@@ -40,11 +37,8 @@ public class Carts {
         if(!data.containsKey(productid)){
             data.put(productid, new CartsProduct(product, quantity));
         }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
 //    if (data.containsKey(productid)){
 //      data.get(productid);
 //

@@ -1,7 +1,7 @@
 
 <%@ page import="services.CategoryServices" %>
-<%@ page import="services.BrandServices" %>
-<%@ page import="services.Dao" %>
+<%--<%@ page import="services.BrandServices" %>--%>
+<%--<%@ page import="services.Dao" %>--%>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="beans.*" %><%--
@@ -55,7 +55,7 @@
               </a>
                 <ul>
                   <% BrandServices brandServices = new BrandServices(); %>
-                  <% for (Brand brand : brandServices.getBrandList()) { %>
+                  <% for (com.example.do_an_bong_den.beans.Brand brand : brandServices.getBrandList()) { %>
 
                   <li class="dropdown"><a
                     href="product_brand.jsp?id_brand=<%=brand.getId() %>"><span><%= brand.getName() %></span></a>
@@ -66,7 +66,7 @@
               <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
                 <% CategoryServices categoryServices = new CategoryServices(); %>
                 <%--                hiển thị danh mục loại sp để chọn--%>
-                <ul><% for (Category category : categoryServices.getCategoryList()) { %>
+                <ul><% for (beans.Category category : categoryServices.getCategoryList()) { %>
 
                   <li class="dropdown"><a href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a></li>
                   <% } %>
@@ -280,6 +280,9 @@
 <%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
 <%@ page import="com.example.do_an_bong_den.services.Dao" %>
 <%@ page import="com.example.do_an_bong_den.beans.*" %>
+<%@ page import="beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.beans.Category" %>
+<%@ page import="com.example.do_an_bong_den.beans.Product" %>
 
 <%--
 Created by IntelliJ IDEA.

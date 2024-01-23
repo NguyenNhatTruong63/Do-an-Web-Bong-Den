@@ -4,13 +4,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
-<%@ page import="services.BrandServices" %>
 <%@ page import="beans.Brand" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="com.example.do_an_bong_den.carts.CartsProduct" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -76,7 +76,7 @@
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
                                 <% BrandServices brandServices = new BrandServices(); %>
-                                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+                                <ul><% for (com.example.do_an_bong_den.beans.Brand brand : brandServices.getBrandList()) { %>
 
                                     <li class="dropdown"><a
                                             href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>
