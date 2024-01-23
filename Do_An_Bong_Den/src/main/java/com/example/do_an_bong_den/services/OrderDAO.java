@@ -1,5 +1,6 @@
 package com.example.do_an_bong_den.services;
 import beans.Order;
+import beans.OrderDetail;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,7 +29,7 @@ public class OrderDAO {
                 preparedStatement.setString(4, order.getAddress());
                 preparedStatement.setString(5, order.getNote());
                 preparedStatement.setString(6, order.getOrderDate());
-                preparedStatement.setInt(8, order.getIdUser());
+                preparedStatement.setInt(7, order.getIdUser());
 
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
@@ -40,7 +41,31 @@ public class OrderDAO {
             e.printStackTrace();
        }
     }
+    public void insertOrderDetail(OrderDetail orderDetail) throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
 
+        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+            // Câu truy vấn SQL để thêm mới chi tiết đơn hàng
+            String sql = "INSERT INTO orderDetail (orderId, productId, productName, quantity, unitPrice) VALUES (?, ?, ?, ?, ?)";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                // Thiết lập giá trị cho các tham số trong câu truy vấn
+                preparedStatement.setInt(1, orderDetail.getOrderId());
+                preparedStatement.setInt(2, orderDetail.getProductId());
+                preparedStatement.setString(3, orderDetail.getProductName());
+                preparedStatement.setInt(4, orderDetail.getQuantity());
+                preparedStatement.setDouble(5, orderDetail.getUnitPrice());
+
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("Error during insertOrderDetail");
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            System.out.println("Connection error");
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) throws ClassNotFoundException {
         // Tạo một đối tượng OrderDAO
         OrderDAO orderDAO = new OrderDAO();
