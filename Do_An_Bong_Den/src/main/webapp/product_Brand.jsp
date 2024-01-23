@@ -64,21 +64,28 @@
                         <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="50px" height="50px">
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
+                    <%--                    xử lý phần search--%>
                     <div class="search">
-                        <input type="text" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
-                        <img class="icon_search" src="assart/image/icon_button/search.svg">
+                        <form action="./search" method="get">
+                            <input type="search" name="keyword" id="search1" placeholder="Tìm Sản Phẩm"
+                                   class="text_search">
+                            <button type="submit" value="" class="icon_search"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
                     </div>
                     <div class="button_icon">
-                        <a href="https://www.facebook.com/"><img class="icon_head" src="assart/image/logo/fb_icon_30x30.png"
-                                                                 width="30px" height="30px"></a>
-                        <a href="https://twitter.com/i/flow/login"><img class="icon_head" src="assart/image/logo/twitter.png"
-                                                                        width="30px" height="30px"></a>
+                        <a href="https://www.facebook.com/"><img class="icon_head"
+                                                                 src="assart/image/logo/fb_icon_30x30.png" width="30px"
+                                                                 height="30px"></a>
+                        <a href="https://twitter.com/i/flow/login"><img class="icon_head"
+                                                                        src="assart/image/logo/twitter.png" width="30px"
+                                                                        height="30px"></a>
                         <a href="https://www.instagram.com/accounts/login/"> <img class="icon_head"
-                                                                                  src="assart/image/logo/instagram.png" width="30px"
-                                                                                  height="30px"></a>
+                                                                                  src="assart/image/logo/instagram.png"
+                                                                                  width="30px" height="30px"></a>
                         <a href="https://www.google.com/intl/vi/gmail/about/"> <img class="icon_head"
-                                                                                    src="assart/image/logo/email.png" width="30px"
-                                                                                    height="30px"></a>
+                                                                                    src="assart/image/logo/email.png"
+                                                                                    width="30px" height="30px"></a>
                     </div>
                 </div>
             </div>
@@ -102,7 +109,14 @@
                                     </li>
                                     <% } %>
                                 </ul>
-
+                                <%--                <ul>--%>
+                                <%--                  <li><a href="#">Rạng Đông</a></li>--%>
+                                <%--                  <li><a href="#">PHILIPS</a></li>--%>
+                                <%--                  <li><a href="#">OSRAM</a></li>--%>
+                                <%--                  <li><a href="#">Điện Quang</a></li>--%>
+                                <%--                  <li><a href="#">Duhal</a></li>--%>
+                                <%--                  <li><a href="#">Panasonic</a></li>--%>
+                                <%--                </ul>--%>
                             </li>
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
                                                                                       style="color: white"></i> </a>
@@ -175,7 +189,7 @@
                         style="text-align: center; color: red; margin-left: -120px "><%=brandServices.nameBrand(request.getParameter("id_namebrand")) %>
                     </h2>
                     <%--  hiển thị danh sách sản phẩm--%>
-                        <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
+                    <%for (Product product : productByBrandServices.getListProductByBrand(request.getParameter("id_namebrand"))) { %>
                     <tr id="section_product" class="products" style="float: left; ">
                         <td class="table_image2" style="height: 300px; width: 250px; border: 1px solid black  ">
                             <a href="productDetail.jsp?id_product=<%=product.getId()%>"><img class="image_sp2" src="<%= product.getImg() %>"
@@ -205,7 +219,7 @@
         </div>
     </div>
 </div>
-<div id="foot" class="">
+<div id="foot" class="" style="width: 1260px">
     <div class="container">
         <div class="foot_alpha">
             <img class="logo_flash_foot" src="assart/image/logo/light-bulb%20(1).png">
