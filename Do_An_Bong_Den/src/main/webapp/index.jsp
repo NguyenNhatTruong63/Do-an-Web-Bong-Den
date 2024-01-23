@@ -53,9 +53,10 @@
                         <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="50px" height="50px">
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
+                    <%--                    xử lý phần search--%>
                     <div class="search">
-                        <form action="./search" method="post">
-                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm"
+                        <form action="./search" method="get">
+                            <input type="search" name="keyword" id="search1" placeholder="Tìm Sản Phẩm"
                                    class="text_search">
                             <button type="submit" value="" class="icon_search"><i
                                     class="fa-solid fa-magnifying-glass"></i></button>
@@ -115,6 +116,8 @@
                                 </ul>
                             </li>
 
+                            <li><a href="./addcart">
+
 <%--                            <li class="dropdown"><a href="category.jsp"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"--%>
 <%--                                                                                      style="color: white"></i> </a>--%>
 <%--                                <ul>--%>
@@ -166,6 +169,7 @@
 <%--                                </ul>--%>
 <%--                            </li>--%>
                             <li><a href="./AddCartController">
+
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -237,6 +241,16 @@
                                             <p class="text_sp1"><%=product.getName()%>
                                             </p>
                                             <div class="purch_price">
+
+                                                <p class="price_sp1">
+                                                    <del><%=numberFormat.format(product.getPrice())%>
+                                                    </del>
+                                                    <%=numberFormat.format(product.salePrice())%>
+                                                </p>
+                                                <button class="purche"><a
+                                                        href="./addcart"
+                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+
                                                 <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
 <%--                                                <button class="purche"><a href="/AddCartController ?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
                                                 <button class="purche"><a href="AddCartController?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
@@ -245,6 +259,7 @@
 <%--                                                <button class="purche"><a--%>
 <%--                                                        href="/AddCartController ?id=<%= product.getId()%>"--%>
 <%--                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
+
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
                                                         <span class="close" onclick="closePopup()">&times;</span>

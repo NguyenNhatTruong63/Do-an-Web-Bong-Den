@@ -71,7 +71,7 @@ font-size: 20px;
 width: 500px;
 height: auto;
 margin-left: -50px;
-margin-top: 0px;
+margin-top: -8px;
 position: absolute;
 text-align: center;
 border-radius: 5px;
