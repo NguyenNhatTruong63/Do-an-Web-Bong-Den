@@ -28,7 +28,6 @@ public class OrderDAO {
                 preparedStatement.setString(4, order.getAddress());
                 preparedStatement.setString(5, order.getNote());
                 preparedStatement.setString(6, order.getOrderDate());
-                preparedStatement.setString(7, order.getStatus());
                 preparedStatement.setInt(8, order.getIdUser());
 
                 preparedStatement.executeUpdate();
@@ -55,7 +54,7 @@ public class OrderDAO {
         order.setAddress("123 Main Street");
         order.setNote("Special note");
         order.setOrderDate("2024-01-01");
-        order.setStatus("Processing");
+
 
         // Gọi phương thức updateOrder
         orderDAO.insertOrder(order);

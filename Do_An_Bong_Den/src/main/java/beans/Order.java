@@ -24,7 +24,6 @@ public class Order {
         this.address = address;
         this.note = note;
         this.orderDate = orderDate;
-        this.status = status;
     }
 
     public Order() {
@@ -91,12 +90,7 @@ public class Order {
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
+
 
     public String toString() {
         return "Order{" +
@@ -108,7 +102,6 @@ public class Order {
                 ", address='" + address + '\'' +
                 ", note='" + note + '\'' +
                 ", orderDate='" + orderDate + '\'' +
-                ", status='" + status + '\'' +
                 '}';
     }
 }
