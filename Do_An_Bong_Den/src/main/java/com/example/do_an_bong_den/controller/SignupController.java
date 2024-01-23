@@ -67,6 +67,7 @@ public class SignupController extends HttpServlet {
                 dao.signup(username, password, repassword, email, phone);
 //                    dao.signup(username, password, repassword, email);
                     response.sendRedirect("index.jsp");
+                    password = MaHoa.toSHA1(password);
                     request.setAttribute("error", "Tài khoản đã tồn tại");
                     request.getRequestDispatcher("signup.jsp").forward(request, response);
                 } else if (accountExist != null) {
