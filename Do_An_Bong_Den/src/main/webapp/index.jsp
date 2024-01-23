@@ -241,15 +241,9 @@
                                             <p class="text_sp1"><%=product.getName()%>
                                             </p>
                                             <div class="purch_price">
-
-                                                <p class="price_sp1">
-                                                    <del><%=numberFormat.format(product.getPrice())%>
-                                                    </del>
-                                                    <%=numberFormat.format(product.salePrice())%>
-                                                </p>
-                                                <button class="purche"><a
-                                                        href="./addcart"
-                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+<%--                                                <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del><%=numberFormat.format(product.salePrice())%>--%>
+<%--                                                </p>--%>
+<%--                                                <button class="purche"><a href="./addcart" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
 
                                                 <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
 <%--                                                <button class="purche"><a href="/AddCartController ?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>

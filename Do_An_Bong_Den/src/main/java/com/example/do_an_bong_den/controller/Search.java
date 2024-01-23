@@ -30,7 +30,7 @@ public class Search extends HttpServlet {
 //        request.setAttribute("product", list);
 //        request.getRequestDispatcher("searchsp.jsp").forward(request, response);
 
-        String search = request.getParameter("search");
+        search = request.getParameter("search");
         Dao dao = new Dao();
         List<Product> list = dao.searchbyname(search);
         request.setCharacterEncoding("UTF-8");

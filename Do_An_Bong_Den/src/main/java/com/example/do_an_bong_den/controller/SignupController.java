@@ -28,7 +28,7 @@ public class SignupController extends HttpServlet {
 
 
         Dao dao = new Dao();
-        Account accountExist = dao.checkAccountExist(username, email);
+        Account accountExist = dao.checkAccountExit(username);
 
         if (username.equals("") || password.equals("") || email.equals("") || phoneNumber.equals("") || repassword.equals("")) {
             request.setAttribute("error", "Vui lòng nhập đầy đủ thông tin");
@@ -55,7 +55,6 @@ public class SignupController extends HttpServlet {
             dao.signup(username, password, repassword, email, phoneNumber);
             request.setAttribute("error", "Đăng ký thành công");
             request.getRequestDispatcher("formdn.jsp").forward(request, response);
-<<<<<<< HEAD
 //        String phone = request.getParameter("phone");
 //        String address = request.getParameter("address");
             if (!password.equals(repassword)) {
@@ -68,7 +67,7 @@ public class SignupController extends HttpServlet {
 //            Dao dao = new Dao();
                 Account account = dao.checkAccountExit(username);
                 if (account == null) {
-                dao.signup(username, password, repassword, email, phone);
+                dao.signup(username, password, repassword, email, phoneNumber);
 //                    dao.signup(username, password, repassword, email);
                     response.sendRedirect("index.jsp");
                     password = MaHoa.toSHA1(password);
@@ -95,8 +94,6 @@ public class SignupController extends HttpServlet {
 
             }
 
-=======
->>>>>>> 29c7fa5edc98d777fd7b2bb1c37cb4851e47097d
 
         }
 
