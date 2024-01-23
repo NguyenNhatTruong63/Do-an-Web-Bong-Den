@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 public class producdb {
     private final String hostName="localhost:3306";
-    private final String dbName="database";
+    private final String dbName="dabd";
     private final String username="root";
     private final String password="";
     private final String instance="";

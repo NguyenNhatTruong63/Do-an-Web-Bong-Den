@@ -35,7 +35,9 @@ public class ProductServices {
     }
 
     public static void main(String[] args) {
-        List<Product> all = ProductServices.getInstance().getAll();
-        System.out.println(all);
+//        List<Product> all = ProductServices.getInstance().getAll();
+        ProductServices dao = new ProductServices();
+
+        System.out.println(dao.getById(2));
     }
 }

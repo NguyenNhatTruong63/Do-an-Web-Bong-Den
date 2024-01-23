@@ -33,7 +33,7 @@ public class AddCartController extends HttpServlet {
         session.setAttribute("cart", carts);
         session.setAttribute("totalPrice", carts.getTotal());
 
-        response.sendRedirect("product");
+        response.sendRedirect("carts.jsp");
     }
 
     @Override

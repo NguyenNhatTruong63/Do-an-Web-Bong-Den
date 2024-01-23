@@ -8,6 +8,9 @@
 <%@ page import="beans.Brand" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.DateFormat" %>
+<%@ page import="com.example.do_an_bong_den.carts.CartsProduct" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -67,7 +70,7 @@
                 <div id="nanavbar-collapse-01" class="collapse">
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="ieda.html">Trang Chủ </a></li>
+                            <li><a href="index.jsp">Trang Chủ </a></li>
                             <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
@@ -154,12 +157,21 @@
                                     class="user1" src="assart/image/logo/user.jpg"></span></a>
 
                                 <ul>
+<%--                                    <li><a href="#">Thông tin cá nhân</a></li>--%>
+<%--                                    <li><a href="#">Lịch sử đơn hàng</a></li>--%>
+<%--                                    <li><a href="policy.html">Chính Sách</a></li>--%>
+<%--                                    <li><a href="formdn.html"> Đăng Nhập</a></li>--%>
+<%--                                    <li><a href="formdk.html">Đăng ký</a></li>--%>
+<%--                                    <li><a href="ieda.html">Đăng Xuất</a></li>--%>
+
                                     <li><a href="#">Thông tin cá nhân</a></li>
-                                    <li><a href="#">Lịch sử đơn hàng</a></li>
                                     <li><a href="policy.html">Chính Sách</a></li>
-                                    <li><a href="formdn.html"> Đăng Nhập</a></li>
-                                    <li><a href="formdk.html">Đăng ký</a></li>
-                                    <li><a href="ieda.html">Đăng Xuất</a></li>
+                                    <li><a href="#">Lịch sử đơn hàng</a></li>
+                                    <li><a href="signup.jsp">Đăng ký</a></li>
+                                    <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                    <li><a href="admin/index.html">Admin</a></li>
+                                    <li><a href="./Logout">Đăng Xuất</a></li>
+
                                 </ul>
                             </li>
 
@@ -171,15 +183,34 @@
                     </nav><!-- .navbar -->
                 </div>
 
-                <div id="section_cart" class="#">
+                <div id="section_cart" class="">
                     <div class="container">
                         <div id="cart1">
                             <div class="cart_product1">
                                 <a class=order_history" href="#"><p class="text_order"> Lịch sử đơn hàng</p></a>
+                                <%
+                                    Carts cart = (Carts) session.getAttribute("cart");
+                                    if (cart == null)
+                                        cart = new Carts();
+
+                                    Map<Integer, CartsProduct> cartItems = cart.getData();
+                                %>
+
                                 <%NumberFormat numberFormat = NumberFormat.getNumberInstance();%>
-                                <% JDBIConnector Dao = new JDBIConnector();%>
-                                <% List<Product> list = Dao.getAllProduct();%>
-                                <% for (Product product : list) {%>
+                                <%
+                                    if (cartItems.isEmpty()) {
+                                %>
+                                <p>Giỏ hàng của bạn trống. Vui lòng thêm sản phẩm vào giỏ hàng</p>
+                                <%
+                                } else {
+//                                    int totalPriceForAllProducts = 0;
+                                for (Map.Entry<Integer, CartsProduct> entry : cartItems.entrySet()) {
+                                CartsProduct cartProduct = entry.getValue();
+                                Product product = cartProduct.getProduct();
+                                %>
+<%--                                <% JDBIConnector Dao = new JDBIConnector();%>--%>
+<%--                                <% List<Product> list = Dao.getAllProduct();%>--%>
+<%--                                <% for (Product product : list) {%>--%>
                                 <ul class="product1">
                                     <li class="cart_product_image1">
                                         <img class="cart_image1" src="<%=product.getImg()%>">
@@ -190,8 +221,11 @@
                                         <p class="price_cart1"><del><%=numberFormat.format(product.getPrice())%></del><%=numberFormat.format(product.salePrice())%></p>
                                         <span class="delete"><i class="fa-solid fa-trash"></i></span>
 <%--                                        <p class="delivery">Dự kiến giao ngày: 10/11/20023 - 12/11/2023</p>--%>
-                                        <%SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");%>
-                                        <p class="delivery">Dự kiến giao ngày: <%= dateFormat.format(DateFormat.getDateInstance())%></p>
+                                        <%SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");%>
+                                        <p class="delivery">Dự kiến giao ngày:<%=sm.format(new Date())%></p>
+
+<%--                                        <%SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");%>--%>
+<%--                                        <p class="delivery">Dự kiến giao ngày: <%= dateFormat.format(DateFormat.getDateInstance())%></p>--%>
                                         <div class="add_quantity">
                                             <p class="quantity">Số Lượng</p>
                                             <button id="minus" onclick="minus()">-</button>
@@ -201,16 +235,11 @@
                                         <button class="pay_cart"><a class="card" href="pay_page.html">Thanh Toán</a></button>
                                     </li>
                                 </ul>
-                                <%}%>
-
+                                <%}}%>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
 
                 <div id="foot" class="">
                     <div class="container">
@@ -261,7 +290,45 @@
     </div>
 
 </div>
+<script>
+    function plus(){
+        let number = document.getElementById("numbera").innerHTML
+        if (document.getElementById("plus")){
+            number ++;
+            document.getElementById("numbera").innerHTML = number
+        }
 
+    }
+    function minus(){
+        let number = document.getElementById("numbera").innerHTML
+        if (document.getElementById("minus")){
+            number --;
+            document.getElementById("numbera").innerHTML = number
+            if(number < 0){
+                document.getElementById("numbera").innerHTML = 0;
+            }
+        }
 
+    }
+    function plus1(){
+        let number = document.getElementById("numberb").innerHTML
+        if (document.getElementById("plus1")){
+            number ++;
+            document.getElementById("numberb").innerHTML = number
+        }
+
+    }
+    function minus1(){
+        let number = document.getElementById("numberb").innerHTML
+        if (document.getElementById("minus1")){
+            number --;
+            document.getElementById("numberb").innerHTML = number
+            if(number < 0){
+                document.getElementById("numberb").innerHTML = 0;
+            }
+        }
+
+    }
+</script>
 </body>
 </html>
