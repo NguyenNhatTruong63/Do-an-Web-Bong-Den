@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.example.do_an_bong_den.carts.Carts" %>
 <%@ page import="com.example.do_an_bong_den.db.JDBIConnector" %>
@@ -6,7 +5,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Locale" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.Dao" %>
 <%@ page import="com.example.do_an_bong_den.beans.Account" %>
+<<<<<<< HEAD
+=======
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
 <%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
 <%@ page import="com.example.do_an_bong_den.beans.Category" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -24,6 +29,17 @@
         function closePopup() {
             document.getElementById("popup-wrapper").style.display = "none";
         }
+
+        <%-- success.jsp --%>
+        <% String successMessage = (String) session.getAttribute("successMessage"); %>
+
+        <% if (successMessage != null && session.getAttribute("account") != null) { %>
+        window.onload = function () {
+            alert("<%= successMessage %>");
+
+        };
+
+        <% } %>
     </script>
 </head>
 <body>
@@ -42,8 +58,10 @@
                     </div>
                     <div class="search">
                         <form action="./search" method="post">
-                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm" class="text_search">
-                            <button type="submit" value="" class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm"
+                                   class="text_search">
+                            <button type="submit" value="" class="icon_search"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                     <div class="button_icon">
@@ -69,26 +87,39 @@
                     <nav id="navbar" class="navbar">
                         <ul>
                             <li><a href="index.jsp">Trang Chủ </a></li>
-                            <li class="dropdown1"><a href="brand.jsp"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
+                            <li class="dropdown1"><a href="#"><span>Thương Hiệu</span><i class="fa-solid fa-caret-down"
                                                                                          style="color: white"></i>
                                 <!--                                <img class="caret" src="assart/image/icon_button/caret-down.svg">-->
                             </a>
-                                <ul>
-                                    <li><a href="#">Rạng Đông</a></li>
-                                    <li><a href="#">PHILIPS</a></li>
-                                    <li><a href="#">MPE</a></li>
-                                    <li><a href="#">Điện Quang</a></li>
-                                    <li><a href="#">Duhal</a></li>
-                                    <li><a href="#">Panasonic</a></li>
+                                <% BrandServices brandServices = new BrandServices(); %>
+                                <%--                hiển thị danh mục loại sp để chọn--%>
+                                <ul><% for (Brand brand : brandServices.getBrandList()) { %>
+
+                                    <li class="dropdown"><a
+                                            href="product_Brand.jsp?id_namebrand=<%=brand.getId()%>"><span><%= brand.getName() %></span></a>
+                                    </li>
+                                    <% } %>
                                 </ul>
+
                             </li>
+<<<<<<< HEAD
 
                             <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down" style="color: white"></i> </a>
+=======
+                            <li class="dropdown"><a href="#"><span>Sản Phẩm</span> <i class="fa-solid fa-caret-down"
+                                                                                      style="color: white"></i> </a>
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
                                 <% CategoryServices categoryServices = new CategoryServices(); %>
                                 <%--                hiển thị danh mục loại sp để chọn--%>
                                 <ul><% for (Category category : categoryServices.getCategoryList()) { %>
 
+<<<<<<< HEAD
                                     <li class="dropdown"><a href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a></li>
+=======
+                                    <li class="dropdown"><a
+                                            href="product_Category.jsp?id_caterory=<%=category.getId()%>"><span><%= category.getName() %></span></a>
+                                    </li>
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
                                     <% } %>
                                 </ul>
                             </li>
@@ -153,38 +184,37 @@
                                 </p>
                                 <!--                                <span ><i class="fa-solid fa-cart-shopping fa-sm" style="color: white"></i></span>-->
                             </a></li>
+                            <% Dao dao = new Dao();
+                                Account account = (Account) session.getAttribute("account");
+                                if (account == null) account = new Account();
+                            %>
+                            <%--                            <c:if test="${sessionScope.account != null}">--%>
+                            <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
+                                    class="user1"
+                                    src="assart/image/logo/user.jpg">Hello  <% if (session.getAttribute("account") != null) { %>
+                                <%=account.getUserName() %>
 
-<%--                            <c:if test="${sessionScope.account != null}">--%>
-                                <li class="dropdown2"><a class="resume" href="#"><span class="text_resume"><img
-                                    class="user1" src="assart/image/logo/user.jpg">Hello</span></a>
-<%--                                    </c:if>--%>
-                                    <ul>
-                                        <li><a href="#">Thông tin cá nhân</a></li>
-                                        <li><a href="policy.html">Chính Sách</a></li>
-                                        <li><a href="#">Lịch sử đơn hàng</a></li>
-                                        <li><a href="signup.jsp">Đăng ký</a></li>
-                                        <li><a href="formdn.jsp"> Đăng Nhập</a></li>
-                                        <li><a href="admin/index.html">Admin</a></li>
-                                        <li><a href="./Logout">Đăng Xuất</a></li>
+                                <% } %> </span></a>
 
-<%--                                        <c:if test="${sessionScope.account == null}">--%>
-<%--                                            <li><a href="formdn.jsp"> Đăng Nhập</a></li>--%>
-<%--                                        </c:if>--%>
+                                <%--                                    </c:if>--%>
+                                <ul>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="ttcn.jsp?id_user=<%= account.getId() %>">Thông tin cá nhân</a></li>
+                                    <li><a href="#">Lịch sử đơn hàng</a></li>
+                                    <% } %>
 
+                                    <% if (session.getAttribute("account") == null) {%>
+                                    <li><a href="formdn.jsp"> Đăng Nhập</a></li>
+                                    <li><a href="signup.jsp">Đăng Ký</a></li>
+                                    <% } %>
+                                    <li><a href="policy.jsp">Chính Sách</a></li>
+                                    <% if (session.getAttribute("account") != null) { %>
+                                    <li><a href="Logout">Đăng Xuất</a></li>
+                                    <% } %>
 
-<%--                                        <li><a href="signup.jsp">Đăng ký</a></li>--%>
-<%--                                        <c:if test = "${sessionScope.account != null}">--%>
-<%--                                        <li><a href="./Logout">Đăng Xuất</a></li>--%>
-<%--                                        </c:if>--%>
-
-                                    </ul>
-                                </li>
-<%--                            </c:if>--%>
-
-                            <li>
-                                <span><i class="fa-regular fa-bell fa-beat-fade fa-sm"
-                                         style="color: white;"></i> </span>
+                                </ul>
                             </li>
+                            <%--                            </c:if>--%>
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
@@ -202,23 +232,35 @@
                             <div class="box_table">
                                 <table class="table_product" border="0px" cellspacing="20px" cellpadding="1px">
                                     <caption class="caption"> Sản Phẩm Bán Chạy Nhất</caption>
-                                    <%--                                    <%--%>
                                     <% JDBIConnector Dao = new JDBIConnector();%>
                                     <% List<Product> list = Dao.getAllProduct();%>
                                     <% for (Product product : list) {%>
-                                    <%--                                    %>--%>
                                     <%
                                         NumberFormat numberFormat = NumberFormat.getNumberInstance();
                                     %>
                                     <tr id="section_product" class="products" style="float: left">
-                                        <td class="table_image1" style="height: 300px; width: 300px; border: solid 1px black">
-                                            <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px" height="270px">
+                                        <td class="table_image1"
+                                            style="height: 300px; width: 300px; border: solid 1px black">
+                                            <a href=""><img class="image_sp1" src="<%=product.getImg()%>" width="270px"
+                                                            height="270px">
                                                 <p class="text_dicount"><%=product.getDiscount()%>%<br>Giảm</p></a>
-                                            <p class="text_sp1"><%=product.getName()%></p>
+                                            <p class="text_sp1"><%=product.getName()%>
+                                            </p>
                                             <div class="purch_price">
+<<<<<<< HEAD
                                                 <p class="price_sp1"><del><%=numberFormat.format(product.getPrice())%></del>  <%=numberFormat.format(product.salePrice())%></p>
 <%--                                                <button class="purche"><a href="/AddCartController ?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>--%>
                                                 <button class="purche"><a href="AddCartController?id=<%= product.getId()%>" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+=======
+                                                <p class="price_sp1">
+                                                    <del><%=numberFormat.format(product.getPrice())%>
+                                                    </del>
+                                                    <%=numberFormat.format(product.salePrice())%>
+                                                </p>
+                                                <button class="purche"><a
+                                                        href="/AddCartController ?id=<%= product.getId()%>"
+                                                        onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
                                                         <span class="close" onclick="closePopup()">&times;</span>

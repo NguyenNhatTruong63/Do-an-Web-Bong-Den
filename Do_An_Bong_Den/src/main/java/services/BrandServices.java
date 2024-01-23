@@ -6,13 +6,9 @@ import beans.Category;
 import database.JDBIConnector;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.mapper.reflect.BeanMapper;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-public class BrandServices {
-  private static BrandServices instance;
 
   public BrandServices(){
   }

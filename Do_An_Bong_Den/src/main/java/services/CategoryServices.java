@@ -1,7 +1,6 @@
 package services;
 
 import beans.Category;
-import beans.Product;
 import database.JDBIConnector;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.mapper.reflect.BeanMapper;

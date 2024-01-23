@@ -23,13 +23,17 @@ public class Login extends HttpServlet {
         Account a = dao.login(userName, password);
 
 
-        if(a == null){
-            request.setAttribute("error", "Vui lòng nhập lại user or password");
+        if(userName.equals("") || password.equals("")){
+            request.setAttribute("error", "Vui lòng nhập đầy đủ thông tin");
+            request.getRequestDispatcher("formdn.jsp").forward(request, response);
+        } else if(a == null) {
+            request.setAttribute("error", "Tên đăng nhập hoặc mật khẩu không chính xác");
             request.getRequestDispatcher("formdn.jsp").forward(request, response);
         }
-        else{
+        else {
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
+            session.setAttribute("successMessage", "Đăng nhập thành công!");;
 //            request.getRequestDispatcher("index").forward(request, response);
             response.sendRedirect("index.jsp");
         }

@@ -13,8 +13,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <title>Đăng Nhập</title>
 
+    <h3 style="color: red">${requestScope.error}</h3>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup-wrapper").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-wrapper").style.display = "none";
+        }
+    </script>
+
 </head>
 <body>
+
 <%
     String error = (String)(request.getAttribute("error"));
     if(error != null) {
@@ -22,17 +35,16 @@
     } else {
         error = "";
     }
-    String userName = request.getParameter("userName") != null ? request.getParameter("userName") : "";
+    String userName = request.getParameter("username") != null ? request.getParameter("username") : "";
 %>
 
 <p style="color: white;
 font-weight: bold;
 font-size: 20px;
-width: auto;
+width: 500px;
 height: auto;
-margin-left: 15px;
-/*margin-top: -45px;*/
-margin-top: 60px;
+margin-left: -50px;
+margin-top: -45px;
 position: absolute;
 text-align: center;
 border-radius: 5px;
@@ -56,7 +68,7 @@ background: red;
 
     <div class="btn_dn" id="btn_dn">
 <%--        <input type="submit" value="Đăng Nhập" onclick="document.getElementById()">--%>
-        <input type="submit" value="Đăng Nhập">
+        <input type="submit" value="Đăng Nhập" onclick="openPopup()">
     </div>
     <div class="f_pass">
         <p><a href="forgetpass.jsp">Quên mật khẩu?</a></p>
@@ -64,6 +76,7 @@ background: red;
     <div class="questionDk">
         <p>Bạn chưa có tài khoản? <a href="signup.jsp">Đăng ký ngay</a></p>
     </div>
+
 </form>
 </body>
 </html>

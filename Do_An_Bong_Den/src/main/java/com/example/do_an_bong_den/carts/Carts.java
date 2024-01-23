@@ -4,22 +4,31 @@ import com.example.do_an_bong_den.beans.Product;
 import com.example.do_an_bong_den.db.JDBIConnector;
 import com.example.do_an_bong_den.services.ProductServices;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Carts {
     Map<Integer, CartsProduct> data = new HashMap<>();
 
+<<<<<<< HEAD
 //    public Carts() {
 //    }
     public Map<Integer, CartsProduct> getData() {
      return data;
 }
 
+=======
+    long totalPrice = 0;
+    public Carts() {
+    }
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
+
 
     public boolean add(int productid) {
         return add(productid, 1);
     }
+
     public boolean add(int productid, int quantity) {
         if (data.containsKey(productid)){
             return data.get(productid).incri(productid,quantity);
@@ -31,14 +40,15 @@ public class Carts {
         if(!data.containsKey(productid)){
             data.put(productid, new CartsProduct(product, quantity));
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c57b0f248c8221d2c84dfbb6a2d095ebba2662f2
 //    if (data.containsKey(productid)){
 //      data.get(productid);
 //
 //    }
-
-
         return true;
     }
     public void remove(int productid) {
@@ -55,5 +65,19 @@ public class Carts {
     }
     public int getTotal(){
         return data.size();
+    }
+
+    public ArrayList<Product> getProductFromCart() {
+        ArrayList<Product> temp = new ArrayList<Product>();
+        for(int i = 0; i < data.size(); i++) {
+            Product product = data.get(i).getProduct();
+            temp.add(product);
+            totalPrice += (long) product.getQuantity() * product.getPrice();
+        }
+        return temp;
+    }
+
+    public long getTotalPrice() {
+        return this.totalPrice;
     }
 }

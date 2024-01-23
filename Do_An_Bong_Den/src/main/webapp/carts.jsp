@@ -142,6 +142,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <p id="bag"></p>
                             <li><a href="cart.html">
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
