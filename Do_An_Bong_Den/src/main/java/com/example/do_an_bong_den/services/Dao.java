@@ -60,12 +60,13 @@ public class Dao {
     }
 
 
-    public Account checkAccountExist(String user) {
-        String query = "select * from user where userName = ?";
+    public Account checkAccountExist(String user, String email) {
+        String query = "select * from user where userName = ? or email = ?";
         try {
             conn = new DBText().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
+            ps.setString(2, email);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Account(rs.getString(1),
@@ -105,35 +106,36 @@ public class Dao {
         }
         return null;
     }
-//    public List<Product> searchbyname(String search){
-//        List<Product> list = new ArrayList<>();
-//        String query = "select name from products where name like = ?";
-//        try{
-//            conn = new DBText().getConnection();
-//            ps = conn.prepareStatement(query);
-//            ps.setString(1, "%"+ search +"%");
-//            rs = ps.executeQuery();
-//            while (rs.next()){
-//                list.add(new Product(
-//                        rs.getString(1),
-//                        rs.getString(2),
-//                        rs.getString(3),
-//                        rs.getString(4),
-//                        rs.getString(5),
-//                        rs.getInt(6),
-//                        rs.getInt(7),
-//                        rs.getInt(8),
-//                        rs.getString(9),
-//                        rs.getString(10)
-//
-//
-//                ));
-//            }
-//        }catch (Exception e){
-//
-//        }
-//        return list;
-//    }
+
+    public List<Product> searchbyname(String search) {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from products where name like ?";
+        try {
+            conn = new DBText().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + search + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getDouble(6),
+                        rs.getDouble(7),
+                        rs.getInt(8),
+                        rs.getInt(9),
+                        rs.getString(10)
+
+
+                ));
+            }
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
 
     public int getTotalPage() {
         String query = "select count(*) from products";
@@ -332,10 +334,11 @@ public class Dao {
 //        }
         Dao dao = new Dao();
 //    System.out.println(dao.signup("234", "123", "123","123"));
-        System.out.println(dao.checkAccountExist("linh1"));
+//        System.out.println(dao.checkAccountExist("linh1"));
 //        System.out.println(dao.getAccount("3"));
 //        System.out.println(dao.getProductDetail("3"));
 //        dao.changePassword("linh", "linh");
+//        System.out.println(dao.searchbyname("downlight"));
     }
 
 
