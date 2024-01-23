@@ -34,8 +34,8 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
             session.setAttribute("successMessage", "Đăng nhập thành công!");;
-//            request.getRequestDispatcher("index").forward(request, response);
-            response.sendRedirect("index.jsp");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+//            response.sendRedirect("index.jsp");
         }
         response.getWriter().println("username: " + userName);
         response.getWriter().println("password: " + password);

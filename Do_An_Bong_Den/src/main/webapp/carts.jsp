@@ -233,7 +233,7 @@
                                             <p id="numbera">0</p>
                                             <button id="plus" onclick="plus()">+</button>
                                         </div>
-                                        <button class="pay_cart"><a class="card" href="pay_page.html">Thanh Toán</a></button>
+                                        <button class="pay_cart"><a class="card" href="TrangThanhToan.jsp">Thanh Toán</a></button>
                                     </li>
                                 </ul>
                                 <%}}%>

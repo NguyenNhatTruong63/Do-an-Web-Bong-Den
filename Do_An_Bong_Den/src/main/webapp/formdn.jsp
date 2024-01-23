@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
     <title>Đăng Nhập</title>
 
-    <h3 style="color: red">${requestScope.error}</h3>
+<%--    <h3 style="color: red">${requestScope.error}</h3>--%>
 
     <script>
         function openPopup() {
@@ -35,7 +35,7 @@
     } else {
         error = "";
     }
-    String userName = request.getParameter("username") != null ? request.getParameter("username") : "";
+    String userName = request.getParameter("username") != null ? request.getParameter("username") : " ";
 %>
 
 <p style="color: white;
