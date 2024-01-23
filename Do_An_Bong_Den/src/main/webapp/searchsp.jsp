@@ -1,27 +1,26 @@
-<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
-<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
 <%@ page import="com.example.do_an_bong_den.services.CategoryServices" %>
 <%@ page import="com.example.do_an_bong_den.beans.Category" %>
-<%@ page import="java.util.Locale" %>
-<%@ page import="java.text.NumberFormat" %>
-<%@ page import="com.example.do_an_bong_den.beans.Product" %>
-<%@ page import="com.example.do_an_bong_den.services.ProductByCategoryServices" %>
 <%@ page import="com.example.do_an_bong_den.services.Dao" %>
 <%@ page import="com.example.do_an_bong_den.beans.Account" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+<%@ page import="java.util.Locale" %>
+<%@ page import="com.example.do_an_bong_den.services.ProductByBrandServices" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="com.example.do_an_bong_den.services.BrandServices" %>
+<%@ page import="com.example.do_an_bong_den.beans.Brand" %>
+<%@ page import="com.example.do_an_bong_den.beans.Product" %><%--
   Created by IntelliJ IDEA.
   User: nguye
-  Date: 12/12/2023
-  Time: 8:14 PM
+  Date: 1/23/2024
+  Time: 7:27 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Loại sản phẩm</title>
+    <title>Sản phẩm</title>
     <link href="assart/sty.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <meta charset="UTF-8">
     <style>
         #search1 {
             margin-top: 0px;
@@ -31,6 +30,7 @@
             margin-top: 0px;
             text-align: center;
             width: 250px;
+            padding: 10px 10px;
         }
 
         .navbar > ul > li {
@@ -39,22 +39,12 @@
         }
 
         .table_product {
-            margin-left: 0px;
+            margin-left: -12px;
             margin-top: -40px;
         }
     </style>
-    <script>
-        function openPopup() {
-            document.getElementById("popup-wrapper").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup-wrapper").style.display = "none";
-        }
-    </script>
 </head>
 <body>
-
 <div id="flashbulb" class="flashbulb">
     <div class="container">
         <div id="header_1">
@@ -64,7 +54,7 @@
                         <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="50px" height="50px">
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
-                    <%--                    xử lý phần search--%>
+<%--                    xử lý phần search--%>
                     <div class="search">
                         <form action="./search" method="get">
                             <input type="search" name="keyword" id="search1" placeholder="Tìm Sản Phẩm"
@@ -164,7 +154,6 @@
                             </li>
                             <%--                            </c:if>--%>
 
-
                         </ul>
                     </nav><!-- .navbar -->
                 </div>
@@ -181,30 +170,33 @@
                     <%
                         Locale locale = new Locale("vi", "VN");
                         NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+
                     %>
                     <%--      dựa vào mã danh mục để gọi sản phẩm--%>
 
-                    <% ProductByCategoryServices productByCategoryServices = new ProductByCategoryServices();%>
-                    <%--lấy tên danh mục hiển thị h2--%>
+
+                    <%--lấy từ khóa tìm kiếm hiển thị h2--%>
                     <h2 class="h2title"
-                        style="text-align: center; color: red; margin-left: -120px "><%=categoryServices.nameCategory(request.getParameter("id_caterory")) %>
+                        style="text-align: center; color: red; margin-left: -120px "><%=request.getParameter("keyword") %>
                     </h2>
+
                     <%--  hiển thị danh sách sản phẩm--%>
-                    <%for (Product product : productByCategoryServices.getListProductByCategory(request.getParameter("id_caterory"))) { %>
+                    <%for (Product listProduct : dao.searchbyname(request.getParameter("keyword"))) { %>
                     <tr id="section_product" class="products" style="float: left; ">
-                        <td class="table_image2" style="height: 300px; width: 250px; border: 1px solid black  ">
-                            <a href="productDetail.jsp?id_product=<%=product.getId() %>"><img class="image_sp2"
-                                                                                              src="<%= product.getImg() %>"
-                                                                                              width="270px"
-                                                                                              height="270px">
-                                <p class="text_dicount"><%=  (int) (product.getDiscount() * 100) %>% <br>Giảm </p></a>
-                            <p class="text_sp1"><%= product.getName() %>
+                        <td class="table_image2" style="height: 350px; width: 260px; border: 1px solid black  ">
+                            <a href="productDetail.jsp?id_product=<%=listProduct.getId()%>"><img class="image_sp2"
+                                                                                                 src="<%= listProduct.getImg() %>"
+                                                                                                 width="270px"
+                                                                                                 height="270px">
+                                <p class="text_dicount"><%=  (int) (listProduct.getDiscount() * 100) %>% <br>Giảm </p>
+                            </a>
+                            <p class="text_sp1"><%= listProduct.getName() %>
                             </p>
                             <div class="purch_price">
                                 <p class="price_sp1">
-                                    <del><%= currencyFormatter.format(product.getPrice()) %>
+                                    <del><%= currencyFormatter.format(listProduct.getPrice()) %>
                                     </del>
-                                    <%= currencyFormatter.format(product.salePrice()) %>
+                                    <%= currencyFormatter.format(listProduct.salePrice()) %>
                                 </p>
                                 <button class="purche"><a href="#" onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                                 <div class="popup-wrapper" id="popup-wrapper1">
@@ -223,7 +215,7 @@
         </div>
     </div>
 </div>
-<div id="foot" class="" style="width: 1260px">
+<div id="foot" class="">
     <div class="container">
         <div class="foot_alpha">
             <img class="logo_flash_foot" src="assart/image/logo/light-bulb%20(1).png">

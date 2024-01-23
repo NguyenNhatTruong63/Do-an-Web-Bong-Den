@@ -53,9 +53,10 @@
                         <img class="logo_flash" src="assart/image/logo/light-bulb%20(1).png" width="50px" height="50px">
                         <p class="tex_flash"> Led Tâm Quang</p>
                     </div>
+                    <%--                    xử lý phần search--%>
                     <div class="search">
-                        <form action="./search" method="post">
-                            <input type="search" name="search" id="search1" placeholder="Tìm Sản Phẩm"
+                        <form action="./search" method="get">
+                            <input type="search" name="keyword" id="search1" placeholder="Tìm Sản Phẩm"
                                    class="text_search">
                             <button type="submit" value="" class="icon_search"><i
                                     class="fa-solid fa-magnifying-glass"></i></button>
@@ -111,7 +112,7 @@
                                     <% } %>
                                 </ul>
                             </li>
-                            <li><a href="./AddCartController">
+                            <li><a href="./addcart">
                                 <!--                                <img class="icon_cart" src="assart/image/icon_button/cart.svg">-->
                                 <% Carts carts = (Carts) session.getAttribute("cart");
                                     if (carts == null) carts = new Carts();
@@ -190,7 +191,7 @@
                                                     <%=numberFormat.format(product.salePrice())%>
                                                 </p>
                                                 <button class="purche"><a
-                                                        href="/AddCartController ?id=<%= product.getId()%>"
+                                                        href="./addcart"
                                                         onclick="openPopup()"> Thêm vào giỏ hàng</a></button>
                                                 <div class="popup-wrapper" id="popup-wrapper">
                                                     <div class="popup">
